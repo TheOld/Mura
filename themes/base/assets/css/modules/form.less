@@ -1,0 +1,126 @@
+
+// Form
+//
+// Markup:
+// <form>
+// 	<fieldset>
+//	<div class="field text">
+//		<label class="left" for="CustomMemberLoginForm_LoginForm_Email">Email</label>
+//		<div class="middleColumn">
+//			<input type="text" name="Email" class="text" id="CustomMemberLoginForm_LoginForm_Email">
+//		</div>
+//	</div>
+//	<div class="field optionset">
+//		<label class="left">Are you an admin?</label>
+//		<div class="middleColumn">
+//			<ul class="optionset">
+//				<li class="odd valyes">
+//					<input id="yes" class="radio" name="" type="radio" value="yes" checked="">
+//					<label for="yes">Yes</label>
+//				</li>
+//				<li class="even valno">
+//					<input id="no" class="radio" name="" type="radio" value="no">
+//					<label for="no">No</label>
+//				</li>
+// 			</ul>
+//		</div>
+//	</div>
+// <div class="field dropdown is-open">
+// 	<label class="left">Select</label>
+// 	<div class="middleColumn">
+// 		<select class="dropdown">
+// 			<option value="0">Option 1</option>
+// 			<option value="1">Option 2</option>
+// 			<option value="2">Option 3</option>
+// 			<option value="3">Option 4</option>
+// 		</select>
+// 	</div>
+// </div>
+//	<div class="field text password">
+//		<label class="left" for="CustomMemberLoginForm_LoginForm_Password">Password</label>
+//		<div class="middleColumn">
+//			<input type="password" name="Password" class="text password" id="CustomMemberLoginForm_LoginForm_Password" autocomplete="off">
+//		</div>
+//	</div>
+//	<div class="field checkbox">
+//		<input type="checkbox" name="Remember" value="1" class="checkbox" id="CustomMemberLoginForm_LoginForm_Remember">
+//		<label class="right" for="CustomMemberLoginForm_LoginForm_Remember">Remember me next time?</label>
+//	</div>
+// 	</fieldset>
+// 	<div class="Actions">
+//		<input type="submit" name="action_dologin" value="Log in" class="action" id="CustomMemberLoginForm_LoginForm_action_dologin">
+//		<p id="ForgotPassword"><a href="Security/lostpassword">I've lost my password</a></p>
+//	</div>
+// </form>
+//
+// Style guide: global.form
+
+form {
+	label {
+		display: block;
+		width: 100%;
+		margin-bottom: 1rem;
+	}
+
+	input, select {
+		display: block;
+		width: 100%;
+		margin-bottom: 3rem;
+		padding: 1rem;
+		border: 1px solid @color-primary;
+		border-radius: @border-radius;
+		outline: 0;
+		background-color: @color-secondary;
+		resize: vertical;
+		transition: padding, 0.2s, @bezier;
+
+		&[type="radio"],
+		&[type="checkbox"] {
+			display: inline-block;
+			width: auto;
+			margin-right: 1rem;
+			margin-top: 0.2rem;
+			float: left;
+		}
+
+		&[type="submit"] {
+			width: auto;
+			resize: none;
+		}
+
+		&:focus {
+			box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+		}
+	}
+
+	select {
+		padding-right: 3.5rem;
+		background-image: url('../images/core/select.png');
+		background-position: 99% 50%;
+		background-repeat: no-repeat;
+		background-size: 15px 20px;
+		appearance: none;
+	}
+
+	fieldset {
+		border: 0px;
+		padding: 1rem 0rem 0rem;
+		margin-bottom: 0rem;
+
+		input, select {
+			margin-bottom: 3rem;
+		}
+
+		> :last-child {
+			margin-bottom: 3rem;
+		}
+	}
+
+	.optionset {
+		margin-bottom: 3rem;
+
+		input {
+			margin-bottom: 0rem;
+		}
+	}
+}

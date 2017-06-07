@@ -1,0 +1,42 @@
+description = "Default layout"
+
+[SeoCmsPage]
+==
+<!DOCTYPE html>
+<html>
+    <head>
+        {#{% partial 'site/meta' %}#}
+        {% component 'SeoCmsPage' %}
+        {% partial 'site/styles' %}
+    </head>
+    <body>
+        <!-- Header -->
+        <header id="layout-header">
+            {% partial 'site/subnav' %}
+            <div class="container">
+                <div class="row">   
+                    <div class="col-xs-12">
+                        <a href="/" class="logo">
+                            <img src="{{ 'assets/img/logo.png'|theme }}" alt="">
+                        </a>
+                    </div>
+                    <div class="col-xs-12">
+                        {% partial 'site/nav' %}
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Nav -->
+        
+
+        <!-- Content -->
+        <section id="layout-content">
+            {% page %}
+        </section>
+
+        <!-- Scripts -->
+        {% partial 'site/scripts' %}
+
+    </body>
+</html>

@@ -1,0 +1,12 @@
+1496814723a:1:{s:16:"site/scripts.htm";a:5:{s:8:"fileName";s:16:"site/scripts.htm";s:7:"content";s:139:"<script src="{{ [
+    'assets/js/jquery.js',
+    'assets/build/bundle-index.js'
+]|theme }}"></script>
+{% framework extras %}
+{% scripts %}
+";s:5:"mtime";i:1496806589;s:6:"markup";s:138:"<script src="{{ [
+    'assets/js/jquery.js',
+    'assets/build/bundle-index.js'
+]|theme }}"></script>
+{% framework extras %}
+{% scripts %}";s:4:"code";N;}}

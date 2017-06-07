@@ -1,0 +1,48 @@
+
+// Environment setup
+// ==========================================================================
+@import "~normalize-css/normalize.css"; // Reset styles
+
+// Variable & mixins
+// ==========================================================================
+@import "variables.less";
+@import "core/easing.less";
+@import "core/mixins.less";
+@import "core/helpers.less";
+
+// Bootstrap
+// ==========================================================================
+@import "~bootstrap/less/variables.less";
+@import "~bootstrap/less/grid.less";
+@import "~bootstrap/less/mixins.less";
+
+
+@grid-gutter-width: 25px;
+@container: 1024px;
+
+.container {
+    max-width: 1024px;
+	padding-left: unit(@grid-gutter-width, px);
+	padding-right: unit(@grid-gutter-width, px);
+
+   	@media @md {
+		padding-left: unit(@grid-gutter-width / 2, px);
+		padding-right: unit(@grid-gutter-width / 2, px);
+	}
+}
+
+// Core
+// ==========================================================================
+@import "core/layout.less"; // Grid and base layout styles (l)
+@import "core/fonts.less"; // Fonts
+@import "core/typography.less"; // Type styles (type)
+@import "core/helpers.less"; // Helper classes for adaptive grid
+
+// Modules
+// ==========================================================================
+@import "modules/header.less"; // Header styles
+@import "modules/navigation.less"; // Navigation styles
+@import "modules/table.less"; // Table styles
+@import "modules/form.less"; // Form styles
+
+@import "modules/section.less"; // Form styles

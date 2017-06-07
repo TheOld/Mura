@@ -1,0 +1,137 @@
+// ==========================================================================
+// Adaptive her classes
+// ==========================================================================
+
+.h--left { float: left; }
+.h--right { float: right;}
+
+.h--list-reset {
+	padding: 0;
+	list-style: none;
+}
+
+.h--hide-js {
+	display: none;
+
+	.no-js & {
+		display: block;
+	}
+}
+
+// Hide from both screenreaders and browsers: h5bp.com/u
+.h-hidden {
+	display: none !important;
+	visibility: hidden;
+}
+
+// Hide only visually, but have it available for screenreaders: h5bp.com/v
+.h-visuallyhidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+// Extends the .visuallyhidden class to allow the element to be focusable
+// when navigated to via the keyboard: h5bp.com/p
+.h-visuallyhidden.h-focusable:active,
+.h-visuallyhidden.h-focusable:focus {
+	clip: auto;
+	height: auto;
+	margin: 0;
+	overflow: visible;
+	position: static;
+	width: auto;
+}
+
+// Hide visually and from screenreaders, but maintain layout
+.h-invisible {
+	visibility: hidden;
+}
+
+// Clear floats
+.h-clear {
+	clear: both;
+}
+
+@media @xs {
+	.h--visible-xs { display: inherit !important; }
+	.h--visible-sm { display: none !important; }
+	.h--visible-md { display: none !important; }
+	.h--visible-lg { display: none !important; }
+	.h--visible-xl { display: none !important; }
+
+	.h--hidden-xs  { display: none !important; }
+	.h--hidden-sm  {  }
+	.h--hidden-md  {  }
+	.h--hidden-lg  {  }
+	.h--hidden-xl  {  }
+}
+
+// Small
+// ==========================================================================
+@media @sm {
+	.h--visible-xs { display: none !important; }
+	.h--visible-sm { display: inherit !important; }
+	.h--visible-md { display: none !important; }
+	.h--visible-lg { display: none !important; }
+	.h--visible-xl { display: none !important; }
+
+	.h--hidden-xs  {  }
+	.h--hidden-sm  { display: none !important; }
+	.h--hidden-md  {  }
+	.h--hidden-lg  {  }
+	.h--hidden-xl  {  }
+}
+
+// Medium
+// ==========================================================================
+@media @md {
+	.h--visible-xs { display: none !important; }
+	.h--visible-sm { display: none !important; }
+	.h--visible-md { display: inherit !important; }
+	.h--visible-lg { display: none !important; }
+	.h--visible-xl { display: none !important; }
+
+	.h--hidden-xs  {  }
+	.h--hidden-sm  {  }
+	.h--hidden-md  { display: none !important; }
+	.h--hidden-lg  {  }
+	.h--hidden-xl  {  }
+}
+
+// Large
+// ==========================================================================
+@media @lg {
+	.h--visible-xs { display: none !important; }
+	.h--visible-sm { display: none !important; }
+	.h--visible-md { display: none !important; }
+	.h--visible-lg { display: inherit !important; }
+	.h--visible-xl { display: none !important; }
+
+	.h--hidden-xs  {  }
+	.h--hidden-sm  {  }
+	.h--hidden-md  {  }
+	.h--hidden-lg  { display: none !important; }
+	.h--hidden-xl  {  }
+}
+
+// Extra large
+// ==========================================================================
+@media @xl {
+	.h--visible-xs { display: none !important; }
+	.h--visible-sm { display: none !important; }
+	.h--visible-md { display: none !important; }
+	.h--visible-lg { display: none !important; }
+	.h--visible-xl { display: inherit !important; }
+
+	.h--hidden-xs  {  }
+	.h--hidden-sm  {  }
+	.h--hidden-md  {  }
+	.h--hidden-lg  {  }
+	.h--hidden-xl  { display: none !important; }
+}

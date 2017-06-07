@@ -1,0 +1,37 @@
+// ==========================================================================
+// Layout (l)
+// ==========================================================================
+
+// The layout file is for high level layout based styles.
+// These will largely be the grid and any container styles required.
+
+// Base
+// ==========================================================================
+
+body {
+	margin: 0;
+}
+
+// apply a natural box layout model to all elements BECAUSE IT'S AWESOME
+* {
+	box-sizing: border-box;
+}
+
+// Max width/responsive images
+// ==========================================================================
+img {
+	@media @not-lg {
+		max-width: 100%;
+		width: auto\9;
+		height: auto;
+		vertical-align: middle;
+		border: 0;
+	}
+}
+
+ul {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+

@@ -1,0 +1,58 @@
+// ==========================================================================
+// General Variables
+// ==========================================================================
+// Consider using these non-specific variable names:
+// e.g. @color-primary, @color-secondary, @color-tertiary, @color-quaternary,
+// @color-quinary, @color-senary, @color-septenary, @color-octonary, @color-nonary, @color-denary
+
+@color-primary: #111111;
+@color-secondary: #ffffff;
+
+// Fonts
+@font-color-primary: #333333;
+@font-color-secondary: #222222;
+@font-color-primary-hover: #444444;
+
+// States
+@color-success: #4caf50;
+@color-error: #f44336;
+@color-inactive: #cccccc;
+
+// Font Families
+@font-playfair: 'Playfair Display', serif;
+@font-montserrat: 'Montserrat', sans-serif;
+@font-hind: 'Hind', sans-serif;
+
+// Units
+@border-radius: 4px;
+
+// Easing
+@bezier: cubic-bezier(0.120, 0.825, 0.230, 1.000);
+
+
+// Directories
+// This should be prefixed to all asset urls
+// @example: "@{dir-theme}images/yourimage.jpg"
+@dir-theme: "../"; // Theme
+@dir-images: "@{dir-theme}images/"; // Images
+@dir-fonts: "@{dir-theme}fonts/"; // Images
+
+// Media queries breakpoints
+// ==========================================================================
+@screen-xs: 320px;  // Extra small screen / phone (portrait)
+@screen-sm: 480px;  // Small screen / phone (landscape)
+@screen-md: 768px;  // Small screen / tablet
+@screen-lg: 992px;  // Large screen / desktop
+@screen-xl: 1200px; // Extra Large screen / wide desktop
+
+// Media Queries (Mobile first approach)
+// ==========================================================================
+@xs: ~"(min-width: @{screen-xs})"; // 320px 	->
+@sm: ~"(min-width: @{screen-sm})"; // 480px  ->
+@md: ~"(min-width: @{screen-md})"; // 768px  ->
+@lg: ~"(min-width: @{screen-lg})"; // 992px  ->
+@xl: ~"(min-width: @{screen-xl})"; // 1200px ->
+
+@hi-dpi: ~"(-webkit-min-device-pixel-ratio: 2), (min--moz-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)";
+@not-sm: ~"(min-width: @{screen-md} + 1)";
+@not-lg: ~"(max-width: @{screen-md})";

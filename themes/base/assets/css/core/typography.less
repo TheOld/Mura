@@ -1,0 +1,130 @@
+// Typography
+//
+// Markup:
+// <h1>Heading 1</h1>
+// <h2>Heading 2</h2>
+// <h3>Heading 3</h3>
+// <h4>Heading 4</h4>
+// <p>Paragraph with <a href="#">a text link</a></p>
+//
+// Style guide: global.typography
+
+html {
+	font-size: 62.5%;
+}
+
+body * {
+	-webkit-font-smoothing: antialiased;
+	.font-size(16, 20);
+	color: @font-color-primary;
+}
+
+.h1 {
+	.font-size(52, 54, 20);
+}
+
+h1 {
+	.h1();
+	font-weight: 900i;
+	font-family: @font-playfair;
+
+	font-size: 50px;
+	color: #44D5C3;
+	letter-spacing: 0;
+	line-height: 42px;
+}
+
+.h2 {
+	.font-size(38, 42, 15);
+}
+
+h2 {
+	.h2();
+	font-weight: 900;
+	font-family: @font-montserrat;
+	color: #FFFFFF;
+	letter-spacing: 0;
+}
+
+.h3 {
+	.font-size(28, 34, 10);
+}
+
+h3 {
+	.h3();
+	font-weight: 900;
+	font-family: @font-montserrat;
+	color: #233F51;
+	text-transform: uppercase;
+}
+
+.h4 {
+	.font-size(18, 20, 10);
+}
+
+h4 {
+	.h4();
+	font-weight: 900;
+	font-family: @font-montserrat;
+	color: #233F51;
+	text-transform: uppercase;
+}
+
+p {
+	.font-size(16, 21, 10);
+	font-family: @font-hind;
+	font-weight: 500;
+}
+
+a {
+	color: @color-primary;
+	text-decoration: none;
+	transition: color 0.3s ease-in-out;
+
+	&:hover {
+		color: lighten(@color-primary, 40);
+	}
+}
+
+// Editable content
+// ==========================================================================
+// For blocks with CMS content where things like lists need to be styled.
+
+.type--content {
+	ul {
+		list-style-type: disc;
+	}
+	ul, ol {
+		list-style-position: outside;
+		margin: 0 0 18px 16px;
+		padding: 0;
+
+		li {
+			p {
+				.ie8 &,
+				.ie9 &,
+				.ie10 & {
+					display: inline;
+				}
+			}
+		}
+	}
+}
+
+// Center aligned
+// ==========================================================================
+.type--center {
+	text-align: center;
+}
+
+// Right aligned
+// ==========================================================================
+.type--right {
+	text-align: right;
+}
+
+// Left aligned
+// ==========================================================================
+.type--left {
+	text-align: left;
+}
