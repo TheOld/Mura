@@ -58,6 +58,8 @@ return [
         'name' => 'Imię',
         'email' => 'E-mail',
         'common' => 'Nazwa',
+        'locale' => 'Idioma',
+        'lang' => 'pl',
         'mail' => 'mail'
     ],
     'button' => [
@@ -84,6 +86,7 @@ return [
         'show_active' => 'Pokaż aktywne',
         'show_inactive' => 'Pokaż nieaktywne',
         'show_draft' => 'Pokaż szkice',
+        'show_unsub' => 'Pokaż wypisać',
         'total' => 'Razem'
     ],
     'component' => [

@@ -1,14 +1,14 @@
 [staticMenu mainMenu]
-code = "main-menu"
+code = "mainMenu"
+
+[viewBag]
 ==
 {% import _self as nav %}
-
 {% macro render_menu(items) %}
     {% import _self as nav %}
-
     {% for item in items %}
         {% if item.items %}
-            <li role="presentation" class="dropdown {{ item.isActive ? 'active' }} {{ item.isChildActive ? 'child-active' }}">
+            <li role="presentation" class="nav__item {{ item.isActive ? 'active' }} {{ item.isChildActive ? 'child-active' }}">
                 <a href="{{ item.url }}" class="dropdown-toggle" data-toggle="dropdown">
                     {{ item.code ? ('nav.'~item.code)|_ : item.title }} <span class="caret"></span>
                 </a>
@@ -17,27 +17,25 @@ code = "main-menu"
                 </ul>
             </li>
         {% else %}
-            <li role="presentation" class="{{ item.isActive ? 'active' }} {{ item.isChildActive ? 'child-active' }}">
+            <li role="presentation" class="nav__item {{ item.isActive ? 'active' }} {{ item.isChildActive ? 'child-active' }}">
                 <a href="{{ item.url }}">{{ item.code ? ('nav.'~item.code)|_ : item.title }}</a>
             </li>
         {% endif %}
     {% endfor %}
 {% endmacro %}
 
-<nav id="layout-nav" class="navbar" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="{{ 'home'|page }}"></a>
-        </div>
-        <div class="collapse navbar-collapse navbar-main-collapse">
-            <ul class="nav navbar-nav">
-                {{ nav.render_menu(mainMenu.menuItems) }}
-            </ul>
-        </div>
-    </div>
+<nav id="layout-nav" class="nav" role="navigation">
+	<div class="nav__header">
+		<button type="button" class="nav__toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="{{ 'home'|page }}"></a>
+	</div>
+	<div class="nav__navbar">
+		<ul>
+			{{ nav.render_menu(mainMenu.menuItems) }}
+		</ul>
+	</div>
 </nav>

@@ -3,21 +3,35 @@
 {% set parentOrSelf = page.parent ?: page %}
 {% set childPages = parentOrSelf.children %}
 <div class="container">
-    <div class="row">
-        <div class="col-sm-8">
-            <a href="mailto:contato@muraempresarial.com.br" class="subnav__contact--email">
-                contato@muraempresarial.com.br
-            </a>
-            <a href="call:4833078753" class="subnav__contact--phone">| 48.33077853</a>
-        </div>
-        <div class="col-sm-4">
-            <ul class="nav nav-pills pull-right">
-                <li class="{{ page.url == childPage.url ? 'active' }}">
-                    <a href="{{ childPage.url|app }}">
-                        {{ childPage.title }}
+    <div class="subnav">
+        <div class="row">
+            <div class="col-xs-6 col-md-8">
+                <div class="subnav__contact__holder">
+                    <a href="mailto:contato@muraempresarial.com.br" class="subnav__contact--email">
+                        contato@muraempresarial.com.br |
                     </a>
-                </li>
-            </ul>
+                    <a href="call:4833078753" class="subnav__contact--phone">48.33077853</a>
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-4">
+                <ul class="subnav subnav--aux">
+                    <li class="subnav__item">
+                        <a href="/faq">
+                            FAQ
+                        </a>
+                    </li>
+                    <li class="subnav__item">
+                        <a href="/blog">
+                            blog
+                        </a>
+                    </li>
+                    <li class="subnav__item">
+                        <a href="/news">
+                            notícias
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>

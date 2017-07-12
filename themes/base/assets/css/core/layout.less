@@ -7,9 +7,9 @@
 
 // Base
 // ==========================================================================
-
 body {
 	margin: 0;
+	overflow-x: hidden;
 }
 
 // apply a natural box layout model to all elements BECAUSE IT'S AWESOME
@@ -18,7 +18,6 @@ body {
 }
 
 // Max width/responsive images
-// ==========================================================================
 img {
 	@media @not-lg {
 		max-width: 100%;
@@ -30,8 +29,22 @@ img {
 }
 
 ul {
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 	list-style-type: none;
 }
 
+.content__wrapper {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	width: 100%;
+	position: absolute;
+	z-index: 5;
+}
+
+.content__centered {
+	max-width: 488px;
+	margin: 0 auto;
+}

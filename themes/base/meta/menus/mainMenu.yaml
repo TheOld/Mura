@@ -1,0 +1,28 @@
+name: mainMenu
+items:
+    -
+        title: Sobre
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: ''
+        reference: sobre
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Método
+        nesting: ''
+        type: url
+        url: 'http://www.google.com'
+        code: ''
+        reference: ''
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'

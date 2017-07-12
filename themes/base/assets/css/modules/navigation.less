@@ -9,6 +9,78 @@
 // 	...
 // </div>
 
-.nav {
+.menu__wrapper {
+	height: 75px;
+	width: 100%;
+	display: flex;
+	align-items: center;
 
+	// @media @md {
+	// 	height: 153px;
+	// }
+}
+
+.nav {
+	width: 100%;
+
+	@media @md {
+		margin-top: 30px;
+	}
+
+	.mobile__menu {
+
+	}
+
+	.menu {
+		display: none;
+
+		@media @md {
+			display: block;
+		}
+		.nav__navbar {
+			.nav__item {
+				float: left;
+
+				&:not(:first-child) {
+					margin-left: 24px;
+				}
+
+				a {
+					color: @font-link;
+					font-family: @font-montserrat;
+					font-weight: 300;
+					text-transform: uppercase;
+				}
+
+				&:before {
+					content: '';
+					display: block;
+					width: 0;
+					height: 2px;
+					background-color: @font-link-hover;
+					transition: width 220ms ease-out;
+				}
+
+				&:hover {
+					a {
+						color: @font-link-hover;
+					}
+
+					&:before {
+						width: 24px;
+					}
+				}
+
+				&--active {
+					a {
+						color: @font-link-hover;
+					}
+
+					&:before {
+						width: 24px;
+					}
+				}
+			}
+		}
+	}
 }

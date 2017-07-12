@@ -91,7 +91,7 @@ class CombineAssets
     /**
      * @var bool Compress (minify) asset files.
      */
-    public $useMinify = false;
+    public $useMinify = true;
 
     /**
      * @var bool When true, cache will be busted when an import is modified.

@@ -1,6 +1,6 @@
 description = "Default layout"
-
 [SeoCmsPage]
+[staticPage]
 ==
 <!DOCTYPE html>
 <html>
@@ -14,29 +14,27 @@ description = "Default layout"
         <header id="layout-header">
             {% partial 'site/subnav' %}
             <div class="container">
-                <div class="row">   
-                    <div class="col-xs-12">
-                        <a href="/" class="logo">
-                            <img src="{{ 'assets/img/logo.png'|theme }}" alt="">
-                        </a>
-                    </div>
-                    <div class="col-xs-12">
-                        {% partial 'site/nav' %}
-                    </div>
-                </div>
+                <div class="row">
+					<div class="menu__wrapper">
+						<div class="col-xs-2 col-md-6">
+							<a href="/" class="logo">
+							</a>
+						</div>
+						<div class="col-xs-2 col-xs-push-8 col-md-6 col-md-push-0">
+							<!-- Nav -->
+
+								{% partial 'site/static-nav' %}
+
+						</div>
+					</div>
+				</div>
             </div>
         </header>
-
-        <!-- Nav -->
-        
-
-        <!-- Content -->
+		<!-- Content -->
         <section id="layout-content">
             {% page %}
         </section>
-
         <!-- Scripts -->
         {% partial 'site/scripts' %}
-
     </body>
 </html>

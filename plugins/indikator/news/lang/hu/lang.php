@@ -58,6 +58,8 @@ return [
         'name' => 'Név',
         'email' => 'E-mail',
         'common' => 'Megjegyzés',
+        'locale' => 'Nyelv',
+        'lang' => 'hu',
         'mail' => 'levél'
     ],
     'button' => [
@@ -84,6 +86,7 @@ return [
         'show_active' => 'Aktívak mutatása',
         'show_inactive' => 'Inaktívak mutatása',
         'show_draft' => 'Piszkozatok mutatása',
+        'show_unsub' => 'Leiratkozottak mutatása',
         'total' => 'Összes'
     ],
     'component' => [
