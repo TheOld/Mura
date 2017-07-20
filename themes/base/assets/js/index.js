@@ -1,9 +1,12 @@
 'use strict';
 
+// import Scrollbar from 'smooth-scrollbar';
+import initMobileMenu from './interactions/mobile-menu';
+
 window.jQuery = require('jquery');
 
-// import Search from './components/Search/Search.js';
-
-window.addEventListener('DOMContentLoaded', function() {
-	console.log('asdfasdfasd');
+document.addEventListener('DOMContentLoaded', function() {
+	if (window.matchMedia('(max-width: 768px)').matches) {
+		initMobileMenu();
+	}
 });
