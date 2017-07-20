@@ -77,9 +77,13 @@ h4 {
 }
 
 p {
-	.font-size(16, 21, 10);
+	.font-size(15, 21, 10);
 	font-family: @font-hind;
 	font-weight: 500;
+
+	@media @md {
+		.font-size(16, 21, 10);
+	}
 }
 
 a {

@@ -17,12 +17,12 @@
 @import '~bootstrap/less/mixins.less';
 
 @grid-gutter-width: 25px;
-@container: 1024px;
+@container: 1220px;
 
 .container {
 	padding-left: unit(@grid-gutter-width, px);
 	padding-right: unit(@grid-gutter-width, px);
-	max-width: 1024px;
+	max-width: 1220px;
 	width: 100%;
 
 	@media @md {
@@ -36,7 +36,8 @@
 @import 'core/layout.less'; // Grid and base layout styles (l)
 @import 'core/typography.less'; // Type styles (type)
 @import 'core/helpers.less'; // Helper classes for adaptive grid
-@import 'core/icon.less'; // Header styles
+@import 'core/icon.less';
+@import 'core/animation.less';
 
 // Modules
 // ==========================================================================
@@ -44,6 +45,8 @@
 @import 'modules/logo.less';
 @import 'modules/navigation.less'; // Navigation styles
 @import 'modules/subnav.less'; // Navigation styles
+@import 'modules/mobilemenu.less'; // Navigation styles
 @import 'modules/table.less'; // Table styles
 @import 'modules/form.less'; // Form styles
 @import 'modules/section.less'; // Section styles
+@import 'modules/about.less';

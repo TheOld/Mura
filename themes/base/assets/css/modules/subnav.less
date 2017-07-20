@@ -1,7 +1,6 @@
 .subnav {
 	height: 40px;
-	font-family: @font-hind;
-	font-weight: 500;
+	z-index: 1;
 
 	&__contact__holder {
 		display: flex;
@@ -20,13 +19,23 @@
 			@media @md {
 				font-size: 1.6rem;
 			}
+
+			&:hover {
+				color: @font-link-hover;
+			}
 		}
 
 		.subnav__contact--email {
 			display: none;
 
-			@media @md {
+			&:after {
+				content: '︱';
 				display: block;
+				height: 100%;
+			}
+
+			@media @md {
+				display: flex;
 			}
 		}
 	}
@@ -52,7 +61,7 @@
 			border-style: solid;
 			border-width: 0 24px 40px 0;
 			border-color: transparent #315d79 transparent transparent;
-			margin-left: -24px;
+			margin-left: -23px;
 		}
 
 		&:after {
@@ -70,18 +79,94 @@
 			z-index: 1;
 			position: relative;
 			display: flex;
-			text-transform: uppercase;
 
 			a {
 				font-size: 12px;
+				color: #6E98B2;
+				text-transform: uppercase;
+
+				@media @md {
+					font-size: 13px;
+				}
+			}
+
+			&:first-child {
+				@media @md {
+					margin-left: 32px;
+				}
 			}
 
 			&:not(:last-child) {
-
 				&:after {
 					content: '・';
 				}
 			}
 		}
+	}
+
+	&--alt {
+		background-color: transparent;
+		width: auto;
+
+		&:before {
+			display: none;
+		}
+
+		&:after {
+			display: none;
+		}
+
+		.subnav__item {
+			a {
+				color: @font-color-mobile-menu;
+				font-size: 14px;
+			}
+
+			&:not(:last-child) {
+				color: @font-color-mobile-menu;
+				margin-right: 12px;
+				&:after {
+					content: '・';
+					margin-left: 12px;
+				}
+			}
+		}
+	}
+}
+
+.subnav__mobile {
+	height: 70px;
+	background-color: @color-mobile-header;
+	padding: 20px 26px;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	transition: transform 320ms ease-in-out;
+	transform: translate3d(0, -100%, 0);
+
+	.header__wrapper {
+		display: flex;
+		align-items: center;
+
+		a {
+			display: block;
+		}
+
+		.subnav__mobile--phone {
+			color: #ffffff;
+			margin-left: 36px;
+		}
+	}
+
+	@media @md {
+		display: none;
+	}
+
+	&--open {
+		transform: translate3d(0, 0, 0);
 	}
 }

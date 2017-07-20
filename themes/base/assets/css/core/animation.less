@@ -1,0 +1,56 @@
+@import 'easing.less';
+
+.animated {
+	animation-fill-mode: both;
+	animation-duration: 320ms; // animation-fill-mode:forwards;
+	animation-timing-function: @easeOutExpo;
+	opacity: 0;
+
+	&__duration--180 {
+		animation-duration: 180ms;
+	}
+
+	&__duration--200 {
+		animation-duration: 200ms;
+	}
+
+	&__duration--220 {
+		animation-duration: 220ms;
+	}
+
+	&__duration--240 {
+		animation-duration: 240ms;
+	}
+}
+
+.slideUpOut {
+	animation-name: slideUpOut;
+}
+
+.slideDown {
+	animation-name: slideDownIn;
+}
+
+@keyframes slideDownIn {
+	from {
+		transform: translate3d(0, -100%, 0);
+		opacity: 0;
+	}
+
+	to {
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
+	}
+}
+
+@keyframes slideUpOut {
+	from {
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
+	}
+
+	to {
+		transform: translate3d(0, -100%, 0);
+		opacity: 0;
+	}
+}

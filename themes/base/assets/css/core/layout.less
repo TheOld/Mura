@@ -12,6 +12,11 @@ body {
 	overflow-x: hidden;
 }
 
+.page__container {
+	display: flex;
+	flex-direction: column;
+}
+
 // apply a natural box layout model to all elements BECAUSE IT'S AWESOME
 * {
 	box-sizing: border-box;
@@ -34,6 +39,10 @@ ul {
 	list-style-type: none;
 }
 
+.layout__content {
+	flex: 1;
+}
+
 .content__wrapper {
 	display: flex;
 	justify-content: center;
@@ -41,7 +50,7 @@ ul {
 	flex-direction: column;
 	width: 100%;
 	position: absolute;
-	z-index: 5;
+	z-index: 1;
 }
 
 .content__centered {
