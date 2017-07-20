@@ -9,31 +9,31 @@ description = "Default layout"
         {% component 'SeoCmsPage' %}
         {% partial 'site/styles' %}
     </head>
-    <body>
-        <!-- Header -->
-        <header id="layout-header">
-            {% partial 'site/subnav' %}
-            <div class="container">
-                <div class="row">
-					<div class="menu__wrapper">
-						<div class="col-xs-2 col-md-6">
-							<a href="/" class="logo">
-							</a>
-						</div>
-						<div class="col-xs-2 col-xs-push-8 col-md-6 col-md-push-0">
-							<!-- Nav -->
-
+    <body class="page__container">
+		<main id="main-scrollbar">
+			<!-- Header -->
+			<header id="layout-header">
+				{% partial 'site/subnav' %}
+				<div class="container">
+					<div class="row">
+						<div class="menu__wrapper">
+							<div class="col-xs-2 col-md-6">
+								<a href="/" class="logo">
+								</a>
+							</div>
+							<div class="col-xs-2 col-xs-push-8 col-md-6 col-md-push-0">
+								<!-- Nav -->
 								{% partial 'site/static-nav' %}
-
+							</div>
 						</div>
 					</div>
 				</div>
-            </div>
-        </header>
-		<!-- Content -->
-        <section id="layout-content">
-            {% page %}
-        </section>
+			</header>
+			<!-- Content -->
+			<section id="layout-content" class="layout__content">
+				{% page %}
+			</section>
+		</main>
         <!-- Scripts -->
         {% partial 'site/scripts' %}
     </body>
