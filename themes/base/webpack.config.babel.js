@@ -119,26 +119,26 @@ switch (process.env.npm_lifecycle_event) {
 			]
 		});
 		break;
-
 	default:
-		config = merge(common, {
-			entry: {
-				vendor: [
-					'react',
-					'react-dom'
-				]
-			},
-			plugins: [
-				new webpack.optimize.CommonsChunkPlugin({
-					name: ['vendor']
-				}),
-				new webpack.ProvidePlugin({
-					$: 'jquery',
-					jQuery: 'jquery',
-					'window.jQuery': 'jquery'
-				})
-			],
-			devtool: 'source-map'
-		});
+		// config = merge(common, {
+		// 	entry: {
+		// 		vendor: [
+		// 			'react',
+		// 			'react-dom'
+		// 		]
+		// 	},
+		// 	plugins: [
+		// 		new webpack.optimize.CommonsChunkPlugin({
+		// 			name: ['vendor']
+		// 		}),
+		// 		new webpack.ProvidePlugin({
+		// 			$: 'jquery',
+		// 			jQuery: 'jquery',
+		// 			'window.jQuery': 'jquery'
+		// 		})
+		// 	],
+		// 	devtool: 'source-map'
+		// });
+		config = common;
 }
 export default config;
