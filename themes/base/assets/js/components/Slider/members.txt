@@ -1,0 +1,52 @@
+// <figure className="grid--12 grid__md--4 grid--center member">
+// <img src="http://fakeimg.pl/155x120?text=Ass&font=bebas" alt="Dummy" className="member__photo"/>
+// <figcaption className="member__caption">
+//   <h2 className="member__name">
+//     this.props.member.name
+//   </h2>
+//   <p className="member__title">advogado consultor</p>
+//   <p className="member__short">
+//     Experiência internacional, sendo conselheiro e consultor jurídico de empresas sediadas no exterior.
+//   </p>
+// </figcaption>
+// </figure>
+// <section className="card__content">
+// <div className="card__column grid--12 grid__md--5 push__md--1">
+//   <hr />>
+//   <p className="card__info">
+//     Mestre em Gestão Estratégica de Empresas Familiares pela Universidad Europea Miguel de Cervantes.
+//   </p>
+//   <p className="card__info">
+//     Pós-graduando em Direito Imobiliário Aplicado pela EPD.
+//   </p>
+//   <p className="card__info">
+//     Pós-graduado em Direito Empresarial e dos Negócios pela UNIVALI.
+//   </p>
+//   <p className="card__info">
+//     Bacharel em Direito pelo CESUSC – FCSF.
+//   </p>
+// </div>
+
+// <div className="card__column grid--12 grid__md--5 push__md--1">
+//   <hr />
+//   <p className="card__info">
+//     Membro da Ordem dos Advogados do Brasil (OAB/SC 31.329).
+//   </p>
+//   <p className="card__info">
+//     Membro Associado do Instituto Brasileiro de Governança Corporativa (IBGC).
+//   </p>
+//   <p className="card__info">
+//     Membro Profissional do Family Firm Institute, Inc. (FFI).
+//   </p>
+//   <p className="card__info">
+//     Premiado no II Prêmio Libertas, promovido pelo Ministério de Justiça e UNODC.
+//   </p>
+// </div>
+// </section>
+// <section className="card__footer">
+// <a className="card__link" ref="mailto:eduardo@muraempresiarial.com.br">eduardo@muraempresiarial.com.br</a>
+// <a className="card__link" href="call:47991796790">47.991796790</a>
+// <a className="card__link" href="http:www.linkedin.com.br">
+//   <i className="icon icon--linkedin"></i>
+// </a>
+// </section>

@@ -14,8 +14,8 @@ let common = {
 	context: __dirname,
 	entry: {
 		index: [
-			PATH('assets/css/style.less'),
-			PATH('assets/js/index.js')
+			PATH('assets/js/index.js'),
+			PATH('assets/css/style.less')
 		]
 	},
 	output: {
@@ -23,23 +23,27 @@ let common = {
 		filename: 'bundle-[name].js',
 		sourceMapFilename: '[file].map'
 	},
+	performance: {
+		maxAssetSize: 250000,
+		maxEntrypointSize: 250000
+	},
 	module: {
 		loaders: [
 			{
 				test: /\.js$|\.json$|\.jsx$/,
-				loader: 'babel-loader',
-				include: PATH('js'),
+				use: 'babel-loader',
+				include: PATH('assets/js'),
 				exclude: /node_modules/
 			},
 			{
 				test: /\.(jpg|png|woff|woff2|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-				loader: 'url-loader'
+				use: 'url-loader'
 			},
 			{
 				test: /\.less$/,
-				loader: ExtractTextPlugin.extract({
-					fallbackLoader: 'style-loader',
-					loader: [
+				use: ExtractTextPlugin.extract({
+					fallback: 'style-loader',
+					use: [
 						{
 							loader: 'css-loader',
 							options: {
@@ -47,8 +51,15 @@ let common = {
 							}
 						},
 						{
-							loader: 'autoprefixer-loader',
-							query: { browsers: 'last 2 versions' }
+							loader: 'postcss-loader',
+							options: {
+								sourceMap: true,
+								plugins: (loader) => [
+									require('autoprefixer')(
+										{ browsers: ['last 2 versions'] }
+									)
+								]
+							}
 						},
 						{
 							loader: 'less-loader',
@@ -83,6 +94,7 @@ let common = {
 		})
 	]
 };
+
 switch (process.env.npm_lifecycle_event) {
 	case 'prod':
 		config = merge(common, {
@@ -92,8 +104,11 @@ switch (process.env.npm_lifecycle_event) {
 						test: /\.js$|\.json$|\.jsx$/,
 						enforce: 'pre',
 						loader: 'eslint-loader',
-						include: PATH('js'),
-						exclude: [/node_modules/, PATH('js/head')]
+						include: PATH('assets/js'),
+						exclude: [/node_modules/, PATH('assets/js/head')],
+						options: {
+							fix: true
+						}
 					}
 				]
 			},
@@ -115,30 +130,69 @@ switch (process.env.npm_lifecycle_event) {
 					},
 					sourceMap: false
 				}),
-				new webpack.optimize.DedupePlugin()
+				new webpack.optimize.ModuleConcatenationPlugin()
 			]
 		});
 		break;
+	case 'server':
+		config = merge(common, {
+			devServer: {
+				// add contentBase if you need to handle a subdomain.
+				// For example for z.co.nz/win/ simply add
+				// contentBase: '/win/', // to serve the content
+				// from there.
+				// display errors in a webpage overlay
+				overlay: true,
+				// gzip everything produced by Webpack
+				compress: true,
+				port: 9000,
+				// serve over https
+				https: true,
+				// allow Cross Origin Request
+				headers: {
+					'Access-Control-Allow-Origin': '*'
+				},
+				// redirect every static assets to the
+				// silverstripe instance
+				proxy: {
+					'/themes/base': {
+						target: {
+							// replace this with project
+							// host name (eg: zwin.dev)
+							host: '',
+							// can be changed to handle
+							// non-secure website.
+							protocol: 'https:',
+							port: 443
+						},
+						secure: false
+					}
+				}
+			}
+		});
+		break;
 	default:
-		// config = merge(common, {
-		// 	entry: {
-		// 		vendor: [
-		// 			'react',
-		// 			'react-dom'
-		// 		]
-		// 	},
-		// 	plugins: [
-		// 		new webpack.optimize.CommonsChunkPlugin({
-		// 			name: ['vendor']
-		// 		}),
-		// 		new webpack.ProvidePlugin({
-		// 			$: 'jquery',
-		// 			jQuery: 'jquery',
-		// 			'window.jQuery': 'jquery'
-		// 		})
-		// 	],
-		// 	devtool: 'source-map'
-		// });
-		config = common;
+		config = merge(common, {
+			entry: {
+				vendor: [
+					'react',
+					'react-dom'
+				]
+			},
+			plugins: [
+				new webpack.optimize.CommonsChunkPlugin({
+					name: ['vendor'],
+					minChunks: Infinity
+				}),
+				new webpack.ProvidePlugin({
+					$: 'jquery',
+					jQuery: 'jquery',
+					'window.jQuery': 'jquery'
+				})
+			],
+			devtool: 'source-map'
+		});
+	config = common;
 }
+
 export default config;

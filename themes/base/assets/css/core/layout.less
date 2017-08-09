@@ -5,6 +5,9 @@
 // The layout file is for high level layout based styles.
 // These will largely be the grid and any container styles required.
 
+@import "~@heyday/less-grid/src/less/grid.less";
+@import '../variables.less';
+
 // Base
 // ==========================================================================
 body {
@@ -37,6 +40,23 @@ ul {
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
+}
+
+.grid(122rem, 12, 1rem, @xs, @sm, @md, @lg, @xl);
+
+@media @lg {
+	.grid(122rem, 12, 2.2rem, @xs, @sm, @md, @lg, @xl);
+}
+
+.grid__container {
+	max-width: 122rem;
+	width: 100%;
+}
+
+.grid--hiddensm {
+	@media @sm {
+		display: none;
+	}
 }
 
 .layout__content {

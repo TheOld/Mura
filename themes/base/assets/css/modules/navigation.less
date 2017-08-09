@@ -30,8 +30,11 @@
 	.menu {
 		display: none;
 
-		@media @md {
+		@media @lg {
 			display: block;
+			position: relative;
+			overflow: hidden;
+			float: right;
 		}
 
 		.nav__navbar {
@@ -81,8 +84,8 @@
 		}
 
 		&--mobile {
-			position: fixed;
-			z-index: 10;
+			position: absolute;
+			z-index: -10;
 			background-color: @color-mobile-header;
 			width: 100vw;
 			height: 100vh;
@@ -93,7 +96,7 @@
 			padding-top: 52px;
 			transform: translate3d(0, 100%, 0);
 			opacity: 0;
-			transition: all 320ms ease-in-out;
+			transition: transform 320ms ease-in-out, opacity 320ms ease-in-out;
 
 			.menu__items {
 				display: flex;
@@ -102,29 +105,55 @@
 				.menu__item {
 					display: block;
 					font-family: @font-montserrat;
-					font-size: 25px;
-					line-height: 38px;
+					font-size: 40px;
+					line-height: 80px;
 					color: @font-color-mobile-menu;
 					text-transform: uppercase;
 					font-weight: 600;
-					margin-bottom: 12px;
+					position: relative;
+					z-index: 1;
+					transform: translate3d(0, 100%, 0);
+					opacity: 0;
+					transition: all 280ms @bezier;
+
+					&:after {
+						position: absolute;
+						left: 0;
+						bottom: 20px;
+						content: '';
+						display: block;
+						width: 0;
+						height: 24px;
+						background-color: @font-link-hover;
+						transition: width 420ms @bezier;
+						z-index: -1;
+					}
+
+					&:hover {
+						&:after {
+							width: 84px;
+						}
+					}
 
 					&--active {
-						&:before {
-							content: '';
-							display: block;
-							width: 24px;
-							height: 4px;
-							background-color: @font-link-hover;
-							transition: width 220ms ease-out;
+						&:after {
+							width: 84px;
 						}
+					}
+
+					&--open {
+						transform: translate3d(0, 0, 0);
+						opacity: 1;
+						display: block;
 					}
 				}
 			}
 
 			&--open {
 				transform: translate3d(0, 0, 0);
+				position: fixed;
 				opacity: 1;
+				z-index: 1;
 			}
 		}
 	}

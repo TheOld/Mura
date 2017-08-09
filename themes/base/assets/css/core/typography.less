@@ -16,14 +16,14 @@ html {
 body * {
 	-webkit-font-smoothing: antialiased;
 	color: @font-color-primary;
-	.font-size(16, 20);
+	.font-size(15, 20);
 }
 
 .h1 {
 	.font-size(35, 34, 24);
 
 	@media @md {
-		.font-size(52, 54, 20);
+		.font-size(60, 52, 20);
 	}
 }
 
@@ -64,7 +64,7 @@ h3 {
 .h4 {
 	.font-size(14, 18, 10);
 	@media @md {
-		.font-size(18, 20, 10);
+		.font-size(20, 24, 10);
 	}
 }
 
@@ -77,7 +77,7 @@ h4 {
 }
 
 p {
-	.font-size(15, 21, 10);
+	.font-size(16, 21, 10);
 	font-family: @font-hind;
 	font-weight: 500;
 
@@ -93,6 +93,7 @@ a {
 
 	&:hover {
 		color: lighten(@color-primary, 40);
+		text-decoration: none;
 	}
 }
 
@@ -139,4 +140,10 @@ a {
 // ==========================================================================
 .type--left {
 	text-align: left;
+}
+
+.type__sm--bold {
+	@media @sm {
+		font-weight: bold;
+	}
 }

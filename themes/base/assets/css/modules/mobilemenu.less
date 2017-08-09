@@ -1,5 +1,5 @@
 .bigmac {
-	@media @md {
+	@media @lg {
 		display: none;
 	}
 
@@ -8,13 +8,17 @@
 	}
 
 	.nav__icon {
-		width: 28px;
+		width: 25px;
 		height: 20px;
 		position: relative;
 		transform: rotate(0deg);
 		transition: 380ms ease-in-out;
 		cursor: pointer;
-		margin-left: 12px;
+
+		@media @md {
+			width: 30px;
+			height: 25px;
+		}
 
 		span {
 			display: block;
@@ -45,24 +49,32 @@
 			}
 		}
 
-		&--open span:nth-child(1) {
-			transform: rotate(45deg);
-			top: -3px;
-			left: 8px;
-			background: @font-color-mobile-menu;
-		}
+		&--open {
+			span {
+				&:nth-child(1) {
+					transform: rotate(45deg);
+					top: 0;
+					left: 8px;
+					background: @font-color-mobile-menu;
+				}
 
-		&--open span:nth-child(2) {
-			width: 0%;
-			opacity: 0;
-			background: @font-color-mobile-menu;
-		}
+				&:nth-child(2) {
+					width: 0%;
+					opacity: 0;
+					background: @font-color-mobile-menu;
+				}
 
-		&--open span:nth-child(3) {
-			transform: rotate(-45deg);
-			top: 17px;
-			left: 8px;
-			background: @font-color-mobile-menu;
+				&:nth-child(3) {
+					transform: rotate(-45deg);
+					top: 18px;
+					left: 8px;
+					background: @font-color-mobile-menu;
+
+					@media @md {
+						top: 21px;
+					}
+				}
+			}
 		}
 
 		&--hidden {

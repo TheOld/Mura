@@ -10,27 +10,6 @@
 @import 'core/mixins.less';
 @import 'core/helpers.less';
 
-// Bootstrap
-// ==========================================================================
-@import '~bootstrap/less/variables.less';
-@import '~bootstrap/less/grid.less';
-@import '~bootstrap/less/mixins.less';
-
-@grid-gutter-width: 25px;
-@container: 1220px;
-
-.container {
-	padding-left: unit(@grid-gutter-width, px);
-	padding-right: unit(@grid-gutter-width, px);
-	max-width: 1220px;
-	width: 100%;
-
-	@media @md {
-		padding-left: unit(@grid-gutter-width / 2, px);
-		padding-right: unit(@grid-gutter-width / 2, px);
-	}
-}
-
 // Core
 // ==========================================================================
 @import 'core/layout.less'; // Grid and base layout styles (l)
@@ -38,6 +17,7 @@
 @import 'core/helpers.less'; // Helper classes for adaptive grid
 @import 'core/icon.less';
 @import 'core/animation.less';
+@import 'modules/smooth-scrollbar.less';
 
 // Modules
 // ==========================================================================
@@ -49,5 +29,7 @@
 @import 'modules/table.less'; // Table styles
 @import 'modules/form.less'; // Form styles
 @import 'modules/section.less'; // Section styles
+@import 'modules/teamcontrols.less';
 @import 'modules/about.less';
-@import 'modules/card.less';
+@import 'modules/slider.less';
+
