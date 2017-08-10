@@ -20,7 +20,15 @@ class Slider extends Component {
 			initialSlide: 0,
 			variableWidth: false,
 			prevArrow: <SliderPrevious action={this.handlePrevious} />,
-			nextArrow: <SliderNext action={this.handleNext} />
+			nextArrow: <SliderNext action={this.handleNext} />,
+			responsive: [
+				{
+					breakpoint: 962,
+					settings: {
+						centerMode: false
+					}
+				}
+			]
 		};
 		return (
 			<ReactSlider {...settings} ref="slider" >
@@ -54,9 +62,24 @@ class Slider extends Component {
 
 		const member2 = {
 			name: 'Rodrigo Cantú',
-			resume: [],
-			membership: [],
-			contact: []
+			title: 'ADVOGADO CONSULTOR',
+			shortDesc: 'Mais de 18 anos de experiência como advogado, com alto reconhecimento público no Estado de Santa Catarina.',
+			resume: [
+				'Especialista latu sensu em Direito pela IELF – Instituto de Ensino Luiz Flávio Gomes.',
+				'Pós-Graduado em Direito e Processo de Trabalho pela Escola do Ministério Público de Santa Catarina.',
+				'Bacharel em Direito pela UNIVALI e em Administração pela UFSC.'
+			],
+			membership: [
+				'Membro da Ordem dos Advogados do Brasil (OAB/SC 13.955).',
+				'Diretor Administrativo da FESPORTE SC (2010-2013).',
+				'Subcontrolador Jurídico da Prefeitura Municipal de Florianópolis SC (2013-2016).',
+				'Membro Titular do Tribunal de Ética da OAB/SC (2010-2013).'
+			],
+			contact: {
+				mail: 'rodrigo.cantu@muraempresarial.com',
+				phone: '48. 330787530',
+				linkedin: 'http:www.linkedin.com.br'
+			}
 		};
 
 		const members = [];

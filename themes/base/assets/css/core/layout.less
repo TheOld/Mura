@@ -27,6 +27,10 @@ body {
 
 // Max width/responsive images
 img {
+
+	opacity: 0;
+	transition: opacity 320ms @bezier;
+
 	@media @not-lg {
 		max-width: 100%;
 		width: auto\9;
@@ -34,6 +38,10 @@ img {
 		vertical-align: middle;
 		border: 0;
 	}
+}
+
+.img--loaded {
+	opacity: 1 !important;
 }
 
 ul {

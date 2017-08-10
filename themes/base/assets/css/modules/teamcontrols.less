@@ -4,20 +4,40 @@
 	position: absolute;
 	display: flex;
 	justify-content: space-between;
-	top: 257px;
+	top: 130px;
 	z-index: 10;
 	outline: none;
 	border: none;
 	background: none;
 	appearance: none;
 
+	@media @md {
+		top: 257px;
+	}
+
 	&--left {
 		transform: rotate(180deg);
-		left: 0;
+		left: 28px;
+
+		@media @sm {
+			left: 54px;
+		}
+
+		@media @lg {
+			left: 0;
+		}
 	}
 
 	&--right {
-		right: 0;
+		right: 28px;
+
+		@media @sm {
+			right: 54px;
+		}
+
+		@media @lg {
+			right: 0;
+		}
 	}
 }
 

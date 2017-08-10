@@ -11,9 +11,9 @@ class Card extends Component {
 
 	render() {
 		return (
-			<div className="card grid__lg--10 push__lg--1">
+			<div className="card grid--10 push--1 grid__lg--10 push__lg--1">
 				<h2 className="card__title">Conhe&ccedil;a a equipe</h2>
-				<figure className="grid--12 grid__md--4 grid--center member">
+				<figure className="grid--12 grid__md--6 grid__lg--4 grid--center member">
 					<img src="http://fakeimg.pl/155x120?text=Kammiri&font=bebas" alt="Dummy" className="member__photo" />
 					<figcaption className="member__caption">
 						<h2 className="member__name">
@@ -67,25 +67,6 @@ class Card extends Component {
 			);
 		});
 	}
-
-	// renderContact() {
-	// 	return this.props.member.contact.map((item, index) => {
-	// 		switch (item.type) {
-	// 			case 'mail':
-	// 				return (
-	// 					<a className="card__link" href={'mailto:' + item} key={'link' + index}>{item}</a>
-	// 				);
-	// 			case 'phone':
-	// 				return (
-	// 					<a className="card__link" href={'tel:' + item} key={'link' + index}>{item}</a>
-	// 				);
-	// 			default:
-	// 				return (
-	// 					<a className="card__link" href={item} key={'link' + index}>{item}</a>
-	// 				);
-	// 		}
-	// 	});
-	// }
 }
 
 export default Card;
