@@ -133,19 +133,22 @@
 	&.section--2 {
 		background-color: #f1f1f1;
 		display: block;
-		padding-bottom: 110px;
-		height: 100vh;
-		min-height: 768px;
+		padding-bottom: 40px;
+		height: 135vh;
+		position: relative;
 		overflow: inherit;
 
 		@media @md {
+			padding-bottom: 110px;
 			margin-top: -20px;
+			height: 87vh;
+			min-height: 830px;
+			overflow: inherit;
 		}
 
-		// @media @lg {
-		// 	min-height: 100vh;
-		// 	overflow: inherit;
-		// }
+		@media @lg {
+			min-height: 940px;
+		}
 
 		.container {
 			position: relative;
@@ -155,7 +158,7 @@
 	.team__bg {
 		position: absolute;
 		top: 50%;
-		right: -400px;
+		right: 0;
 		background-image: url('../../img/team-bg.png');
 		background-repeat: no-repeat;
 		background-size: contain;
@@ -168,9 +171,53 @@
 		@media @sm {
 			display: block;
 		}
+	}
+
+	&.section--3 {
+		background-color: #50E3D1;
+		position: relative;
+		padding-bottom: 5.4rem;
+		justify-content: flex-start;
+		min-height: 440px;
+		padding-top: 90px;
+		overflow: hidden;
 
 		@media @md {
-			right: -90px;
+			height: 735px;
+			padding-top: 145px;
+		}
+
+		.method__content {
+			position: relative;
+			z-index: 2;
+			order: 2;
+
+			@media @md {
+				order: 1;
+			}
+		}
+
+		.title {
+			clear: both;
+			margin-top: 24px;
+			color: @color-mobile-menu-header;
+			text-transform: none;
+
+			@media @lg {
+				font-size: 50px;
+				line-height: 56px;
+			}
+		}
+
+		.copy {
+			margin-top: 28px;
+			font-weight: 300;
+
+			@media @lg {
+				font-size: 18px;
+				line-height: 28px;
+			}
+
 		}
 	}
 }

@@ -1,5 +1,23 @@
 [viewBag]
 ==
 <section class="section section--3">
-
+	{% partial 'svg/lines' %}
+	<section class="flex__container">
+		<div class="grid__container boxes__wrapper">
+			{% partial 'svg/boxes' %}
+		</div>
+		<div class="grid__container method__content">
+			<div class="grid--10 grid__lg--7 push--1 grid--nogutters ">
+				<p class="type--sup">Como fazemos</p>
+				<h3 class="title">Esqueça a visão enigmática dos tradicionais escritórios de advocacia.</h3>
+				<p class="copy grid__md--7">
+					Nosso escritório possui um método moderno de trabalho focado na transparência e comunicação com o cliente. Desde o primeiro contato, nós demonstramos como será o nosso serviço etapa-por-etapa.
+				</p>
+			</div>
+		</div>
+	</section>
 </section>
+{% partial 'content/method-01' %}
+{% partial 'content/method-02' %}
+{% partial 'content/method-03' %}
+{% partial 'content/method-04' %}

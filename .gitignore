@@ -1,7 +1,10 @@
 .DS_Store
 *.log
 */node_modules
-**/storage
-**/tools
-**/plugins
-*/storage
+storage
+tools
+plugins
+storage/*
+/storage
+/plugins
+themes/base/node_modules

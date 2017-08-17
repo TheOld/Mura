@@ -2,24 +2,27 @@
 // General Variables
 // ==========================================================================
 // Consider using these non-specific variable names:
-// e.g. @color-primary, @color-secondary, @color-tertiary, @color-quaternary,
+// e.g. @laser, @ming, @blue-dianne, @turquoise,
 // @color-quinary, @color-senary, @color-septenary, @color-octonary, @color-nonary, @color-denary
 
-@color-primary: #cca969;
-@color-secondary: #315D79;
-@color-tertiary: #223F52;
+@laser: #cca969;
+@ming: #315D79;
 
-@color-quaternary: #d8d8d8;
-@color-mobile-menu-header: #233F51;
+@blue-dianne: #223F52;
+
+@turquoise: #44D5C3;
+
+@alto: #d8d8d8;
+@color-mobile-menu-header: @blue-dianne;
 
 // Fonts
 @font-color-primary: #333333;
 @font-color-secondary: #222222;
 @font-color-primary-hover: #444444;
-@font-link: #233f51;
+@font-link: @blue-dianne;
 @font-color-mobile-menu: #f1f1f1;
 @font-dark: #233F51;
-@font-link-hover: @color-primary;
+@font-link-hover: @laser;
 
 // States
 @color-success: #4caf50;
@@ -37,7 +40,13 @@
 @border-radius: 4px;
 
 // Easing
-@bezier: cubic-bezier(0.12, 0.825, 0.23, 1);
+@standard-curve: cubic-bezier(0.4, 0.0, 0.2, 1);
+// For elements entering the viewport
+@deceleration-curve: cubic-bezier(0.0, 0.0, 0.2, 1);
+// For elements leaving permanently the viewport
+@acceleration-curve: cubic-bezier(0.4, 0.0, 1, 1);
+// For elements that wil return to the viewport (like a menu
+@sharp-curve: cubic-bezier(0.4, 0.0, 0.6, 1);
 
 // Directories
 // This should be prefixed to all asset urls

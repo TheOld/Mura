@@ -29,7 +29,7 @@ body {
 img {
 
 	opacity: 0;
-	transition: opacity 320ms @bezier;
+	transition: opacity 320ms @deceleration-curve;
 
 	@media @not-lg {
 		max-width: 100%;
@@ -50,7 +50,7 @@ ul {
 	list-style-type: none;
 }
 
-.grid(122rem, 12, 1rem, @xs, @sm, @md, @lg, @xl);
+.grid(122rem, 12, 1.1rem, @xs, @sm, @md, @lg, @xl);
 
 @media @lg {
 	.grid(122rem, 12, 2.2rem, @xs, @sm, @md, @lg, @xl);
@@ -84,4 +84,9 @@ ul {
 .content__centered {
 	max-width: 488px;
 	margin: 0 auto;
+}
+
+.flex__container {
+	display: flex;
+	flex-direction: column;
 }

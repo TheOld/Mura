@@ -114,7 +114,7 @@
 					z-index: 1;
 					transform: translate3d(0, 100%, 0);
 					opacity: 0;
-					transition: all 280ms @bezier;
+					transition: all 280ms @deceleration-curve;
 
 					&:after {
 						position: absolute;
@@ -125,7 +125,7 @@
 						width: 0;
 						height: 24px;
 						background-color: @font-link-hover;
-						transition: width 420ms @bezier;
+						transition: width 420ms @deceleration-curve;
 						z-index: -1;
 					}
 

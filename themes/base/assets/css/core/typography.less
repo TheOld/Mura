@@ -87,12 +87,12 @@ p {
 }
 
 a {
-	color: @color-primary;
+	color: @laser;
 	text-decoration: none;
 	transition: color 0.3s ease-in-out;
 
 	&:hover {
-		color: lighten(@color-primary, 40);
+		color: lighten(@laser, 40);
 		text-decoration: none;
 	}
 }
@@ -146,4 +146,41 @@ a {
 	@media @sm {
 		font-weight: bold;
 	}
+}
+
+.type--sup {
+	color: #ffffff;
+	font-size: 10px;
+	text-transform: uppercase;
+	text-align: right;
+	position: relative;
+	line-height: 13px;
+	font-weight: 800;
+	font-family: @font-montserrat;
+	width: 60px;
+
+	&:after {
+		position: absolute;
+		bottom: 2px;
+		right: -30px;
+		background-color: @turquoise;
+		content: '';
+		height: 4px;
+		width: 23px;
+
+		@media @lg {
+			width: 44px;
+			right: -60px;
+		}
+	}
+
+	@media @lg {
+		font-size: 1.5rem;
+		letter-spacing: 0.71px;
+		width: 82px;
+	}
+}
+
+.type--turquoise {
+	color: @turquoise;
 }

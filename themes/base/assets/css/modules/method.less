@@ -1,0 +1,135 @@
+.method {
+	padding-top: 5.4rem;
+	position: relative;
+
+	&--alt {
+		position: relative;
+	}
+
+	.method__icon {
+		position: relative;
+
+		&--alt {
+			position: relative;
+			top: 0;
+			display: flex;
+			height: auto;
+			justify-content: center;
+			align-items: center;
+			margin-bottom: 22px;
+		}
+
+		&--pin {
+			position: absolute;
+			top: -13px;
+			right: 0;
+		}
+
+		&--file{
+
+		}
+
+		&--horse {
+			position: absolute;
+			right: 8.33333333%;
+		}
+
+		&--building {
+			display: flex;
+			justify-content: center;
+		}
+
+		&--lead {
+			display: flex;
+			justify-content: center;
+			margin-top: 22px;
+		}
+	}
+
+	.method__header {
+		position: relative;
+		width: 100%;
+	}
+
+	.method__headerwrapper {
+		&--alt {
+			display: flex;
+		}
+	}
+
+	.method__sup {
+		font-size: 22px;
+		font-weight: 300;
+		color: @laser;
+		font-family: @font-montserrat;
+		position: relative;
+		margin-bottom: 0;
+		margin-top: 0;
+
+		&:after{
+			position: absolute;
+			width: 24px;
+			display: block;
+			content: '';
+			background-color: @laser;
+			transform: rotate(-60deg) translate3d(14px, 16px, 0);
+			height: 2px;
+		}
+
+		&--alt {
+			display: inline;
+			&:after {
+				transform: rotate(-60deg) translate3d(14px, 10px, 0);
+			}
+		}
+	}
+
+	.method__leadin {
+		color: @laser;
+		font-size: 18px;
+		font-weight: 900;
+		text-transform: uppercase;
+		font-family: @font-montserrat;
+		margin-bottom: 0;
+
+		&--alt{
+			color: @turquoise;
+			margin-top: 0;
+		}
+	}
+
+	.method__title {
+		text-transform: none;
+		font-size: 22px;
+		font-weight: 700;
+		line-height: 24px;
+	}
+
+	.method__sub {
+		font-weight: 300;
+		font-size: 14px;
+		line-height: 16px;
+		text-transform: uppercase;
+		color: @blue-dianne;
+		margin-bottom: 0;
+		display: block;
+
+		&--small {
+			text-transform: lowercase;
+			color: @blue-dianne;
+			font-weight: 700;
+		}
+
+		&--alt {
+
+		}
+	}
+
+	.method__copy {
+		font-size: 16px;
+		font-weight: 500;
+		font-family: @font-hind;
+		line-height: 20px;
+		color: @blue-dianne;
+	}
+}
