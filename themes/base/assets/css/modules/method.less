@@ -2,8 +2,17 @@
 	padding-top: 5.4rem;
 	position: relative;
 
+	@media @md {
+		padding-top: 11.6rem;
+	}
+
+
 	&--alt {
 		position: relative;
+	}
+
+	&--last {
+		margin-bottom: 5rem;
 	}
 
 	.method__icon {
@@ -17,21 +26,41 @@
 			justify-content: center;
 			align-items: center;
 			margin-bottom: 22px;
+
+			@media @md {
+				margin-bottom: 0;
+				margin-right: 8px;
+			}
 		}
 
 		&--pin {
 			position: absolute;
 			top: -13px;
 			right: 0;
+
+			@media @md {
+				top: -33px;
+				right: 108px;
+			}
+
+			@media @lg {
+				right: 228px;
+			}
 		}
 
 		&--file{
+			@media @md {
 
+			}
 		}
 
 		&--horse {
 			position: absolute;
-			right: 8.33333333%;
+			right: 0;
+
+			@media @md {
+				right: 0;
+			}
 		}
 
 		&--building {
@@ -43,17 +72,51 @@
 			display: flex;
 			justify-content: center;
 			margin-top: 22px;
+
+			@media @md {
+				margin-top: 8px;
+			}
 		}
 	}
 
 	.method__header {
 		position: relative;
 		width: 100%;
+
+		@media @md {
+			margin-left: 0;
+		}
+
+		&--alt {
+			@media @md {
+				display: flex;
+				align-items: flex-end;
+				margin-left: -20px;
+			}
+
+			@media @xl {
+				align-items: flex-start;
+			}
+		}
+
+		&--last {
+			align-items: flex-start;
+		}
 	}
 
 	.method__headerwrapper {
+		display: flex;
 		&--alt {
 			display: flex;
+			flex-direction: column;
+			@media @md {
+				flex-direction: row;
+				margin-bottom: 10px;
+			}
+
+			@media @lg {
+				margin-top: 28px;
+			}
 		}
 	}
 
@@ -65,6 +128,14 @@
 		position: relative;
 		margin-bottom: 0;
 		margin-top: 0;
+		margin-right: 4px;
+
+		@media @md {
+			font-size: 30px;
+			line-height: 37px;
+			margin-right: 8px;
+		}
+
 
 		&:after{
 			position: absolute;
@@ -72,14 +143,24 @@
 			display: block;
 			content: '';
 			background-color: @laser;
-			transform: rotate(-60deg) translate3d(14px, 16px, 0);
-			height: 2px;
+			transform: rotate(-65deg) translate3d(17px, 16px, 0);
+			height: 1px;
+
+			@media @md {
+				width: 43px;
+				transform: rotate(-65deg) translate3d(27px, 12px, 0);
+			}
 		}
 
 		&--alt {
 			display: inline;
 			&:after {
-				transform: rotate(-60deg) translate3d(14px, 10px, 0);
+				transform: rotate(-65deg) translate3d(17px, 10px, 0);
+
+				@media @md {
+					width: 43px;
+					transform: rotate(-65deg) translate3d(20px, 7px, 0);
+				}
 			}
 		}
 	}
@@ -92,6 +173,17 @@
 		font-family: @font-montserrat;
 		margin-bottom: 0;
 
+		@media @md {
+			font-size: 32px;
+			line-height: 39px;
+			margin-top: 0;
+		}
+
+		@media @lg {
+			font-size: 40px;
+			line-height: 40px;
+		}
+
 		&--alt{
 			color: @turquoise;
 			margin-top: 0;
@@ -103,6 +195,43 @@
 		font-size: 22px;
 		font-weight: 700;
 		line-height: 24px;
+		@media @sm {
+			margin-left: 8.33333333%;
+		}
+
+		@media @md {
+			font-size: 40px;
+			letter-spacing: -0.48px;
+			line-height: 40px;
+			margin-top: 44px;
+			margin-left: 0;
+		}
+
+		@media @lg {
+			margin-top: 14px;
+		}
+
+		&--alt {
+			@media @md {
+				margin-left: 8.33333333%;
+			}
+
+			@media @lg {
+				margin-left: inherit;
+			}
+
+			@media @xl {
+				margin-left: 25%;
+				margin-top: -50px;
+			}
+		}
+
+		&--last {
+			@media @lg {
+				margin-top: -80px;
+				margin-left: 25%;
+			}
+		}
 	}
 
 	.method__sub {
@@ -113,6 +242,16 @@
 		color: @blue-dianne;
 		margin-bottom: 0;
 		display: block;
+
+		@media @md {
+			font-size: 17px;
+		}
+
+		@media @md {
+			font-size: 18px;
+			line-height: 24px;
+			margin-top: 6px;
+		}
 
 		&--small {
 			text-transform: lowercase;
@@ -131,5 +270,84 @@
 		font-family: @font-hind;
 		line-height: 20px;
 		color: @blue-dianne;
+
+		@media @md {
+			font-size: 17px;
+			line-height: 24px;
+			margin-top: 8px;
+			margin-bottom: 0;
+		}
+
+		&--last {
+			@media @lg {
+				margin-top: -20px;
+			}
+
+		}
 	}
 }
+.method__action {
+	margin-bottom: 4.5rem;
+	@media @md {
+		margin-top: 7.9rem;
+	}
+	.leadin {
+		text-align: center;
+
+		&--sm {
+			@media @md {
+				display: none;
+			}
+		}
+
+		&--md {
+			display: none;
+
+			@media @md {
+				display: block;
+			}
+		}
+	}
+	.method__cta {
+		text-align: center;
+		height: 67px;
+		background-color: #FCE2B1;
+		font-size: 20px;
+		text-transform: uppercase;
+		color: #223F52;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 190px;
+		margin: 0 auto;
+
+		@media @md {
+			width: auto;
+			height: 100px;
+		}
+
+		.cta__copy {
+			&--sm {
+				display: block;
+
+				@media @md {
+					display: none;
+				}
+			}
+
+			&--md{
+				display: none;
+
+				@media @md {
+					display: block;
+				}
+			}
+		}
+
+		// u {
+		// 	font-weight: bold;
+		// 	font-size: 20px;
+		// }
+	}
+}
+

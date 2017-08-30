@@ -106,6 +106,10 @@
 			width: 100%;
 			position: relative;
 			z-index: 3;
+
+			i {
+				pointer-events: none;
+			}
 		}
 	}
 
@@ -126,17 +130,21 @@
 		}
 	}
 
-	&.section--1 {
+	&.section--about {
 		display: block;
 	}
 
-	&.section--2 {
+	&.section--team {
 		background-color: #f1f1f1;
 		display: block;
 		padding-bottom: 40px;
-		height: 135vh;
 		position: relative;
 		overflow: inherit;
+		height: 175vh;
+
+		@media @xs {
+			height: 135vh;
+		}
 
 		@media @md {
 			padding-bottom: 110px;
@@ -173,14 +181,15 @@
 		}
 	}
 
-	&.section--3 {
+	&--method {
 		background-color: #50E3D1;
 		position: relative;
 		padding-bottom: 5.4rem;
 		justify-content: flex-start;
 		min-height: 440px;
 		padding-top: 90px;
-		overflow: hidden;
+		max-width: 100%;
+		overflow-y: visible;
 
 		@media @md {
 			height: 735px;
@@ -202,10 +211,12 @@
 			margin-top: 24px;
 			color: @color-mobile-menu-header;
 			text-transform: none;
+			font-family: @font-montserrat;
+			font-weight: 800;
 
-			@media @lg {
-				font-size: 50px;
-				line-height: 56px;
+			@media @md {
+				font-size: 45px;
+				line-height: 50px;
 			}
 		}
 
@@ -217,6 +228,21 @@
 				font-size: 18px;
 				line-height: 28px;
 			}
+
+		}
+	}
+
+	&--contact {
+		background-image: url('../../img/contact-bg.jpg');
+		background-size: cover;
+		background-position: top left;
+		background-repeat: no-repeat;
+		padding-top: 6.4rem;
+		padding-bottom: 6.4rem;
+
+		.title {
+			color: @laser;
+			font-weight: 800;
 
 		}
 	}

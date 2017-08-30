@@ -7,6 +7,10 @@ class Waypoints {
 		this.scrollbar = Scrollbar.init(elem);
 	}
 
+	disableXAxisScroll() {
+		this.scrollbar.showTrack('x');
+	}
+
 	/**
 	 * Checks if a given element is visible in the viewport
 	 *

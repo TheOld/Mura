@@ -8,16 +8,50 @@
 		width: 116px;
 		height: 147px;
 
-		.lines {
+		@media @md {
+			max-width: 190px;
+			transform: scale(1.65);
+		}
+
+		@media @lg {
+			max-width: 216px;
+			transform: scale(1.87);
+		}
+
+		.pin__lines {
+			@media @md {
+				width: 190px;
+				height: 240px;
+			}
+
 			path {
 				opacity: 0;
 			}
+
 		}
 	}
 
 	&--file{
 		width: 108px;
 		height: 113px;
+
+		@media @md {
+			width: 170px;
+			height: 180px;
+
+			g {
+				transform: scale(1.6);
+			}
+		}
+
+		@media @lg {
+			width: 205px;
+			height: 216px;
+
+			g {
+				transform: scale(1.87);
+			}
+		}
 	}
 
 	&--lead {
@@ -28,11 +62,53 @@
 	&--horse {
 		width: 113px;
 		height: 115px;
+
+		.horse__group {
+			transform: scale(.8);
+
+
+			@media @md {
+				transform: scale(1.3);
+			}
+		}
+
+		@media @md {
+			width: 200px;
+			height: 200px;
+
+		}
+
+		@media @lg {
+			width: 209px;
+			height: 207px;
+
+			.horse__group {
+				transform: scale(1.75);
+			}
+		}
 	}
 
 	&--building {
 		width: 126px;
 		height: 124px;
+
+		@media @md {
+			width: 175px;
+			height: 168px;
+
+			g {
+				transform: scale(1.3);
+			}
+		}
+
+		@media @lg {
+			width: 218px;
+			height: 209px;
+
+			g {
+				transform: scale(1.6);
+			}
+		}
 	}
 
 

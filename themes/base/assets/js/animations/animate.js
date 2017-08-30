@@ -13,7 +13,7 @@ class Animate {
 
 	drawContent() {
 		anime({
-			targets: '.symbol--pin .lines path',
+			targets: '.symbol--pin .pin__lines path',
 			strokeDashoffset: [anime.setDashoffset, 0],
 			opacity: 1,
 			easing: 'easeInOutSine',

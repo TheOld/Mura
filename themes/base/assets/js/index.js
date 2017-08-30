@@ -8,13 +8,15 @@ import Waypoints from './animations/waypoints.js';
 import {addClass} from './utils/cssClassHelpers.js';
 import animateBoxes from './animations/boxes.js';
 import debounce from './utils/debouncer.js';
+import {delegateScrollTo} from './interactions/events.js';
 import imagesLoaded from 'imagesloaded';
 import initMobileMenu from './interactions/mobile-menu';
 
 window.jQuery = require('jquery');
 
-let waypoints;
+window.waypoints = new Waypoints(document.querySelector('#main-scrollbar'));
 let _animate;
+
 document.addEventListener('DOMContentLoaded', function() {
 	if (window.matchMedia('(max-width: 768px)').matches) {
 		initMobileMenu();
@@ -28,18 +30,34 @@ document.addEventListener('DOMContentLoaded', function() {
 		);
 	}
 
-	waypoints = new Waypoints(document.querySelector('#main-scrollbar'));
+	window.waypoints = new Waypoints(document.querySelector('#main-scrollbar'));
+	window.waypoints.disableXAxisScroll();
 	_animate = new Animate();
+
+	attachScrollTos();
 
 	const imgLoaded = imagesLoaded(document.querySelector('.js-body'), { background: true });
 	imgLoaded.on('always', triggerImgsLoaded);
 
 	let debouncedScroll = debounce(onScroll, 250);
-	waypoints.addListener(debouncedScroll);
+	window.waypoints.addListener(debouncedScroll);
 });
 
+function attachScrollTos() {
+	const arrow = document.querySelector('.scroll__down');
+	const sectionOne = document.querySelector('.section--about');
+	if (arrow) {
+		delegateScrollTo(arrow, sectionOne);
+	}
+
+	const menuItems = document.querySelectorAll('.js-nav');
+	menuItems.forEach(function(menuItem) {
+		const target = document.querySelector('.' + menuItem.dataset.target);
+		delegateScrollTo(menuItem, target);
+	}, this);
+}
+
 function triggerImgsLoaded() {
-	// Init ImagesLoaded for all images
 	const images = Array.prototype.slice.call(document.querySelectorAll('img'));
 
 	for (var index = 0; index < images.length; index++) {
@@ -50,8 +68,7 @@ function triggerImgsLoaded() {
 
 function onScroll(callback) {
 	const methodOne = document.querySelector('.method--section1');
-	console.log(waypoints.isVisible(methodOne));
-	if (waypoints.isVisible(methodOne)) {
+	if (window.waypoints.isVisible(methodOne)) {
 		_animate.drawPin();
 	}
 }

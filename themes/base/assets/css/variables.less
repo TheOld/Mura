@@ -57,7 +57,8 @@
 
 // Media queries breakpoints
 // ==========================================================================
-@screen-xs: 320px;  // Extra small screen / phone (portrait)
+@screen-xxs: 320px;  // Extra small screen / phone (portrait)
+@screen-xs: 375px;  // Extra small screen / phone (portrait)
 @screen-sm: 480px;  // Small screen / phone (landscape)
 @screen-md: 768px;  // Small screen / tablet
 @screen-lg: 992px;  // Large screen / desktop
@@ -65,6 +66,7 @@
 
 // Media Queries (Mobile first approach)
 // ==========================================================================
+@xxs: xxs, ~'(min-width: @{screen-xxs})'; // 320px 	->
 @xs: xs, ~'(min-width: @{screen-xs})'; // 320px 	->
 @sm: sm, ~'(min-width: @{screen-sm})'; // 480px  ->
 @md: md, ~'(min-width: @{screen-md})'; // 768px  ->
