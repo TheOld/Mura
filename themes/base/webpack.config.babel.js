@@ -192,7 +192,7 @@ switch (process.env.npm_lifecycle_event) {
 			],
 			devtool: 'source-map'
 		});
-	config = common;
+		config = common;
 }
 
 export default config;

@@ -1,37 +1,38 @@
-@import 'easing.less';
-
-.animated {
-	animation-fill-mode: both;
-	animation-duration: 320ms; // animation-fill-mode:forwards;
-	animation-timing-function: @easeOutExpo;
-	opacity: 0;
-
-	&__duration--180 {
-		animation-duration: 180ms;
-	}
-
-	&__duration--200 {
-		animation-duration: 200ms;
-	}
-
-	&__duration--220 {
-		animation-duration: 220ms;
-	}
-
-	&__duration--240 {
-		animation-duration: 240ms;
-	}
-}
-
-.slideUpOut {
-	animation-name: slideUpOut;
-}
-
-.slideDown {
-	animation-name: slideDownIn;
-}
-
 @keyframes slideDownIn {
+	from {
+		transform: translate3d(0, -100%, 0);
+		opacity: 0;
+	}
+
+	to {
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
+	}
+}
+
+@keyframes slideFaqTitleDownInMb {
+	from {
+		transform: translate3d(0, -100%, 0);
+		opacity: 0;
+	}
+
+	to {
+		transform: translate3d(0, -8.2rem, 0);
+		opacity: 1;
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes slideFaqTitleDownInMd {
 	from {
 		transform: translate3d(0, -100%, 0);
 		opacity: 0;
@@ -54,3 +55,130 @@
 		opacity: 0;
 	}
 }
+
+@keyframes slideUpBigIn {
+	from {
+		transform: translate3d(0, 0, 0);
+		opacity: 0;
+	}
+
+	to {
+		transform: translate3d(0, -315px, 0);
+		opacity: 1;
+	}
+}
+
+@keyframes slideUpIn {
+	from {
+		transform: translate3d(0, 25%, 0);
+		opacity: 0;
+	}
+
+	to {
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
+	}
+}
+
+
+@keyframes slideLeftIn {
+	from {
+		transform: translate3d(-25%, 0, 0);
+		opacity: 0;
+	}
+
+	to {
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
+	}
+}
+
+@keyframes slide__in {
+	to {
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
+	}
+}
+
+.animated {
+	animation-fill-mode: forwards;
+	animation-duration: 300ms;
+	animation-timing-function: @deceleration-curve;
+
+
+	@media @md {
+		animation-duration: 240ms;
+	}
+
+	@media @lg {
+		animation-duration: 320ms;
+	}
+
+	&--onload {
+		animation-delay: 420ms;
+	}
+
+	&__duration--180 {
+		animation-duration: 180ms;
+	}
+
+	&__duration--200 {
+		animation-duration: 200ms;
+	}
+
+	&__duration--220 {
+		animation-duration: 220ms;
+	}
+
+	&__duration--240 {
+		animation-duration: 240ms;
+	}
+
+	&__delayed--520 {
+		animation-delay: 520ms;
+	}
+
+	&__delayed--620 {
+		animation-delay: 620ms;
+	}
+	&__delayed--720 {
+		animation-delay: 620ms;
+	}
+}
+
+.slideUpOut {
+	animation-name: slideUpOut;
+}
+
+.slide__down {
+	animation-name: slideDownIn;
+}
+
+.slide__upbigin {
+	animation-name: slideUpBigIn;
+}
+
+.slide__slideFaqTitleDownIn {
+	animation-name: slideFaqTitleDownInMb;
+
+	@media @md {
+		animation-name: slideFaqTitleDownInMd;
+	}
+}
+
+.slide__upin {
+	animation-name: slideUpIn;
+}
+
+.slide__leftIn {
+	animation-name: slideLeftIn;
+}
+
+.fade__in {
+	animation-name: fadeIn;
+}
+
+.slide__in {
+	animation-name: slide__in;
+}
+

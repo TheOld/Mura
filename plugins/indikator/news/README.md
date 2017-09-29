@@ -37,6 +37,8 @@ Plugin is same like put together a blog and a newsletter plugin. The main differ
 You can use the following widgets on the back-end Dashboard:
 * Post statistics
 * Subscriber statistics
+* List of TOP posts
+* List of new posts
 
 <a name="available_components"></a>
 ## Available components
@@ -63,6 +65,7 @@ Use the __Components > News__ panel in CMS menu. At this moment there are the fo
 * [RainLab Sitemap](http://octobercms.com/plugin/rainlab-sitemap)
 * [Offline SiteSearch](http://octobercms.com/plugin/offline-sitesearch)
 * [Indikator Popup](http://octobercms.com/plugin/indikator-popup)
+* [TimFoerster NewsPdf](http://octobercms.com/plugin/timfoerster-newspdf)
 
 <a name="available_languages"></a>
 ## Available languages

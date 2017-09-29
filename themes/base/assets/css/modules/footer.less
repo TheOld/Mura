@@ -1,0 +1,151 @@
+.footer {
+	background-color: @blue-dianne;
+	position: relative;
+	padding-top: 3rem;
+	padding-bottom: 1.6rem;
+
+	@media @md {
+		padding-top: 8rem;
+		padding-bottom: 3rem;
+	}
+
+	.footer__wrapper {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+
+		@media @md {
+			flex-direction: row;
+		}
+	}
+
+	.footer__aux {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+
+		&:last-child {
+			&:before {
+				@media @md {
+					height: 6rem;
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 1px;
+					background-color: #315D79;
+					content: '';
+					margin-right: 2.4rem;
+				}
+			}
+
+			@media @lg {
+				flex-direction: row;
+				align-items: center;
+				margin-left: 0;			}
+		}
+
+		@media @md {
+			height: auto;
+			width: 50%;
+		}
+
+		.logo {
+			background: none;
+			@media @md {
+				width: 3.2rem;
+				height: 4.2rem;
+				margin-top: .6rem;
+			}
+
+			img {
+				width: auto;
+				height: 100%;
+
+				@media @md {
+					width: 3.2rem;
+					height: 4.2rem;
+				}
+			}
+		}
+	}
+
+	.social {
+		float: left;
+		order: 1;
+		margin-top: 2.4rem;
+		margin-right: 20%;
+
+		@media @md {
+			order: 2;
+			display: flex;
+			justify-content: flex-end;
+		}
+
+		@media @lg {
+			float: right;
+			align-items: center;
+			margin-top: 0;
+
+		}
+
+		&:before {
+			@media @lg {
+				height: 6rem;
+				position: relative;
+				width: 1px;
+				background-color: #315D79;
+				content: '';
+				margin-right: 2.4rem;
+			}
+		}
+
+		li {
+			float: left;
+			&:not(:first-child) {
+				margin-left: 1.8rem;
+
+				@media @md {
+					margin-left: 0.8rem;
+				}
+			}
+		}
+	}
+
+	.footer__contact {
+		margin-top: 2.2rem;
+		display: flex;
+		flex-direction: column;
+		float: left;
+		order: 2;
+
+		@media @md {
+			margin-top: 0;
+			margin-left: 2.4rem;
+			order: 1;
+		}
+
+		@media @lg {
+			margin-left: 4rem;
+		}
+
+		a {
+			color: #ffffff;
+			font-size: 1.5rem;
+
+			&:hover {
+				color: @laser;
+			}
+		}
+	}
+
+	.copyright {
+		position: relative;
+		font-family: @font-hind;
+		font-size: 1.3rem;
+		color: #919CA6;
+		letter-spacing: 0;
+		line-height: 1.6rem;
+		margin-top: 3rem;
+		text-align: center;
+	}
+}

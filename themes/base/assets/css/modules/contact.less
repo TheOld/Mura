@@ -1,14 +1,16 @@
 .contactpage {
 	position: relative;
 	overflow: hidden;
-}
-.contact {
 
-	&--alt {
+	.title {
+		margin-top: 3.2rem;
+
 		@media @md {
-			display: none;
+			margin-top: 0;
 		}
 	}
+}
+.contact {
 
 	&--form {
 		display: none;
@@ -22,28 +24,73 @@
 		border: 0;
 		outline: none;
 		border-top: 1px solid @laser;
-	}
+		margin-top: 3.2rem;
 
-	.contact__section {
-		.title {
-			font-family: @font-montserrat;
-			font-weight: 800;
-			font-size: 14px;
-			color: @laser;
-			letter-spacing: 0.66px;
+		@media @md {
+			display: none;
 		}
 	}
 
+	.contact__section {
+		@media @md {
+			display: flex;
+
+		}
+		.title {
+			font-family: @font-montserrat;
+			font-weight: 700;
+			font-size: 1.4rem;
+			color: @laser;
+			letter-spacing: 0.66px;
+			margin-top: 3.2rem;
+		}
+
+		.icon {
+			@media @md {
+				display: none;
+			}
+		}
+	}
 	.contact__item {
 		display: flex;
+
+		@media @md {
+			flex-direction: column;
+		}
+
+		&:last-child {
+			margin-top: 2.2rem;
+
+			@media @md {
+				margin-top: 6.2rem;
+			}
+		}
 	}
 
 	.item__copy {
 		font-family: @font-hind;
-		font-weight: 600;
+		font-weight: 500;
 		font-size: 18px;
 		color: #ffffff;
 		letter-spacing: 0;
+
+		@media @md {
+			margin-top: 28px;
+		}
+	}
+
+	.item__label {
+		display: none;
+		font-family: @font-montserrat;
+		font-weight: 700;
+		font-size: 17px;
+		color: @turquoise;
+		letter-spacing: 0.81px;
+		text-transform: uppercase;
+
+		@media @md {
+			display: block;
+		}
 	}
 
 	.address__title {
@@ -67,8 +114,16 @@
 	.address__wrapper {
 		display: flex;
 
+		@media @md {
+			margin-top: 2.4rem;
+		}
+
 		&:last-child {
-			margin-top: 30px;
+			margin-top: 3rem;
+
+			@media @md {
+				margin-top: 2.4rem;
+			}
 		}
 
 		address {
@@ -78,7 +133,29 @@
 			color: #ffffff;
 			font-style: normal;
 		}
+	}
 
+	.help-block{
+		color: #FA7979;
+	}
 
+	.alert {
+		padding: 1.6rem 2.6rem;
+		width: 100%;
+		position: relative;
+		font-family: @font-hind;
+		font-weight: 300;
+		font-size: 1.8rem;
+		margin: 1.6rem auto;
+
+		&-success {
+			background-color: @turquoise;
+			color: #315D79;
+		}
+
+		&-danger {
+			background-color: #FA7979;
+			color: #ffffff;
+		}
 	}
 }

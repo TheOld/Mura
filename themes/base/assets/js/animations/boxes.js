@@ -1,34 +1,35 @@
 import Cycle from 'cycle-array';
 import anime from 'animejs';
-export default function animateBoxes() {
+
+export function animateBoxes() {
 	const boxContainer = document.querySelector('.js-boxes');
 	const boxes = boxContainer.children;
 	const cycle = new Cycle();
-	setInterval(() => {
-		let activeImage = cycle(boxes);
-		for (var index = 0; index < boxes.length; index++) {
-			var box = boxes[index];
 
-			if (box !== activeImage) {
-				anime({
-					targets: box,
-					opacity: 0,
-					duration: 120
-				});
+	if (!window.boxesCycle) {
+		window.boxesCycle = setInterval(() => {
+			let activeImage = cycle(boxes);
+			for (var index = 0; index < boxes.length; index++) {
+				var box = boxes[index];
+
+				if (box !== activeImage) {
+					anime({
+						targets: box,
+						opacity: 0,
+						duration: 80
+					});
+				}
 			}
-		}
-		anime({
-			targets: activeImage,
-			opacity: 1,
-			duration: 120
-		});
-	}, 220);
+			anime({
+				targets: activeImage,
+				opacity: 1,
+				duration: 80
+			});
+		}, 340);
+	}
 };
 
-function animateIn(image) {
-	anime({
-		targets: image,
-		opacity: 1,
-		duration: 320
-	});
+export function destroyAnimBoxes() {
+	clearInterval(window.boxesCycle);
+	window.boxesCycle = null;
 }

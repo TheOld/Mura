@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="216px" height="300px" viewBox="0 0 216 300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>simbolo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="landing-page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1440-1024-px/landing-" transform="translate(-88.000000, -1030.000000)" fill="#2B546F">
+            <g id="SOBRE" transform="translate(-31.000000, 921.000000)">
+                <g id="QUEM-SOMOS" transform="translate(31.000000, 0.000000)">
+                    <g id="quem-somos" transform="translate(88.000000, 20.161047)">
+                        <g id="simbolo" transform="translate(0.000000, 89.716658)">
+                            <polyline id="Fill-181" points="69.896562 145.6581 108.208128 73.6572576 147.128136 146.813238 161.39813 119.189646 119.654951 40.7565957 96.7247989 40.7565957 54 121.08025 69.896562 145.6581"></polyline>
+                            <path d="M25.4693831,272.41166 L25.4693831,87.9178122 L95.5700169,219.744839 L118.500169,219.744839 L188.608915,88.0258467 L188.608915,272.41166 L25.4693831,272.41166 Z M184.796012,40.7565957 L107.053346,186.831712 L29.3350181,40.7565957 L0,40.7565957 L0,298.481217 L214.058017,298.481217 L214.058017,40.7565957 L184.796012,40.7565957 L184.796012,40.7565957 Z" id="Fill-186"></path>
+                            <polygon id="Fill-188" points="1.28571429 26.1106182 215.100354 26.1106182 215.100354 0.0410611951 1.28571429 0.0410611951"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

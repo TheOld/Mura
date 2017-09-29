@@ -2,13 +2,21 @@
     <ul>
         <li><a href="<?= Backend::url('indikator/news/posts') ?>"><?= e(trans('indikator.news::lang.menu.posts')) ?></a></li>
         <li><?= ucfirst(e(trans($this->pageTitle))) ?></li>
+        <li>
+            <span class="text-danger"><strong><?= $formModel->logs_queued_count()->count() ?></strong> <?= e(trans('indikator.news::lang.stat.queued')) ?></span>
+            &nbsp; | &nbsp;
+            <span class="text-warning"><strong><?= $formModel->logs_send_count()->count() ?></strong> <?= e(trans('indikator.news::lang.stat.send')) ?></span>
+            &nbsp; | &nbsp;
+            <span class="text-info"><strong><?= $formModel->logs_viewed_count()->count() ?></strong> <?= e(trans('indikator.news::lang.stat.view')) ?></span>
+            &nbsp; | &nbsp;
+            <span class="text-success"><strong><?= $formModel->logs_clicked_count()->count() ?></strong> <?= e(trans('indikator.news::lang.stat.click')) ?></span>
+        </li>
     </ul>
 <?php Block::endPut() ?>
 
 <?php if (!$this->fatalError): ?>
 
     <?php Block::put('form-contents') ?>
-
         <div class="layout-row min-size">
             <?= $this->formRenderOutsideFields() ?>
         </div>
@@ -40,8 +48,17 @@
                     type="button"
                     data-request="onTest"
                     data-request-confirm="<?= e(trans('system::lang.mail_templates.test_confirm', [ 'email' => e(BackendAuth::getUser()->email)])) ?>"
+                    data-load-indicator="<?= e(trans('backend::lang.form.saving_name', ['name'=>$formRecordName])) ?>"
                     class="btn btn-info">
                     <?= e(trans('system::lang.mail_templates.test_send')) ?>
+                </button>
+                <button
+                    type="button"
+                    data-request="onNewsResend"
+                    data-request-confirm="<?= e(trans('indikator.news::lang.button.newsletter_resend_confirmation')) ?>"
+                    data-load-indicator="<?= e(trans('backend::lang.form.saving_name', ['name'=>$formRecordName])) ?>"
+                    class="btn btn-info<?= $formModel->last_send_at === null ? ' disabled' : '' ?>">
+                    <?= e(trans('indikator.news::lang.button.newsletter_resend')) ?>
                 </button>
                 <?= $this->fireViewEvent('indikator.news.extendPostUpdateViewButtons', [$formModel]) ?>
                 <span class="btn-text">

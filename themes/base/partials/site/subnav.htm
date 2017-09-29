@@ -2,46 +2,84 @@
 
 {% set parentOrSelf = page.parent ?: page %}
 {% set childPages = parentOrSelf.children %}
-<section class="grid__container subnav">
-	<div class="grid--5 grid__md--8">
-		<div class="subnav__contact__holder">
-			<a href="mailto:contato@muraempresarial.com.br" class="subnav__contact--email">
-				contato@muraempresarial.com.br
+
+<nav class="fixedmenu {% if this.page.id == 'atuacao'%} fixedmenu--open fixedmenu--alt{% endif %}">
+	<div class="grid__container">
+		<div class="header__wrapper grid--10">
+			<a href="/" class="logo">
+				{% if this.page.id == 'atuacao'%}
+					<img src="{{ 'assets/img/logo-occ.svg'|theme }}" alt="">
+				{% else %}
+					<img src="{{ 'assets/img/logo-mb.svg'|theme }}" alt="">
+				{% endif %}
 			</a>
-			<a href="call:4833078753" class="subnav__contact--phone">48.33077853</a>
+			<a href="call:4833078753" class="link">48.33077853</a>
+			<a href="mailto:contato@muraempresarial.com.br" class="link link--email">contato@muraempresarial.com.br</a>
 		</div>
+		<span class="bigmac bigmac--fixedmenu grid--2">
+			<div id="subnav__nav-icon" class="nav__icon {% if this.page.id == 'atuacao'%} nav__icon--alt {% endif %}">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</span>
 	</div>
-	<div class="grid--7 grid__md--4">
-		<ul class="subnav__aux">
+</nav>
+<div class="grid__container relative">
+	<div class="menu__aux menu__aux--dt">
+		<ul class="subnav subnav__aux subnav--alt animated slide__down">
 			<li class="subnav__item">
-				<a href="/faq">
+				<a href="faq">
 					FAQ
 				</a>
 			</li>
 			<li class="subnav__item">
-				<a href="/blog">
+				<a href="blog">
 					blog
 				</a>
 			</li>
 			<li class="subnav__item">
-				<a href="/news">
+				<a href="news">
 					notícias
 				</a>
 			</li>
 		</ul>
 	</div>
-</section>
-
-<nav class="subnav__mobile">
-	<div class="header__wrapper">
-		<a href="/" class="logo"></a>
-		<a href="call:4833078753" class="subnav__mobile--phone">48.33077853</a>
-	</div>
-	<span class="bigmac bigmac--subnav">
-		<div id="subnav__nav-icon" class="nav__icon">
-			<span></span>
-			<span></span>
-			<span></span>
+</div>
+<nav class="menu menu--mobile container">
+	<div class="grid__container">
+		<div class="menu__items push__xxs--2 push__lg--8 grid__xs--7 grid__lg--4">
+		{% if this.page.id == 'home' %}
+			<a href="" class="menu__item js-nav" data-target="section--about">sobre</a>
+			<a href="" class="menu__item js-nav" data-target="section--method">método</a>
+			<a href="" class="menu__item js-nav" data-target="section--occupation">atuação</a>
+			<a href="" class="menu__item js-nav" data-target="section--contact">contato</a>
+		{% elseif (this.page.id == 'faq' or this.page.id == 'atuacao') %}
+			<a href="/#about" class="menu__item js-navfaq" data-target="section--about">sobre</a>
+			<a href="/#method" class="menu__item js-navfaq" data-target="section--method">método</a>
+			<a href="/#occupation" class="menu__item js-navfaq" data-target="section--occupation">atuação</a>
+			<a href="/#contato" class="menu__item js-navfaq" data-target="section--contact">contato</a>
+		{% endif %}
 		</div>
-	</span>
+		<div class="menu__aux menu__aux--mb push--2 grid__xs--7">
+			<ul class="subnav subnav__aux subnav--alt animated slide__down">
+				<li class="subnav__item">
+					<a href="faq">
+						FAQ
+					</a>
+				</li>
+				<li class="subnav__item">
+					<a href="blog">
+						blog
+					</a>
+				</li>
+				<li class="subnav__item">
+					<a href="news">
+						notícias
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
 </nav>

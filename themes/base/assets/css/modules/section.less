@@ -14,7 +14,12 @@
 		background-size: cover;
 		margin-top: -115px;
 		overflow: hidden;
+
 		height: 100vh;
+
+		@media @md {
+			min-height: 900px;
+		}
 
 		.section__logo__bg {
 			position: absolute;
@@ -48,17 +53,19 @@
 		.title {
 			color: #44d5c3;
 			font-family: @font-playfair;
+			font-style: italic;
 			position: relative;
 			z-index: 2;
 			display: block;
 			margin-right: 44px;
+			width: 65%;
 
 			@media @md {
-				margin-right: 156px;
+				width: 55%;
 			}
 
 			@media @lg {
-				margin-right: 116px;
+				width: 35%;
 			}
 		}
 
@@ -82,30 +89,50 @@
 			height: 188px;
 			position: absolute;
 			z-index: 2;
-			left: -54px;
+			left: 0;
 			margin-top: -68px;
+			margin-left: -45px;
+
+			@media @xs {
+				margin-left: -205px;
+				left: 50%;
+			}
 
 			@media @sm {
-				height: 304px;
-				width: 369px;
-				left: 17%;
+
 				margin-top: -75px;
 			}
 
 			@media @md {
 				height: 304px;
 				width: 369px;
-				left: 27%;
-				margin-top: -75px;
+				margin-top: -78px;
+				left: 50%;
+				margin-left: -295px;
+			}
+
+			@media @lg {
+				left: 44rem;
+				left: 50%;
+				margin-left: -295px;
+			}
+
+			@media @xl {
+				left: 50%;
+				margin-left: -294.5px;
 			}
 		}
 
 		.scroll__down {
-			display: flex;
-			justify-content: center;
-			width: 100%;
+			display: block;
+			width: 60px;
 			position: relative;
 			z-index: 3;
+			margin: 0 auto;
+			transform: translate3d(0, -100%, 0);
+			opacity: 0;
+			animation-delay: 1.5s;
+			animation-duration: 650ms;
 
 			i {
 				pointer-events: none;
@@ -143,7 +170,7 @@
 		height: 175vh;
 
 		@media @xs {
-			height: 135vh;
+			height: 145vh;
 		}
 
 		@media @md {
@@ -156,6 +183,10 @@
 
 		@media @lg {
 			min-height: 940px;
+		}
+
+		@media @xl {
+			max-height: 940px;
 		}
 
 		.container {
@@ -196,9 +227,14 @@
 			padding-top: 145px;
 		}
 
+		@media @lg {
+			min-height: 735px;
+			height: 90vh;
+		}
+
 		.method__content {
 			position: relative;
-			z-index: 2;
+			z-index: 5;
 			order: 2;
 
 			@media @md {
@@ -209,14 +245,18 @@
 		.title {
 			clear: both;
 			margin-top: 24px;
-			color: @color-mobile-menu-header;
+			color: @blue-dianne;
 			text-transform: none;
-			font-family: @font-montserrat;
-			font-weight: 800;
+
 
 			@media @md {
 				font-size: 45px;
 				line-height: 50px;
+			}
+
+			@media @lg {
+				font-size: 60px;
+				line-height: 65px;
 			}
 		}
 
@@ -224,12 +264,23 @@
 			margin-top: 28px;
 			font-weight: 300;
 
+			@media @md {
+				font-size: 17px;
+				color: #233F51;
+				line-height: 24px;
+			}
+
 			@media @lg {
-				font-size: 18px;
-				line-height: 28px;
+				font-size: 25px;
+				line-height: 32px;
 			}
 
 		}
+	}
+
+	&--occupation {
+
+
 	}
 
 	&--contact {

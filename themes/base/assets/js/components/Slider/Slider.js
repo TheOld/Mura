@@ -9,7 +9,7 @@ class Slider extends Component {
 	render() {
 		const settings = {
 			dots: false,
-			infinite: false,
+			infinite: true,
 			arrows: true,
 			speed: 280,
 			slidesToShow: 1,
@@ -18,6 +18,7 @@ class Slider extends Component {
 			swipeToSlide: true,
 			lazyLoad: false,
 			initialSlide: 0,
+			draggable: false,
 			variableWidth: false,
 			prevArrow: <SliderPrevious action={this.handlePrevious} />,
 			nextArrow: <SliderNext action={this.handleNext} />,
@@ -40,6 +41,7 @@ class Slider extends Component {
 		const member = {
 			name: 'Eduardo Jacob Murakami',
 			title: 'ADVOGADO CONSULTOR',
+			photo: 'themes/base/assets/img/foto_eduardo.png',
 			shortDesc: 'Experiência internacional, sendo conselheiro e consultor jurídico de empresas sediadas no exterior.',
 			resume: [
 				'Mestre em Gestão Estratégica de Empresas Familiares pela Universidad Europea Miguel de Cervantes.',
@@ -54,15 +56,16 @@ class Slider extends Component {
 				'Premiado no II Prêmio Libertas, promovido pelo Ministério de Justiça e UNODC.'
 			],
 			contact: {
-				mail: 'eduardo@muraempresiarial.com.br',
+				mail: 'eduardo@muraempresarial.com.br',
 				phone: '47.991796790',
-				linkedin: 'http:www.linkedin.com.br'
+				linkedin: 'https://www.linkedin.com/in/eduardojmurakami/'
 			}
 		};
 
 		const member2 = {
 			name: 'Rodrigo Cantú',
 			title: 'ADVOGADO CONSULTOR',
+			photo: 'themes/base/assets/img/foto_rodrigo.png',
 			shortDesc: 'Mais de 18 anos de experiência como advogado, com alto reconhecimento público no Estado de Santa Catarina.',
 			resume: [
 				'Especialista latu sensu em Direito pela IELF – Instituto de Ensino Luiz Flávio Gomes.',
@@ -78,7 +81,7 @@ class Slider extends Component {
 			contact: {
 				mail: 'rodrigo.cantu@muraempresarial.com',
 				phone: '48. 330787530',
-				linkedin: 'http:www.linkedin.com.br'
+				linkedin: 'https://www.linkedin.com/in/rodrigocantu/'
 			}
 		};
 

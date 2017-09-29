@@ -33,11 +33,23 @@ columns:
         type: partial
         path: ~/plugins/indikator/news/models/posts/_length.htm
 
+    featured:
+        label: indikator.news::lang.form.featured
+        searchable: true
+        invisible: true
+        type: partial
+        path: ~/plugins/indikator/news/models/posts/_featured.htm
+
     status:
         label: indikator.news::lang.form.status
         searchable: true
         type: partial
         path: ~/plugins/indikator/news/models/posts/_status.htm
+
+    last_send_at:
+        label: indikator.news::lang.form.last_send
+        searchable: true
+        type: timesince
 
     published_at:
         label: indikator.news::lang.form.published

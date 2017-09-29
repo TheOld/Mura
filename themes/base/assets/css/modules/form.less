@@ -1,7 +1,91 @@
-.form {
+.form, form {
 	display: none;
 
 	@media @md{
 		display: block;
+		width: 100%;
 	}
+
+	.form__groups, .form-groups {
+		margin-top: 5.6rem;
+	}
+
+	.form__group, .form-group {
+		&:not(:first-child) {
+			margin-top: 1.8rem;
+		}
+	}
+
+	.control, .form-control {
+		position: relative;
+		display: block;
+		width: 100%;
+		height: 5.5rem;
+		font-family: @font-hind;
+		font-size: 17px;
+		color: #ffffff;
+		letter-spacing: 0;
+		background-color: transparent;
+		border: 2px solid #6CA1C1;
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+		appearance: none;
+		outline: none;
+
+
+
+		&::-webkit-input-placeholder {
+			color: #6CA1C1;
+		}
+
+		&::-moz-placeholder {
+			color: #6CA1C1;
+		}
+
+		&:-ms-input-placeholder {
+			color: #6CA1C1;
+		}
+
+		&::placeholder {
+			color: #6CA1C1;
+		}
+
+		&.control--textarea {
+			padding-top: 1.8rem;
+			height: 19.5rem;
+		}
+
+	}
+
+	textarea.form-control {
+		padding-top: 1.8rem;
+		height: 19.5rem;
+	}
+
+	.btn {
+		background-color: @glacier;
+		font-size: 1.7rem;
+		letter-spacing: 0.5px;
+		font-family: @font-montserrat;
+		font-weight: 700;
+		color: @ming;
+		padding: 1.6rem 2.6rem;
+		margin-top:1.8rem;
+		text-transform: uppercase;
+		border:none;
+		outline: none;
+		appearance: none;
+		transition: backgorund-color 220ms @standard-curve;
+		float: right;
+
+		@media @md {
+			margin-bottom: 4.2rem;
+		}
+
+		&:hover, &:active {
+			background-color: @turquoise;
+			color: #315D79;
+		}
+	}
+
 }

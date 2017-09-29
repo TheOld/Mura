@@ -18,6 +18,22 @@ class Plugin extends PluginBase
         ];
     }
 
+    public function registerSettings()
+    {
+        return [
+            'settings' => [
+                'label'       => 'indikator.news::lang.plugin.name',
+                'description' => 'indikator.news::lang.backend_settings.description',
+                'category'    => 'system::lang.system.categories.cms',
+                'icon'        => 'icon-newspaper-o',
+                'class'       => 'Indikator\News\Models\Settings',
+                'order'       => 500,
+                'keywords'    => 'news newsletter',
+                'permissions' => ['indikator.news.settings']
+            ]
+        ];
+    }
+
     public function registerNavigation()
     {
         return [
@@ -47,6 +63,12 @@ class Plugin extends PluginBase
                         'url'         => Backend::url('indikator/news/statistics'),
                         'icon'        => 'icon-area-chart',
                         'permissions' => ['indikator.news.statistics']
+                    ],
+                    'logs' => [
+                        'label'       => 'indikator.news::lang.menu.logs',
+                        'url'         => Backend::url('indikator/news/logs'),
+                        'icon'        => 'icon-bar-chart',
+                        'permissions' => ['indikator.news.logs']
                     ]
                 ]
             ]
@@ -58,6 +80,14 @@ class Plugin extends PluginBase
         return [
             'Indikator\News\ReportWidgets\Posts' => [
                 'label'   => 'indikator.news::lang.widget.posts',
+                'context' => 'dashboard'
+            ],
+            'Indikator\News\ReportWidgets\NewPosts' => [
+                'label'   => 'indikator.news::lang.widget.newposts',
+                'context' => 'dashboard'
+            ],
+            'Indikator\News\ReportWidgets\TopPosts' => [
+                'label'   => 'indikator.news::lang.widget.topposts',
                 'context' => 'dashboard'
             ],
             'Indikator\News\ReportWidgets\Subscribers' => [
@@ -103,8 +133,21 @@ class Plugin extends PluginBase
             'indikator.news.import_export' => [
                 'tab'   => 'indikator.news::lang.menu.news',
                 'label' => 'indikator.news::lang.permission.import_export'
+            ],
+            'indikator.news.logs' => [
+                'tab'   => 'indikator.news::lang.menu.news',
+                'label' => 'indikator.news::lang.permission.logs'
+            ],
+            'indikator.news.settings' => [
+                'tab'   => 'indikator.news::lang.menu.news',
+                'label' => 'indikator.news::lang.permission.settings'
             ]
         ];
+    }
+
+    public function registerSchedule($schedule)
+    {
+        $schedule->command('queue:work --daemon --queue=newsletter')->everyMinute()->withoutOverlapping();
     }
 
     public function boot()

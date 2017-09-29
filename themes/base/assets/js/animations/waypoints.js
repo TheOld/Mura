@@ -4,7 +4,7 @@ import Scrollbar from 'smooth-scrollbar';
 
 class Waypoints {
 	constructor(elem) {
-		this.scrollbar = Scrollbar.init(elem);
+		this.scrollbar = Scrollbar.init(elem, { speed: 1, damping: 0.15 });
 	}
 
 	disableXAxisScroll() {
@@ -46,6 +46,14 @@ class Waypoints {
 		this.scrollbar.scrollTo(x, y, duration, (scrollbar) => {
 			callback();
 		});
+	}
+
+	getScrollTop() {
+		return this.scrollbar.scrollTop;
+	}
+
+	getOffSet() {
+		return this.scrollbar.offset;
 	}
 
 	addListener(fn) {

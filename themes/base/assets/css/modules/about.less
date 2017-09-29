@@ -1,5 +1,6 @@
 .about {
-	background-image: linear-gradient(-160deg, #315D79 7%, #233F51 90%);
+	// background-image: linear-gradient(-160deg, #315D79 7%, #233F51 90%);
+	background-color: #315D79;
 	position: relative;
 	z-index: 0;
 	justify-content: flex-start;
@@ -23,14 +24,8 @@
 			color: @font-dark;
 		}
 
-		// @media @md {
-		// 	font-size: 1.7rem;
-		// 	line-height: 2.4rem;
-		// 	margin-left: .7rem;
-		// }
-
 		@media @xl {
-			margin-left: 5%;
+			margin-left: 5.4rem;
 			padding-top: 0;
 
 			.font-size(18, 28);
@@ -38,18 +33,28 @@
 	}
 
 	.section__logo__bg {
-		background-image: url('../../img/who-logo.png');
+		// background-image: url('../../img/who-logo.png');
+		background-image: url('../../img/who-bg.png');
 		background-repeat: no-repeat;
 		background-size: contain;
 		position: absolute;
 		top: 95px;
 		z-index: -1;
-		height: 223px;
-		width: 162px;
+		height: 299px;
+		width: 216px;
+		transform: translate3d(0, 250px, 0);
 
 		@media @md {
 			background-image: url('../../img/who-logo-dt.png');
 			left: 14%;
+		}
+
+		@media @lg {
+			left: 6%;
+		}
+
+		@media @xl {
+			left: -2.5rem;
 		}
 	}
 
@@ -133,7 +138,11 @@
 	}
 
 	.who__wrapper {
-		padding-top: 60px;
+		padding-top: 44px;
+
+		@media @xs {
+			padding-top: 60px;
+		}
 
 		@media @sm {
 			padding-top: 120px;
@@ -149,6 +158,8 @@
 		font-weight: 700;
 		text-transform: uppercase;
 		z-index: 3;
+		opacity: 0;
+		transform: translate3d(0, 50px, 0);
 
 		@media @sm {
 			margin-top: 0;
@@ -173,11 +184,15 @@
 		margin-top: 0;
 		margin-bottom: 0;
 		margin-left: 1.3rem;
+		font-family: @font-montserrat;
+		font-size: 1.4rem;
+		font-weight: 600;
 	}
 
 	.who__leadin {
 		color: #F1F1F1;
-		font-family: @font-montserrat;
+		font-family: @font-hind;
+
 		margin-top: 75px;
 		font-weight: bold;
 
@@ -191,8 +206,8 @@
 		}
 
 		@media @lg {
-			margin-left: -10%;
-
+			font-family: @font-montserrat;
+			margin-left: -8.33333333% * 3;
 			.font-size(20, 30);
 		}
 
@@ -201,6 +216,14 @@
 	.about__items__wrapper {
 		display: flex;
 		align-items: flex-start;
+
+		@media @md {
+			margin-bottom: 2rem;
+		}
+
+		@media @xl {
+			margin-bottom: 1.6rem;
+		}
 	}
 
 	.about__wrapper {
@@ -209,16 +232,16 @@
 		display: block;
 		padding-top: 2.8rem;
 		padding-bottom: 4.7rem;
-		margin-bottom: 220px;
+		margin-bottom: 22rem;
 
 		@media @sm {
 			padding-top: 80px;
-			margin-bottom: 220px;
+			margin-bottom: 22rem;
 		}
 
 		@media @md {
 			margin-top: 7rem;
-			margin-bottom: 220px;
+			margin-bottom: 22rem;
 			padding-top: 8.3rem;
 			padding-bottom: 8.3rem;
 		}
@@ -226,6 +249,7 @@
 		@media @lg {
 			margin-top: 4rem;
 			margin-bottom: 220px;
+			padding-left: 72px;
 		}
 	}
 
@@ -281,6 +305,7 @@
 	.about__item {
 		margin-top: 1.2rem;
 		margin-bottom: 0;
+		font-weight: 300;
 
 		@media @sm {
 			color: #ffffff;
@@ -288,15 +313,16 @@
 
 		@media @md {
 			margin-top: 0;
-			.font-size(18, 24);
+			.font-size(20, 24);
 		}
 
 		@media @xl {
 			margin-left: 0;
+			.font-size(20, 24);
 		}
 
 		&--leadin {
-			font-weight: 600;
+
 			margin-bottom: 0;
 			margin-bottom: 2.3rem;
 		}
@@ -305,18 +331,20 @@
 			color: @font-link-hover;
 			font-family: @font-hind;
 			font-weight: 500;
-			margin-top: 16px;
+			margin-top: 1rem;
 
 			@media @sm {
+				margin-top: 1.6rem;
 				.font-size(22, 27);
 			}
 
 			@media @md {
 				margin-top: 0;
-				.font-size(24, 30);
+				.font-size(26, 32);
 			}
 
 			@media @xl {
+				.font-size(26, 30);
 				margin-left: 0;
 			}
 		}

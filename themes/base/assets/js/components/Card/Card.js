@@ -11,10 +11,10 @@ class Card extends Component {
 
 	render() {
 		return (
-			<div className="card grid--12 push__xs--1 grid__lg--10 push__lg--1">
+			<div className="card grid--12 grid__xs--11 grid__lg--10 push__lg--1">
 				<h2 className="card__title">Conhe&ccedil;a a equipe</h2>
 				<figure className="grid--12 grid__md--6 grid__lg--4 grid--center member">
-					<img src="http://fakeimg.pl/155x120?text=Kammiri&font=bebas" alt="Dummy" className="member__photo" />
+					<img src={this.props.member.photo} alt="Dummy" className="member__photo" />
 					<figcaption className="member__caption">
 						<h2 className="member__name">
 							{this.props.member.name}

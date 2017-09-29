@@ -1,16 +1,39 @@
 .logo {
-	background-image: url('../../img/logo-mob.png');
-	background-repeat: no-repeat;
-	height: 33px;
-	width: 26px;
-	display: block;
-	background-size: contain;
+	width: 2.6rem;
+	height: 3.3rem;
 
 	@media @sm {
-		background-image: url('../../img/logo.png');
-		background-repeat: no-repeat;
-		width: 235px;
-		height: 60px;
-		margin-top: 30px;
+		margin-top: 3rem;
+		width: 23.5rem;
+		height: 8rem;
+		margin-top: 3rem;
+	}
+
+	.logo__image {
+		display: none;
+		@media @md {
+			display: block;
+		}
+		&--mb {
+			display: block;
+			@media @md {
+				display: none;
+			}
+		}
+	}
+
+	&--faq {
+		width: 9rem;
+		height: 3.3rem;
+
+		@media @sm {
+			margin-top: 3rem;
+			width: 36.4rem;
+			height: 6.7rem;
+		}
+
+		@media @lg {
+			width: 37.8rem;
+		}
 	}
 }

@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'url' => 'http://localhost:8888/Murakami/',
+    'url' => 'http://www.muraempresarial.com/',
 
     /*
     |--------------------------------------------------------------------------
@@ -134,5 +134,4 @@ return [
         // 'Str' => 'Illuminate\Support\Str', // Example
 
     ]),
-
 ];

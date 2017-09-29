@@ -1,58 +1,32 @@
 [viewBag]
 ==
 <div class="nav">
-	<nav role="navigation" class="menu">
-		<div class="nav__navbar">
-			<ul>
-				<li class="nav__item nav__item--active js-nav" data-target="section--about">
-					<a href="#">sobre</a>
-				</li>
-				<li class="nav__item js-nav" data-target="section--method">
-					<a href="/method">método</a>
-				</li>
-				<li class="nav__item js-nav" data-target="section--method">
-					<a href="#">atuação</a>
-				</li>
-				<li class="nav__item js-nav" data-target="section--contact">
-					<a href="#">contato</a>
-				</li>
-			</ul>
-		</div>
-	</nav>
-	<span class="bigmac">
-		<div id="mobile__nav-icon" class="nav__icon">
+	{% if this.page.id == 'home' %}
+		<nav role="navigation" class="menu">
+			<div class="nav__navbar">
+				<ul class="js--menu">
+					<li class="nav__item js-nav" data-target="section--about">
+						<a href="#">sobre</a>
+					</li>
+					<li class="nav__item js-nav" data-target="section--method">
+						<a href="#">método</a>
+					</li>
+					<li class="nav__item js-nav" data-target="section--occupation">
+						<a href="#">atuação</a>
+					</li>
+					<li class="nav__item js-nav" data-target="section--contact">
+						<a href="#">contato</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	{% endif %}
+	<span class="bigmac {% if this.page.id == 'faq' %} bigmac--forfaq {% endif %}">
+		<div id="mobile__nav-icon" class="nav__icon {% if this.page.id == 'atuacao' %} nav__icon--invisible {% endif %}">
 			<span></span>
 			<span></span>
 			<span></span>
 		</div>
 	</span>
-	<nav class="menu menu--mobile container">
-
-		<div class="menu__items push--2 grid__xs--7">
-			<a href="" class="menu__item menu__item--active">sobre</a>
-			<a href="" class="menu__item">método</a>
-			<a href="" class="menu__item">atuação</a>
-			<a href="" class="menu__item">contato</a>
-		</div>
-		<div class="menu__aux push--2 grid__xs--7">
-			<ul class="subnav subnav__aux subnav--alt">
-				<li class="subnav__item">
-					<a href="/faq">
-						FAQ
-					</a>
-				</li>
-				<li class="subnav__item">
-					<a href="/blog">
-						blog
-					</a>
-				</li>
-				<li class="subnav__item">
-					<a href="/news">
-						notícias
-					</a>
-				</li>
-			</ul>
-		</div>
-	</nav>
 </div>
 

@@ -8,11 +8,15 @@
 @import "~@heyday/less-grid/src/less/grid.less";
 @import '../variables.less';
 
+html {
+	overflow: hidden;
+}
+
 // Base
 // ==========================================================================
 body {
 	margin: 0;
-	overflow-x: hidden;
+
 }
 
 .page__container {
@@ -50,18 +54,21 @@ ul {
 	list-style-type: none;
 }
 
-.grid(122rem, 12, 1.1rem, @xxs, @xs, @sm, @md, @lg, @xl);
+.grid(122rem, 12, 2.2rem, @xxs, @xs, @sm, @md, @lg, @xl, @xxl, @xxxl);
+
+@media @xs {
+	.grid(122rem, 12, 1.1rem, @xxs, @xs, @sm, @md, @lg, @xl, @xxl, @xxxl);
+}
 
 @media @md {
-	.grid(76.8rem, 12, 2rem, @xxs, @xs, @sm, @md, @lg, @xl);
+	.grid(76.8rem, 12, 2rem, @xxs, @xs, @sm, @md, @lg, @xl, @xxl, @xxxl);
 }
 
 @media @lg {
-	.grid(122rem, 12, 2.2rem, @xxs, @xs, @sm, @md, @lg, @xl);
+	.grid(122rem, 12, 2.2rem, @xxs, @xs, @sm, @md, @lg, @xl, @xxl, @xxxl);
 }
 
 .grid__container {
-	// max-width: 122rem;
 	width: 100%;
 }
 
@@ -83,6 +90,13 @@ ul {
 	width: 100%;
 	position: absolute;
 	z-index: 1;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+
+	@media @xs {
+		padding-left: inherit;
+		padding-right: inherit;
+	}
 }
 
 .content__centered {
@@ -93,4 +107,5 @@ ul {
 .flex__container {
 	display: flex;
 	flex-direction: column;
+	position: relative;
 }

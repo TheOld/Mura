@@ -1,0 +1,51 @@
+<!-- Header -->
+<header class="header {% if this.page.id == 'atuacao' %} header--alt {% endif %}" id="layout-header">
+	<section class="grid__container subnav {% if this.page.id == 'home' %} animated slide__down {% endif %}">
+		<div class="grid--5 grid__md--8">
+			<div class="subnav__contact__holder">
+				<a href="mailto:contato@muraempresarial.com.br" class="subnav__contact--email">
+					contato@muraempresarial.com.br
+				</a>
+				<a href="call:4833078753" class="subnav__contact--phone">48.33077853</a>
+			</div>
+		</div>
+		<div class="grid--7 grid__md--4">
+			<ul class="subnav__aux">
+				<li class="subnav__item animated slide__down">
+					<a href="faq">
+						FAQ
+					</a>
+				</li>
+				<li class="subnav__item animated slide__down">
+					<a href="blog">
+						blog
+					</a>
+				</li>
+				<li class="subnav__item animated slide__down">
+					<a href="news">
+						notícias
+					</a>
+				</li>
+			</ul>
+		</div>
+	</section>
+	<div class="grid__container">
+		<div class="menu__wrapper {% if this.page.id == 'faq' %} menu__wrapper--faq {% endif %}">
+			<div class="grid--4 push--1 grid__md--3">
+				{% if this.page.id == 'faq' %}
+					<a href="/" class="">
+						{% partial 'svg/logofaq' %}
+					</a>
+				{% elseif this.page.id == 'home' %}
+					<a href="/" class="logo">
+						{% partial 'svg/logo' %}
+					</a>
+				{% endif %}
+			</div>
+			<div class="grid--1 push__xxs--5 push__md--6 grid__lg--4 push__lg--2 push__xl--2 {% if this.page.id == 'faq' %} grid__xl--1 push__xl--7 {% endif %}">
+				<!-- Nav -->
+				{% partial 'site/static-nav' %}
+			</div>
+		</div>
+	</div>
+</header>

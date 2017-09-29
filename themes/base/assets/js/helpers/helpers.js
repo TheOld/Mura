@@ -1,7 +1,7 @@
 
 'use strict';
 
-/*global ss*/
+/* global ss */
 
 export function isInView(element) {
 	let elemTop = element.getBoundingClientRect().top;

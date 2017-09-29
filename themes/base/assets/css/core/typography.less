@@ -28,7 +28,7 @@ body * {
 }
 
 h1 {
-	font-weight: 900;
+	font-weight: 700;
 	font-family: @font-montserrat;
 	font-size: 50px;
 	color: #ffffff;
@@ -42,7 +42,7 @@ h1 {
 }
 
 h2 {
-	font-weight: 900;
+	font-weight: 700;
 	font-family: @font-montserrat;
 	color: #ffffff;
 	letter-spacing: 0;
@@ -55,7 +55,7 @@ h2 {
 
 h3 {
 	.h3();
-	font-weight: 900;
+	font-weight: 700;
 	font-family: @font-montserrat;
 	color: #233F51;
 	text-transform: uppercase;
@@ -70,7 +70,7 @@ h3 {
 
 h4 {
 	.h4();
-	font-weight: 900;
+	font-weight: 700;
 	font-family: @font-montserrat;
 	color: #233F51;
 	text-transform: uppercase;
@@ -90,6 +90,7 @@ a {
 	color: @laser;
 	text-decoration: none;
 	transition: color 0.3s ease-in-out;
+	font-family: @font-hind;
 
 	&:hover {
 		color: lighten(@laser, 40);
@@ -159,25 +160,32 @@ a {
 	font-family: @font-montserrat;
 	width: 60px;
 
-	&:after {
-		position: absolute;
-		bottom: 2px;
-		right: -30px;
-		background-color: @turquoise;
-		content: '';
-		height: 4px;
-		width: 23px;
+	// &:after {
+	// 	position: absolute;
+	// 	bottom: 2px;
+	// 	right: -30px;
+	// 	background-color: @turquoise;
+	// 	content: '';
+	// 	height: 4px;
+	// 	width: 23px;
 
-		@media @md {
-			width: 44px;
-			right: -60px;
-		}
-	}
+	// 	@media @md {
+	// 		width: 44px;
+	// 		right: -60px;
+	// 	}
+	// }
 
 	@media @md {
 		font-size: 1.5rem;
 		letter-spacing: 0.71px;
 		width: 82px;
+	}
+}
+
+.page__title {
+	color: @laser;
+	@media @md {
+		.font-size(40, 50);
 	}
 }
 

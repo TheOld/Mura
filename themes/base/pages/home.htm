@@ -5,20 +5,20 @@ is_hidden = 0
 robot_index = "index"
 robot_follow = "follow"
 
-[contactForm]
+[JanVince\SmallContactForm\Components\SmallContactForm contactForm]
+[DevINX\ContactUs\Components\ContactForm contactForm2]
 injectBootstrapAssets = 1
-injectMainScript = 1
 ==
 <section class="section section--0">
 	<div class="section__logo__bg">&nbsp;</div>
 	<div class="grid__container">
-		<div class="grid--11 push_xs--1 grid__md--10 grid__xl--6 push__xl--3">
+		<div class="grid--12 grix__xs--11 grid__md--12">
 			<div class="title__wrapper">
-				<h1 class="type--right title">Saiba o que podemos fazer</h1>
-				<h4 class="type--right leadin">Por voc&ecirc;<br />e pela sua empresa</h4>
+				<h1 class="type--right title js--introtitle">Saiba o que podemos fazer</h1>
+				<h4 class="type--right leadin js--introleadin">Por voc&ecirc;<br />e pela sua empresa</h4>
 			</div>
 			<div class="leadin__shadow push--4">&nbsp;</div>
-			<a href="#" class="scroll__down">
+			<a href="#" class="scroll__down animated slide__down" data-target="section--about">
 				<i class="icon icon--arrowdown"></i>
 			</a>
 		</div>
@@ -28,4 +28,5 @@ injectMainScript = 1
 {% partial 'content/about-content' %}
 {% partial 'content/team-content' %}
 {% partial 'content/method-content' %}
+{% partial 'content/occ-content' %}
 {% partial 'content/form-content' %}

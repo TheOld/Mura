@@ -1,55 +1,48 @@
-<section class="section section--contact">
+<section class="section section--contact" id="contact">
 	<div class="content__wrapper contactpage">
 		<div class="grid__container">
-			<div class="grid--3 push_xs--1 push__xl--2">
-				<h3 class="title">Contact</h3>
+			<div class="grid--11 grid__lg--8 push__xs--1 push__lg--2">
+				<h3 class="page__title">Contato</h3>
 			</div>
-			<div class="grid--10 push__xs--1">
-				<div class="contact contact--alt">
+			<div class="grid--12 grid__xs--10 grid__lg--8 push__xs--1 push__lg--2">
+				<div class="contact">
 					<section class="contact__section">
-						<a class="contact__item" href="tel:4833078753">
-							<i class="icon icon--phone"></i>
-							<span class="item__copy">
-								48.33078753
-							</span>
-						</a>
-						<a class="contact__item" href="mailto:contato@muraempresarial.com.br">
-							<i class="icon icon--email"></i>
-							<span class="item__copy">
-								contato@muraempresarial.com.br
-							</span>
-						</a>
+						<div class="contact__itemwrapper">
+							<a class="contact__item" href="tel:4833078753">
+								<span class="item__label">Telefone</span>
+								<i class="icon icon--phone"></i>
+								<span class="item__copy">
+									48.33078753
+								</span>
+							</a>
+						</div>
+						<div class="contact__itemwrapper push__md--3">
+							<a class="contact__item" href="mailto:contato@muraempresarial.com.br">
+								<span class="item__label">E-mail</span>
+								<i class="icon icon--email"></i>
+								<span class="item__copy">
+									contato@muraempresarial.com.br
+								</span>
+							</a>
+						</div>
 					</section>
 					<hr class="contact__separator">
-					<section class="contact contact--form">
-							<div class="confirm-container"> <!--This will contain the confirmation when the email is successfully sent--> </div>
-							<form class="form" role="form" data-request="{{ SELF }}::onMailSent" data-request-update="'{{ SELF }}::confirm': '.confirm-container'">
-								<div class="form-groups">
-									<div class="form-group">
-										<input type="text" class="form-control" value=""  name="name" placeholder="Enter name">
-									</div>
-									<div class="form-group">
-										<input type="text" class="form-control" value="" name="email" placeholder="Enter Email">
-									</div>
-									<div class="form-group">
-										<input type="text" class="form-control" value="" name="subject" placeholder="Enter Subject">
-									</div>
-									<div class="form-group">
-										<textarea class="form-control" value="" name="body" placeholder="Enter Message" cols="30" rows="10"></textarea>
-									</div>
-									<button type="submit" class="btn btn-primary btn-lg pull-right">Send</button>
-								</div>
-							</form>
-						</section>
-					<section class="contact__section">
-						<h4 class="title">Endereços</h4>
-						<section class="address__wrapper">
+					<section class="contact contact--form grid__container">
+						{% component 'contactForm2' %}
+					</section>
+					<section class="grid__container">
+						<div class="grid--12">
+							<h4 class="title">Endereços</h4>
+						</div>
+					</section>
+					<section class="grid__container">
+						<section class="address__wrapper grid--12 grid__md--6">
 							<address>
 								<span class="address__title">Matriz</span>
 								Rua Emílio Blum, n. 131, sala 1103, Bloco B, Ed. Hantei Office Building, Centro, Florianópolis / SC
 							</address>
 						</section>
-						<section class="address__wrapper">
+						<section class="address__wrapper grid--12 grid__md--6">
 							<address>
 								<span class="address__title">Filial</span>Rua Vidal Ramos, n. 655, sala 108 (Sala Dra. Miriam Murakami), Ed. Anne Maria, Centro, Canoinhas / SC
 							</address>

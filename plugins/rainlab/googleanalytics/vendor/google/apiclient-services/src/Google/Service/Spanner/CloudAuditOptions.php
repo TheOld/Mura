@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2014 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -17,4 +17,30 @@
 
 class Google_Service_Spanner_CloudAuditOptions extends Google_Model
 {
+  protected $authorizationLoggingOptionsType = 'Google_Service_Spanner_AuthorizationLoggingOptions';
+  protected $authorizationLoggingOptionsDataType = '';
+  public $logName;
+
+  /**
+   * @param Google_Service_Spanner_AuthorizationLoggingOptions
+   */
+  public function setAuthorizationLoggingOptions(Google_Service_Spanner_AuthorizationLoggingOptions $authorizationLoggingOptions)
+  {
+    $this->authorizationLoggingOptions = $authorizationLoggingOptions;
+  }
+  /**
+   * @return Google_Service_Spanner_AuthorizationLoggingOptions
+   */
+  public function getAuthorizationLoggingOptions()
+  {
+    return $this->authorizationLoggingOptions;
+  }
+  public function setLogName($logName)
+  {
+    $this->logName = $logName;
+  }
+  public function getLogName()
+  {
+    return $this->logName;
+  }
 }

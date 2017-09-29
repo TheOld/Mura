@@ -1,11 +1,9 @@
 'use strict';
 
-import {addClass, hasClass, removeClass} from '../helpers/helpers';
+import {addClass, removeClass} from '../helpers/helpers';
 
 export default function initMobileMenu() {
-
 	let menuIcon = document.querySelector('#mobile__nav-icon');
-
 	if (menuIcon) {
 		menuIcon.addEventListener('click', toggleMenu, false);
 	}
@@ -17,38 +15,87 @@ export default function initMobileMenu() {
 }
 
 function toggleMenu() {
-	let menu = document.querySelector('.menu--mobile');
-	let subnav = document.querySelector('.subnav__mobile');
-	let menuIcon = document.querySelector('#mobile__nav-icon');
-	let subnavIcon = document.querySelector('#subnav__nav-icon');
-	let menuItems = document.querySelectorAll('.menu__item');
-	console.log(menuItems);
-
-	if (!hasClass(menu, 'menu--mobile--open')) {
-		addClass(menu, 'menu--mobile--open');
-		addClass(subnav, 'subnav__mobile--open');
-		addClass(subnavIcon, 'nav__icon--open');
-		addClass(menuIcon, 'nav__icon--hidden');
-
-		for (let i = 0; i < menuItems.length; i++) {
-			let toggleItemMove = getToggleItemMove(i, menuItems);
-			setTimeout(toggleItemMove, (i * 60) + 180);
-		};
+	if (window.isNavbarOpen && window.isMenuOpen) {
+		hideMenu();
 	} else {
-		removeClass(menu, 'menu--mobile--open');
-		removeClass(subnav, 'subnav__mobile--open');
-		removeClass(subnavIcon, 'nav__icon--open');
-		removeClass(menuIcon, 'nav__icon--hidden');
-
-		menuItems.forEach(function(link, index) {
-			removeClass(link, 'menu__item--open');
-		}, this);
+		if (!window.isNavbarOpen) {
+			let fixedMenu = document.querySelector('.fixedmenu');
+			addClass(fixedMenu, 'fixedmenu--open');
+		}
+		showMenu();
 	}
 }
 
-function getToggleItemMove(i, list) {
+export function setActiveMenuItem(target) {
+	let item = document.querySelector('[data-target="' + target + '"]');
+	const menuItems = document.querySelectorAll('.js-nav');
+
+	for (var index = 0; index < menuItems.length; index++) {
+		var menuItem = menuItems[index];
+		removeClass(menuItem, 'menu__item--active');
+	}
+
+	addClass(item, 'menu__item--active');
+	hideMenu();
+}
+
+function addItemClass(i, list) {
 	let item = list[i];
 	return function() {
 		addClass(item, 'menu__item--open');
 	};
+}
+
+function removeItemClass(i, list) {
+	let item = list[i];
+	return function() {
+		removeClass(item, 'menu__item--open');
+	};
+}
+
+function showMenu() {
+	let menu = document.querySelector('.menu--mobile');
+	let menuIcon = document.querySelector('#mobile__nav-icon');
+	let subnavIcon = document.querySelector('#subnav__nav-icon');
+	let menuItems = document.querySelectorAll('.menu__item');
+	let menuAux = document.querySelector('.menu__aux--dt');
+
+	addClass(menu, 'menu--mobile--open');
+	addClass(menuAux, 'menu__aux--dt--active');
+	addClass(subnavIcon, 'nav__icon--open');
+	addClass(menuIcon, 'nav__icon--hidden');
+
+	for (let i = 0; i < menuItems.length; i++) {
+		let toggleItemMove = addItemClass(i, menuItems);
+		setTimeout(toggleItemMove, (i * 60) + 180);
+	};
+
+	window.isNavbarOpen = true;
+	window.isMenuOpen = true;
+}
+
+function hideMenu() {
+	let fixedMenu = document.querySelector('.fixedmenu');
+	let menu = document.querySelector('.menu--mobile');
+	let menuIcon = document.querySelector('#mobile__nav-icon');
+	let subnavIcon = document.querySelector('#subnav__nav-icon');
+	let menuItems = document.querySelectorAll('.menu__item');
+	let menuAux = document.querySelector('.menu__aux--dt');
+	for (let i = 0; i < menuItems.length; i++) {
+		let toggleItemMove = removeItemClass(i, menuItems);
+		setTimeout(toggleItemMove, (i * 60) + 180);
+	};
+	removeClass(menuIcon, 'nav__icon--hidden');
+	removeClass(subnavIcon, 'nav__icon--open');
+	removeClass(menu, 'menu--mobile--open');
+	removeClass(menuAux, 'menu__aux--dt--active');
+
+	let main = document.querySelector('main');
+	let page = main.dataset.page || main.getAttribute('[data-page]');
+	if (page !== 'atuacao') {
+		removeClass(fixedMenu, 'fixedmenu--open');
+		window.isNavbarOpen = false;
+	}
+
+	window.isMenuOpen = false;
 }

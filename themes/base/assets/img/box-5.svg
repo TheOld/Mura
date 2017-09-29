@@ -1,17 +1,29 @@
-<svg width="114" height="112" xmlns="http://www.w3.org/2000/svg">
-  <g fill="none" fill-rule="evenodd">
-    <path fill="#41BFB3" d="M90.8874745 46.5487789L57.3282837 68.7938767 23.7690929 46.5487789l33.5591908-22.2450978"/>
-    <path fill="#FFF" d="M90.8874745 41.404475l20.5082345-18.5374862L78.3429442 2.47598257 57.3282837 19.1593772"/>
-    <path stroke="#315D79" stroke-width="3" d="M90.8874745 41.404475l20.5082345-18.5374862L78.3429442 2.47598257 57.3282837 19.1593772z"/>
-    <path fill="#FFF" d="M23.7691504 41.404475L3.26091565 22.8669888 35.0864171 2.47598257 57.3283412 19.1593772"/>
-    <path stroke="#315D79" stroke-width="3" d="M23.7691504 41.404475L3.26091565 22.8669888 35.0864171 2.47598257 57.3283412 19.1593772z"/>
-    <path fill="#E2E3E4" d="M23.7691504 41.6040013V88.490113l33.5591908 21.502661V63.64963"/>
-    <path stroke="#315D79" stroke-width="3" stroke-linejoin="bevel" d="M23.7691504 41.6040013V88.490113l33.5591908 21.502661V63.64963z"/>
-    <path fill="#FFF" d="M57.288218 63.6494013L38.6843974 78.479276 6.8657939 56.2341782l16.9034714-14.8298746"/>
-    <path stroke="#315D79" stroke-width="3" d="M57.288218 63.6494013L38.6843974 78.479276 6.8657939 56.2341782l16.9034714-14.8298746z"/>
-    <path fill="#FFF" d="M90.8874745 41.6040013V88.490113l-33.5591908 21.502661V63.64963"/>
-    <path stroke="#315D79" stroke-width="3" stroke-linejoin="bevel" d="M90.8874745 41.6040013V88.490113l-33.5591908 21.502661V63.64963z"/>
-    <path fill="#FFF" d="M90.8874745 41.404475l16.9034715 14.8298747-31.8186036 22.2450978-18.6440587-14.8298747"/>
-    <path stroke="#315D79" stroke-width="3" d="M90.8874745 41.404475l16.9034715 14.8298747-31.8186036 22.2450978-18.6440587-14.8298747z"/>
-  </g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="253px" height="252px" viewBox="0 0 253 252" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>caixa animada{:linearEase;5,870,2777,189,191,360,1;}</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(0.000000, -3.000000)">
+            <g id="caixa-animada{:linearEase;5,870,2777,189,191,360,1;}" transform="translate(2.000000, 3.000000)">
+                <g id="5" transform="translate(0.283842, 1.370527)">
+                    <polygon id="Stroke-2" stroke="#315D79" stroke-width="3" stroke-linejoin="bevel" points="201.016477 90.7594759 124.336533 142.191497 47.6565887 90.7594759 124.336533 39.3274545"></polygon>
+                    <polygon id="Fill-1" fill="#41BFB3" points="200.531687 102.356094 123.851742 153.788116 47.171798 102.356094 123.851742 50.924073"></polygon>
+                    <polygon id="Fill-5" fill="#E2E3E4" points="47.65672 90.7794297 47.65672 199.182977 124.336664 248.898439 124.336664 141.750266"></polygon>
+                    <polygon id="Stroke-6" stroke="#315D79" stroke-width="3" stroke-linejoin="bevel" points="47.65672 90.7794297 47.65672 199.182977 124.336664 248.898439 124.336664 141.750266"></polygon>
+                    <polygon id="Fill-8" fill="#FFFFFF" points="201.016477 90.7794297 201.016477 199.182977 124.336533 248.898439 124.336533 141.750266"></polygon>
+                    <polygon id="Stroke-9" stroke="#315D79" stroke-width="3" stroke-linejoin="bevel" points="201.016477 90.7794297 201.016477 199.182977 124.336533 248.898439 124.336533 141.750266"></polygon>
+                    <polygon id="Fill-2" fill="#FFFFFF" points="200.531687 90.4621504 247.391288 47.6023528 171.868484 0.457103999 123.851742 39.030129"></polygon>
+                    <polygon id="Stroke-3" stroke="#315D79" stroke-width="3" points="200.531687 90.4621504 247.391288 47.6023528 171.868484 0.457103999 123.851742 39.030129"></polygon>
+                    <polygon id="Fill-5" fill="#FFFFFF" points="47.1719293 90.4621504 0.312328178 47.6023528 73.0309373 0.457103999 123.851874 39.030129"></polygon>
+                    <polygon id="Stroke-6" stroke="#315D79" stroke-width="3" points="47.1719293 90.4621504 0.312328178 47.6023528 73.0309373 0.457103999 123.851874 39.030129"></polygon>
+                    <polygon id="Fill-11" fill="#FFFFFF" points="123.760196 141.893775 81.2520213 176.181349 8.5491735 124.749328 47.172192 90.461754"></polygon>
+                    <polygon id="Stroke-12" stroke="#315D79" stroke-width="3" points="123.760196 141.893775 81.2520213 176.181349 8.5491735 124.749328 47.172192 90.461754"></polygon>
+                    <polygon id="Fill-16" fill="#FFFFFF" points="200.531687 90.4621504 239.154705 124.749724 166.451857 176.181746 123.851742 141.894172"></polygon>
+                    <polygon id="Stroke-17" stroke="#315D79" stroke-width="3" points="200.531687 90.4621504 239.154705 124.749724 166.451857 176.181746 123.851742 141.894172"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
 </svg>

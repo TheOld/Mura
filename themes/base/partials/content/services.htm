@@ -1,0 +1,66 @@
+<aside class="occ__column occ__column--0">
+	<article class="occ__details grid__container">
+		<div class="occ__bg" style="background-image: url({{'assets/img/occ-bg-alt.svg'|theme}})"></div>
+		<div class="occ__detailswrapper">
+			<div class="column grid--12 grid__md--2 occ__menucontainer">
+				<ul class="occ__icons">
+					<li class="occ__icon js-iconfamily occ__icon--active">
+						<img src="{{'assets/img/family-icon-alt.svg'|theme}}" alt="Empresas familiares">
+					</li>
+					<li class="occ__icon js-iconenterprise">
+						<img src="{{'assets/img/building-icon-alt.svg'|theme}}" alt="Empresas">
+					</li>
+					<li class="occ__icon js-iconperson">
+						<img src="{{'assets/img/user-icon-alt.svg'|theme}}" alt="Pessoas físicas">
+					</li>
+				</ul>
+				<nav class="occ__menu">
+					<a href="" class="occ__menuitem occ__menuitem--family">Empresas familiares</a>
+					<a href="" class="occ__menuitem occ__menuitem--enterprise">Empresas</a>
+					<a href="" class="occ__menuitem occ__menuitem--person">Pessoas físicas</a>
+					<a href="#" class="occ__back" alt="Voltar"></a>
+				</nav>
+
+			</div>
+			<section class="occ__wrapper grid__lg--9 js-family" data-content="family">
+				{% include 'content/occfamily' %}
+			</section>
+			<section class="occ__wrapper  grid__lg--9 js-enterprise" data-content="enterprise">
+				{% include 'content/occenterprise' %}
+			</section>
+			<section class="occ__wrapper grid__lg--9 js-person" data-content="person">
+				{% include 'content/occperson' %}
+			</section>
+		</div>
+		<footer class="occ__footer">
+			<section class="occ__footerleadin">
+				<p>Gostaria de saber mais sobre esse assunto?</p>
+				<div>
+					<img src="{{ 'assets/img/arrow-occ.svg'|theme }}" alt="">
+				</div>
+			</section>
+			<section class="occ__footeritems">
+				<div class="occ__footeritem">
+					<img class="occ__footericon" src="{{ 'assets/img/pen-icon.svg'|theme }}" alt="">
+					<span>BLOG</span>
+				</div>
+				<hr>
+				<div class="occ__footeritem">
+					<a href="/faq" style="text-align: center;">
+						<span class="occ__footerlabel occ__footericon">F.A.Q</span>
+						<strong>
+							PERGUNTAS FREQUENTES
+						</strong>
+					</a>
+				</div>
+				<hr>
+				<div class="occ__footeritem">
+					<img class="occ__footericon" src="{{ 'assets/img/mail-icon.svg'|theme }}" alt="">
+					<span>
+						CONTATO
+					</span>
+				</div>
+			</section>
+		</footer>
+	</article>
+</aside>

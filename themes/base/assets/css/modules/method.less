@@ -1,6 +1,7 @@
 .method {
 	padding-top: 5.4rem;
 	position: relative;
+	z-index: 5;
 
 	@media @md {
 		padding-top: 11.6rem;
@@ -44,7 +45,7 @@
 			}
 
 			@media @lg {
-				right: 228px;
+				right: 178px;
 			}
 		}
 
@@ -59,13 +60,17 @@
 			right: 0;
 
 			@media @md {
-				right: 0;
+				right: -4.2rem;
 			}
 		}
 
 		&--building {
 			display: flex;
 			justify-content: center;
+
+			@media @lg {
+				margin-left: -28px;
+			}
 		}
 
 		&--lead {
@@ -77,6 +82,11 @@
 				margin-top: 8px;
 			}
 		}
+	}
+
+	.js--header {
+		opacity: 0;
+		transform: translate3d(0, 50px, 0);
 	}
 
 	.method__header {
@@ -129,6 +139,8 @@
 		margin-bottom: 0;
 		margin-top: 0;
 		margin-right: 4px;
+		opacity: 0;
+		transform: translate3d(-50px, 0, 0);
 
 		@media @md {
 			font-size: 30px;
@@ -168,10 +180,12 @@
 	.method__leadin {
 		color: @laser;
 		font-size: 18px;
-		font-weight: 900;
+		font-weight: 700;
 		text-transform: uppercase;
 		font-family: @font-montserrat;
 		margin-bottom: 0;
+		// opacity: 0;
+		// transform: translate3d(0, 18px, 0);
 
 		@media @md {
 			font-size: 32px;
@@ -195,16 +209,21 @@
 		font-size: 22px;
 		font-weight: 700;
 		line-height: 24px;
+		font-family: @font-hind;
+		opacity: 0;
+		transform: translate3d(0, 22px, 0);
+
 		@media @sm {
 			margin-left: 8.33333333%;
 		}
 
 		@media @md {
-			font-size: 40px;
+			font-size: 42px;
 			letter-spacing: -0.48px;
 			line-height: 40px;
 			margin-top: 44px;
 			margin-left: 0;
+			transform: translate3d(0, 42px, 0);
 		}
 
 		@media @lg {
@@ -243,6 +262,7 @@
 		margin-bottom: 0;
 		display: block;
 
+
 		@media @md {
 			font-size: 17px;
 		}
@@ -270,12 +290,19 @@
 		font-family: @font-hind;
 		line-height: 20px;
 		color: @blue-dianne;
+		opacity: 0;
+		transform: translate3d(0, 100%, 0);
 
 		@media @md {
 			font-size: 17px;
 			line-height: 24px;
 			margin-top: 8px;
 			margin-bottom: 0;
+		}
+
+		@media @lg {
+			font-size: 18px;
+			line-height: 28px;
 		}
 
 		&--last {
@@ -285,7 +312,21 @@
 
 		}
 	}
+
+	&--active {
+		.method__sup, .method__sub, .method__leadin, .method__title, .method__copy, .method__icon--lead {
+			opacity: 1;
+			transform: translate3d(0, 0, 0);
+		}
+	}
+
+	.method__lead {
+		opacity: 0;
+		transform: translate3d(0, -50px, 0);
+	}
+
 }
+
 .method__action {
 	margin-bottom: 4.5rem;
 	@media @md {
@@ -326,6 +367,12 @@
 			height: 100px;
 		}
 
+		@media @lg {
+			font-size: 22px;
+			color: #233F51;
+			line-height: 26px;
+		}
+
 		.cta__copy {
 			&--sm {
 				display: block;
@@ -340,6 +387,9 @@
 
 				@media @md {
 					display: block;
+					font-size: 22px;
+					color: #233F51;
+					line-height: 26px;
 				}
 			}
 		}

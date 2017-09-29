@@ -1,0 +1,15 @@
+Murakami:
+	☐ Add flag to control whether an animation executed (to prevent multiple executions)
+	✔ Find a way to trigger scroll events with smooth scroll @done (8/15/2017, 11:53:45 PM)
+	☐ Remove Waypoints and implement smooth scroll event triggering (https://github.com/idiotWu/smooth-scrollbar/wiki/Instance-Methods)
+	☐ Add BarbaJS to project, if added implement it!
+	☐ use requestAnimationFrame() on scroll listener
+		function doSomething() {
+			requestAnimationFrame(doSomething);
+			// Do stuff
+		}
+		doSomething();
+	☐ Detect mobile browser and set damping to 1 to disable smooth scrolling and maybe fix the contact form issue :/
+
+
+

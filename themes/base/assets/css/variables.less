@@ -11,8 +11,10 @@
 @blue-dianne: #223F52;
 
 @turquoise: #44D5C3;
-
+@glacier: #6CA1C1;
 @alto: #d8d8d8;
+@keppel : #37A092;
+@puerto-rico: #3DC5B4;
 @color-mobile-menu-header: @blue-dianne;
 
 // Fonts
@@ -28,13 +30,15 @@
 @color-success: #4caf50;
 @color-error: #f44336;
 @color-inactive: #cccccc;
-@color-mobile-menu: #919CA6;
+@regent-gray: #919CA6;
 @color-mobile-header: rgba(49, 93, 121, 0.9);
 
 // Font Families
 @font-playfair: 'Playfair Display', serif;
 @font-montserrat: 'Montserrat', sans-serif;
 @font-hind: 'Hind', sans-serif;
+
+
 
 // Units
 @border-radius: 4px;
@@ -63,6 +67,8 @@
 @screen-md: 768px;  // Small screen / tablet
 @screen-lg: 992px;  // Large screen / desktop
 @screen-xl: 1200px; // Extra Large screen / wide desktop
+@screen-xxl: 1440px; // Extra extra Large screen / wide desktop
+@screen-xxxl: 1600px; // Extra extra extra Large screen / wide desktop
 
 // Media Queries (Mobile first approach)
 // ==========================================================================
@@ -72,6 +78,8 @@
 @md: md, ~'(min-width: @{screen-md})'; // 768px  ->
 @lg: lg, ~'(min-width: @{screen-lg})'; // 992px  ->
 @xl: xl, ~'(min-width: @{screen-xl})'; // 1200px ->
+@xxl: xxl, ~'(min-width: @{screen-xxl})'; // 1440px ->
+@xxxl: xxxl, ~'(min-width: @{screen-xxxl})'; // 1600px ->
 
 @hi-dpi: ~'(-webkit-min-device-pixel-ratio: 2), (min--moz-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)';
 @not-sm: ~'(min-width: @{screen-md} + 1)';

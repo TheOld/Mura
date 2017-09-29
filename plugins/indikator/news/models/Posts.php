@@ -1,6 +1,5 @@
 <?php namespace Indikator\News\Models;
 
-use Indikator\News\Classes\NewsSender;
 use Model;
 use File;
 use App;
@@ -15,11 +14,15 @@ class Posts extends Model
 
     public $implement = ['@RainLab.Translate.Behaviors.TranslatableModel'];
 
-    protected $table = 'news_posts';
+    protected $table = 'indikator_news_posts';
+
+    protected $casts = [
+        'send' => 'boolean',
+    ];
 
     public $rules = [
         'title'    => 'required',
-        'slug'     => ['required', 'regex:/^[a-z0-9\/\:_\-\*\[\]\+\?\|]*$/i', 'unique:news_posts'],
+        'slug'     => ['required', 'regex:/^[a-z0-9\/\:_\-\*\[\]\+\?\|]*$/i', 'unique:indikator_news_posts'],
         'status'   => 'required|between:1,3|numeric',
         'featured' => 'required|between:1,2|numeric'
     ];
@@ -36,7 +39,8 @@ class Posts extends Model
     ];
 
     protected $dates = [
-        'published_at'
+        'published_at',
+        'last_send_at'
     ];
 
     public static $allowedSorting = [
@@ -50,39 +54,52 @@ class Posts extends Model
         'published_at desc'
     ];
 
-    public function beforeCreate()
-    {
-        if ($this->statistics == '') {
-            $this->statistics = 0;
-        }
-
-        if ($this->published_at == '') {
-            $this->published_at = date('Y-m-d H:i:00');
-        }
-    }
-
-    public function beforeSave()
-    {
-        if ($this->send && $this->send != '') {
-            $activeSubscribers = Subscribers::where('status', 1)->get();
-
-            $sender = new NewsSender($this);
-            $sender->sendNewsletter($activeSubscribers);
-
-            foreach ($activeSubscribers as $subscriber) {
-                Subscribers::whereId($subscriber->id)->increment('statistics');
-            }
-        }
-
-        if ($this->send) {
-            $this->send = 1;
-        }
-        else {
-            $this->send = 2;
-        }
-    }
+    public $hasMany = [
+        'logs' => [
+            'Indikator\News\Models\Logs',
+            'key' => 'news_id'
+        ],
+        'logs_queued_count' => [
+            'Indikator\News\Models\Logs',
+            'key'   => 'news_id',
+            'scope' => 'isQueued',
+            'count' => true
+        ],
+        'logs_send_count' => [
+            'Indikator\News\Models\Logs',
+            'key'   => 'news_id',
+            'scope' => 'isSend',
+            'count' => true
+        ],
+        'logs_viewed_count' => [
+            'Indikator\News\Models\Logs',
+            'key'   => 'news_id',
+            'scope' => 'isViewed',
+            'count' => true
+        ],
+        'logs_clicked_count' => [
+            'Indikator\News\Models\Logs',
+            'key'   => 'news_id',
+            'scope' => 'isClicked',
+            'count' => true
+        ]
+    ];
 
     public $preview = null;
+
+    /**
+     * Keep the original send and last_send_at attribute because they are read only
+     */
+    public function beforeUpdate()
+    {
+        if ($this->getOriginal('send')) {
+            $this->send = true;
+        }
+
+        if (($lastSend = $this->getOriginal('last_send_at')) != null) {
+            $this->last_send_at = $lastSend;
+        }
+    }
 
     public function scopeListFrontEnd($query, $options)
     {
@@ -237,5 +254,15 @@ class Posts extends Model
 
         $paramName = substr(trim($matches[1]), 1);
         return CmsPage::url($page->getBaseFileName(), [$paramName => $item->slug]);
+    }
+
+    public function filterFields($fields, $context = null)
+    {
+        if ($fields->send->value === true) {
+            $fields->send->disabled = true;
+            $fields->send->readonly = true;
+            $fields->send->type = 'checkbox';
+            $fields->send->label = 'indikator.news::lang.form.sent';
+        }
     }
 }

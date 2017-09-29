@@ -1,13 +1,12 @@
-<section class="section">
-	<section class="flex__container">
+<section class="section" id="method1">
+	<section class="flex__container content__wrapper">
 		<div class="grid__container">
-			<div class="method method--section1 grid--10 grid__lg--10 grid__xl--8 push__xs--1 push__xl--2">
+			<div class="method method--section1 grid--12 grid__xs--10 grid__lg--10 grid__xl--8 push__xs--1 push__xl--2">
 				{% partial 'svg/pin' %}
-
 				<header class="method__header grid--10 push__sm--1">
 					<div class="method__headerwrapper method__headerwrapper--alt">
-						<p class="method__sup method__sup--alt grid__md--1">01</p>
-						<div class="grid__10">
+						<p class="method__sup method__sup--alt grid__md--1" id="number1">01</p>
+						<div class="grid__10 overflow--hidden js--header js--header1">
 							<p class="method__leadin">Necessidade</h4>
 							<p class="method__sub">
 								entrevista inicial
@@ -16,11 +15,15 @@
 						</div>
 					</div>
 				</header>
-				<h4 class="method__title grid--12">Nem todo problema é aquilo que ele aparenta ser.</h4>
-				<p class="method__copy grid--12">
-					Em razão disso, agendamos uma entrevista inicial, sem compromisso financeiro, para entendermos a visão do cliente com objetivo de diagnosticar a real causa da adversidade nos demonstrada.
-				</p>
-				{% partial 'svg/lead' %}
+				<div class="js--method1-content">
+					<h4 class="method__title grid--12 js--method1__title">Nem todo problema é aquilo que ele aparenta ser.</h4>
+					<p class="method__copy method__copy--1 grid--12">
+						Em razão disso, agendamos uma entrevista inicial, sem compromisso financeiro, para entendermos a visão do cliente com objetivo de diagnosticar a real causa da adversidade nos demonstrada.
+					</p>
+				</div>
+				<div class="js--method1-lead method__lead">
+					{% partial 'svg/lead' %}
+				</div>
 			</div>
 		</div>
 	</section>

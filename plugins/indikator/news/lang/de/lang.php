@@ -4,7 +4,21 @@ return [
     'plugin' => [
         'name' => 'News und Newsletters',
         'description' => 'Einfaches News und Newsletter plugin.',
-        'author' => 'Gergő Szabó'
+        'author' => 'Gergő Szabó',
+    ],
+    'backend_settings' => [
+        'description' => 'Einstellungen verwalten',
+        'main_section' => 'Einstellung über das versenden von Newslettern',
+        'main_section_comment' => 'Es können Einstellungen über das Tracking der Abonnenten eingestellt werden',
+        'click_tracking' => 'Klicken verfolgen',
+        'click_tracking_comment' =>  'Trackt wenn eine Person auf einen Link in der Email klickt.',
+        'email_view_tracking' => 'Emailbetrachtung verfolgen',
+        'email_view_tracking_comment' => 'Trackt wenn eine Person eine Email öffnet.',
+        'email_view_tracking_warning' => [
+            'heading' => 'Vorsicht beim verwenden von Email-Tracking' ,
+            'subheading' => 'Dies ist nicht in allen Ländern erlaubt!',
+            'text' => 'Wenn Sie diese Funktion verwenden stellen Sie bitte sicher, dass es in Ihren Land erlaubt ist. Eventuell müssen Sie Ihre Abonneten darüber informieren.'
+        ]
     ],
     'menu' => [
         'news' => 'News',
@@ -12,7 +26,8 @@ return [
         'subscribers' => 'Abonnenten',
         'statistics' => 'Statistik',
         'import' => 'Import',
-        'export' => 'Export'
+        'export' => 'Export',
+        'logs' => 'Logs'
     ],
     'title' => [
         'posts' => 'Nachrichten',
@@ -26,9 +41,20 @@ return [
         'posts' => 'Nachricht|Nachrichten',
         'view' => 'Gesehen',
         'mail' => 'Gesendet',
-        'top' => 'TOP',
-        'longest' => 'Längste',
-        'shortest' => 'Kürzeste'
+        'loss' => 'Verlust',
+        'top' => 'Am besten besucht',
+        'longest' => 'Längste Einträge',
+        'shortest' => 'Kürzeste Eingträge',
+        'queued' => 'In Warteschlange',
+        'send' => 'Gesendet',
+        'sent' => 'Gesendet',
+        'viewed' => 'Betrachtet',
+        'click' => 'Klicks',
+        'clicked' => 'Geklickt',
+        'log' => [
+            'events' => 'Ereignisse',
+            'overall' => 'Gesamt'
+        ]
     ],
     'form' => [
         // General
@@ -53,6 +79,9 @@ return [
         'view' => 'Gesehen',
         'published' => 'Veröffentlicht am',
         'send' => 'Sende die Nachricht an Abonneten.',
+        'sent' => 'Nachricht an Abonneten versendet',
+        'last_send_at' => 'Zuletzt versendet am',
+        'last_send' => 'Zuletzt versendet',
         'length' => 'Länge',
         // Subscribers
         'name' => 'Name',
@@ -60,7 +89,15 @@ return [
         'common' => 'Common',
         'locale' => 'Sprache',
         'lang' => 'de',
-        'mail' => 'Mail'
+        'mail' => 'Mail',
+        'news' => 'Nachricht',
+        'subscriber_name' => 'Abonnent Name',
+        'subscriber_email' => 'Abonnent Email',
+        'queued_at' => 'In Warteschlange',
+        'send_at' => 'Gesendet',
+        'viewed_at' => 'Betrachtet',
+        'clicked_at' => 'Geklickt',
+        'logs_count' => 'Logeinträge'
     ],
     'button' => [
         'activate' => 'Aktivieren',
@@ -71,21 +108,31 @@ return [
         'export' => 'Export',
         'unsubscribe' => 'Deabonnieren',
         'subscribe' => 'Abonnieren',
-        'return' => 'Zurück'
+        'return' => 'Zurück',
+        'newsletter_resend' => 'Newsletter erneut versenden',
+        'newsletter_resend_confirmation' => 'Sind Sie sich sicher, dass Sie den Newsletter erneut versenden möchten?'
     ],
     'flash' => [
         'activate' => 'Nachrichten erfolgreich aktiviert.',
         'deactivate' => 'Nachrichten erfolgreich deaktiviert.',
+        'subscribe' => 'Diese Benutzer erfolgreich abonniert.',
+        'unsubscribe' => 'Diese Benutzer wurden erfolgreich abgemeldet.',
         'delete' => 'Möchten Sie wirklich diese Einträge löschen?',
-        'remove' => 'Einträge erfolgreich gelöscht.'
+        'remove' => 'Einträge erfolgreich gelöscht.',
+        'newsletter_resend_success' => 'Newsletter wurde erfolgreich erneut versendet.',
+        'newsletter_resend_error' => 'Ein Fehler trat beim erneuten versenden auf, es könnten trotzdem einige die Nachricht empfangen!'
     ],
     'widget' => [
         'posts' => 'News - Nachrichten',
+        'newposts' => 'News - Neue Nachrichten',
+        'topposts' => 'News - Top Nachrichten',
         'subscribers' => 'News - Abonneten',
         'show_total' => 'Zeige alle',
         'show_active' => 'Zeige aktive',
         'show_inactive' => 'Zeige inaktive',
         'show_draft' => 'Zeige Entwurf',
+        'show_piece' => 'Anzahl der Beiträge',
+        'show_date' => 'Zeige Datum',
         'show_unsub' => 'Zeige Deabonniert',
         'total' => 'Alle'
     ],
@@ -99,7 +146,9 @@ return [
         'posts' => 'Nachrichten verwalten',
         'subscribers' => 'Abonnenten verwalten',
         'statistics' => 'Zeige Statistik',
-        'import_export' => 'Import und Export'
+        'import_export' => 'Import und Export',
+        'settings' => 'Einstellungen verwalten',
+        'logs' => 'Detailierte Logeinsicht',
     ],
     'settings' => [
         'slug_title' => 'Nachrichten slug',
