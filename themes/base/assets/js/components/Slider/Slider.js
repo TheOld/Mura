@@ -14,7 +14,7 @@ class Slider extends Component {
 			speed: 280,
 			slidesToShow: 1,
 			slidesToScroll: 1,
-			centerMode: true,
+			centerMode: false,
 			swipeToSlide: true,
 			lazyLoad: false,
 			initialSlide: 0,
@@ -40,7 +40,7 @@ class Slider extends Component {
 	renderCards() {
 		const member = {
 			name: 'Eduardo Jacob Murakami',
-			title: 'ADVOGADO CONSULTOR',
+			title: 'ADVOGADO SÓCIO',
 			photo: 'themes/base/assets/img/foto_eduardo.png',
 			shortDesc: 'Experiência internacional, sendo conselheiro e consultor jurídico de empresas sediadas no exterior.',
 			resume: [
@@ -57,14 +57,14 @@ class Slider extends Component {
 			],
 			contact: {
 				mail: 'eduardo@muraempresarial.com.br',
-				phone: '47.991796790',
+				phone: '+55 47 991796790',
 				linkedin: 'https://www.linkedin.com/in/eduardojmurakami/'
 			}
 		};
 
 		const member2 = {
 			name: 'Rodrigo Cantú',
-			title: 'ADVOGADO CONSULTOR',
+			title: 'ADVOGADO SÓCIO',
 			photo: 'themes/base/assets/img/foto_rodrigo.png',
 			shortDesc: 'Mais de 18 anos de experiência como advogado, com alto reconhecimento público no Estado de Santa Catarina.',
 			resume: [
@@ -80,8 +80,8 @@ class Slider extends Component {
 			],
 			contact: {
 				mail: 'rodrigo.cantu@muraempresarial.com',
-				phone: '48. 330787530',
-				linkedin: 'https://www.linkedin.com/in/rodrigocantu/'
+				phone: '+55 48 999716256',
+				linkedin: 'https://www.linkedin.com/in/dicantu/'
 			}
 		};
 

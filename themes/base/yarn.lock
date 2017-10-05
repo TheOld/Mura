@@ -3,8 +3,8 @@
 
 
 "@heyday/less-grid@^0.1.2":
-  version "0.1.2"
-  resolved "https://npm.heyday.net.nz/@heyday%2fless-grid/-/less-grid-0.1.2.tgz#37dc2264d26380241e03af685921040a59911e43"
+  version "0.1.3"
+  resolved "https://npm.heyday.net.nz/@heyday%2fless-grid/-/less-grid-0.1.3.tgz#25d0b446001b609a5194daedfc39aae1ebb9d907"
 
 abbrev@1:
   version "1.1.0"
@@ -82,10 +82,8 @@ amdefine@>=0.0.4:
   resolved "https://npm.heyday.net.nz/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
 animejs@^2.0.2:
-  version "2.0.2"
-  resolved "https://npm.heyday.net.nz/animejs/-/animejs-2.0.2.tgz#6c80ee92253d9429b58b4c0be597772cd7c82d7a"
-  dependencies:
-    google-closure-compiler-js "^20170124.0.0"
+  version "2.2.0"
+  resolved "https://npm.heyday.net.nz/animejs/-/animejs-2.2.0.tgz#35eefdfc535b81949c9cb06f0b3e60c02e6fdc80"
 
 ansi-align@^1.0.0:
   version "1.1.0"
@@ -1283,8 +1281,8 @@ caniuse-db@^1.0.30000529, caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
   resolved "https://npm.heyday.net.nz/caniuse-db/-/caniuse-db-1.0.30000712.tgz#89748396f9d7419d5fa27df3b48872dadbf8318a"
 
 caniuse-db@^1.0.30000677:
-  version "1.0.30000727"
-  resolved "https://npm.heyday.net.nz/caniuse-db/-/caniuse-db-1.0.30000727.tgz#4e22593089b0f35c1b2adcfc28234493a21a4b2e"
+  version "1.0.30000740"
+  resolved "https://npm.heyday.net.nz/caniuse-db/-/caniuse-db-1.0.30000740.tgz#03fcaaa176e3ed075895f72d46c1a12149bbeac9"
 
 capture-stack-trace@^1.0.0:
   version "1.0.0"
@@ -1406,10 +1404,10 @@ clean-css@^4.0.6, clean-css@^4.1.5:
     source-map "0.5.x"
 
 clean-webpack-plugin@^0.1.16:
-  version "0.1.16"
-  resolved "https://npm.heyday.net.nz/clean-webpack-plugin/-/clean-webpack-plugin-0.1.16.tgz#422a8e150bf3d5abfd3d14bfacb070e80fb2e23f"
+  version "0.1.17"
+  resolved "https://npm.heyday.net.nz/clean-webpack-plugin/-/clean-webpack-plugin-0.1.17.tgz#71c57242e6d47204d46f809413176e7bed28ec49"
   dependencies:
-    rimraf "~2.5.1"
+    rimraf "^2.6.1"
 
 cli-boxes@^1.0.0:
   version "1.0.0"
@@ -1687,9 +1685,17 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-create-react-class@^15.5.2, create-react-class@^15.5.3, create-react-class@^15.6.0:
+create-react-class@^15.5.2, create-react-class@^15.6.0:
   version "15.6.0"
   resolved "https://npm.heyday.net.nz/create-react-class/-/create-react-class-15.6.0.tgz#ab448497c26566e1e29413e883207d57cfe7bed4"
+  dependencies:
+    fbjs "^0.8.9"
+    loose-envify "^1.3.1"
+    object-assign "^4.1.1"
+
+create-react-class@^15.5.3:
+  version "15.6.2"
+  resolved "https://npm.heyday.net.nz/create-react-class/-/create-react-class-15.6.2.tgz#cf1ed15f12aad7f14ef5f2dfe05e6c42f91ef02a"
   dependencies:
     fbjs "^0.8.9"
     loose-envify "^1.3.1"
@@ -2354,8 +2360,8 @@ eslint-plugin-import@^2.3.0:
     read-pkg-up "^2.0.0"
 
 eslint-plugin-node@^5.0.0:
-  version "5.1.1"
-  resolved "https://npm.heyday.net.nz/eslint-plugin-node/-/eslint-plugin-node-5.1.1.tgz#a7ed956e780c22aef6afd1116005acd82f26eac6"
+  version "5.2.0"
+  resolved "https://npm.heyday.net.nz/eslint-plugin-node/-/eslint-plugin-node-5.2.0.tgz#e1efca04a385516cff3f2f04027ce8c5ae6db749"
   dependencies:
     ignore "^3.3.3"
     minimatch "^3.0.4"
@@ -2367,8 +2373,8 @@ eslint-plugin-promise@^3.5.0:
   resolved "https://npm.heyday.net.nz/eslint-plugin-promise/-/eslint-plugin-promise-3.5.0.tgz#78fbb6ffe047201627569e85a6c5373af2a68fca"
 
 eslint-plugin-react@^7.0.1:
-  version "7.3.0"
-  resolved "https://npm.heyday.net.nz/eslint-plugin-react/-/eslint-plugin-react-7.3.0.tgz#ca9368da36f733fbdc05718ae4e91f778f38e344"
+  version "7.4.0"
+  resolved "https://npm.heyday.net.nz/eslint-plugin-react/-/eslint-plugin-react-7.4.0.tgz#300a95861b9729c087d362dd64abcc351a74364a"
   dependencies:
     doctrine "^2.0.0"
     has "^1.0.1"
@@ -2605,6 +2611,18 @@ faye-websocket@~0.11.0:
   resolved "https://npm.heyday.net.nz/faye-websocket/-/faye-websocket-0.11.1.tgz#f0efe18c4f56e4f40afc7e06c719fd5ee6188f38"
   dependencies:
     websocket-driver ">=0.5.1"
+
+fbjs@^0.8.16:
+  version "0.8.16"
+  resolved "https://npm.heyday.net.nz/fbjs/-/fbjs-0.8.16.tgz#5e67432f550dc41b572bf55847b8aca64e5337db"
+  dependencies:
+    core-js "^1.0.0"
+    isomorphic-fetch "^2.1.1"
+    loose-envify "^1.0.0"
+    object-assign "^4.1.0"
+    promise "^7.1.1"
+    setimmediate "^1.0.5"
+    ua-parser-js "^0.7.9"
 
 fbjs@^0.8.9:
   version "0.8.14"
@@ -2942,14 +2960,6 @@ glogg@^1.0.0:
   dependencies:
     sparkles "^1.0.0"
 
-google-closure-compiler-js@^20170124.0.0:
-  version "20170124.0.0"
-  resolved "https://npm.heyday.net.nz/google-closure-compiler-js/-/google-closure-compiler-js-20170124.0.0.tgz#cd77291a19a4158eb41fb241688a5e523e250364"
-  dependencies:
-    gulp-util "^3.0.7"
-    minimist "^1.2.0"
-    webpack-core "^0.6.8"
-
 got@^5.0.0:
   version "5.7.1"
   resolved "https://npm.heyday.net.nz/got/-/got-5.7.1.tgz#5f81635a61e4a6589f180569ea4e381680a51f35"
@@ -2981,7 +2991,7 @@ group-args@^0.1.0:
     lodash "^4.11.1"
     minimist "^1.2.0"
 
-gulp-util@^3.0.7, gulp-util@^3.0.8:
+gulp-util@^3.0.8:
   version "3.0.8"
   resolved "https://npm.heyday.net.nz/gulp-util/-/gulp-util-3.0.8.tgz#0054e1e744502e27c04c187c3ecc505dd54bbb4f"
   dependencies:
@@ -5039,11 +5049,12 @@ progress@^1.1.8, progress@~1.1.8:
     asap "~2.0.3"
 
 prop-types@^15.5.10:
-  version "15.5.10"
-  resolved "https://npm.heyday.net.nz/prop-types/-/prop-types-15.5.10.tgz#2797dfc3126182e3a95e3dfbb2e893ddd7456154"
+  version "15.6.0"
+  resolved "https://npm.heyday.net.nz/prop-types/-/prop-types-15.6.0.tgz#ceaf083022fc46b4a35f69e13ef75aed0d639856"
   dependencies:
-    fbjs "^0.8.9"
+    fbjs "^0.8.16"
     loose-envify "^1.3.1"
+    object-assign "^4.1.1"
 
 proxy-addr@~1.1.5:
   version "1.1.5"
@@ -5140,8 +5151,8 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     strip-json-comments "~2.0.1"
 
 react-dom@^15.6.1:
-  version "15.6.1"
-  resolved "https://npm.heyday.net.nz/react-dom/-/react-dom-15.6.1.tgz#2cb0ed4191038e53c209eb3a79a23e2a4cf99470"
+  version "15.6.2"
+  resolved "https://npm.heyday.net.nz/react-dom/-/react-dom-15.6.2.tgz#41cfadf693b757faf2708443a1d1fd5a02bef730"
   dependencies:
     fbjs "^0.8.9"
     loose-envify "^1.1.0"
@@ -5165,8 +5176,8 @@ react-tappable@^1.0.0:
   resolved "https://npm.heyday.net.nz/react-tappable/-/react-tappable-1.0.2.tgz#bda67f4e3f0e74bf416a4ec8a5885888482e27d4"
 
 react@^15.6.1:
-  version "15.6.1"
-  resolved "https://npm.heyday.net.nz/react/-/react-15.6.1.tgz#baa8434ec6780bde997cdc380b79cd33b96393df"
+  version "15.6.2"
+  resolved "https://npm.heyday.net.nz/react/-/react-15.6.2.tgz#dba0434ab439cfe82f108f0f511663908179aa72"
   dependencies:
     create-react-class "^15.6.0"
     fbjs "^0.8.9"
@@ -5503,12 +5514,6 @@ rimraf@2, rimraf@^2.2.8, rimraf@^2.5.1, rimraf@^2.6.1:
   dependencies:
     glob "^7.0.5"
 
-rimraf@~2.5.1:
-  version "2.5.4"
-  resolved "https://npm.heyday.net.nz/rimraf/-/rimraf-2.5.4.tgz#96800093cbf1a0c86bd95b4625467535c29dfa04"
-  dependencies:
-    glob "^7.0.5"
-
 ripemd160@^2.0.0, ripemd160@^2.0.1:
   version "2.0.1"
   resolved "https://npm.heyday.net.nz/ripemd160/-/ripemd160-2.0.1.tgz#0f4584295c53a3628af7e6d79aca21ce57d1c6e7"
@@ -5695,10 +5700,6 @@ source-list-map@^2.0.0:
   version "2.0.0"
   resolved "https://npm.heyday.net.nz/source-list-map/-/source-list-map-2.0.0.tgz#aaa47403f7b245a92fbc97ea08f250d6087ed085"
 
-source-list-map@~0.1.7:
-  version "0.1.8"
-  resolved "https://npm.heyday.net.nz/source-list-map/-/source-list-map-0.1.8.tgz#c550b2ab5427f6b3f21f5afead88c4f5587b2106"
-
 source-map-resolve@^0.3.0:
   version "0.3.1"
   resolved "https://npm.heyday.net.nz/source-map-resolve/-/source-map-resolve-0.3.1.tgz#610f6122a445b8dd51535a2a71b783dfc1248761"
@@ -5728,7 +5729,7 @@ source-map@^0.1.38, source-map@~0.1.31:
   dependencies:
     amdefine ">=0.0.4"
 
-source-map@^0.4.4, source-map@~0.4.1:
+source-map@^0.4.4:
   version "0.4.4"
   resolved "https://npm.heyday.net.nz/source-map/-/source-map-0.4.4.tgz#eba4f5da9c0dc999de68032d8b4f76173652036b"
   dependencies:
@@ -6318,13 +6319,6 @@ wbuf@^1.1.0, wbuf@^1.7.2:
   resolved "https://npm.heyday.net.nz/wbuf/-/wbuf-1.7.2.tgz#d697b99f1f59512df2751be42769c1580b5801fe"
   dependencies:
     minimalistic-assert "^1.0.0"
-
-webpack-core@^0.6.8:
-  version "0.6.9"
-  resolved "https://npm.heyday.net.nz/webpack-core/-/webpack-core-0.6.9.tgz#fc571588c8558da77be9efb6debdc5a3b172bdc2"
-  dependencies:
-    source-list-map "~0.1.7"
-    source-map "~0.4.1"
 
 webpack-dev-middleware@^1.10.2:
   version "1.12.0"

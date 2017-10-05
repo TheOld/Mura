@@ -10,12 +10,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ScrollListener from './interactions/ScrollListener.js';
 import Slider from './components/Slider/Slider.js';
+import SlidingContent from './interactions/SlidingContent';
 import Waypoints from './animations/waypoints.js';
 import {addClass} from './utils/cssClassHelpers.js';
 import debounce from './utils/debouncer.js';
 import imagesLoaded from 'imagesloaded';
 import initMobileMenu from './interactions/mobile-menu';
-import initTransitionController from './transition.js';
+import initTransitionController from './transition';
 
 window.jQuery = require('jquery');
 window.waypoints = new Waypoints(document.querySelector('#main-scrollbar'));
@@ -76,6 +77,9 @@ function initialize() {
 		let debouncedScroll = debounce(onScroll, 120);
 		window.waypoints.addListener(debouncedScroll);
 		window.isNavbarOpen = false;
+
+		daVinci = new DaVinci();
+		daVinci.init();
 	}
 
 	const hash = window.location.hash;
@@ -83,6 +87,13 @@ function initialize() {
 	if (hash) {
 		const section = document.querySelector(hash);
 		window.waypoints.scrollIntoView(section);
+	}
+
+	sectionMethod = document.querySelector('.js--methodtitle');
+	SlidingContent.attachListeners();
+
+	if (page === 'atuacao') {
+		SlidingContent.setInitialContent();
 	}
 
 	setTimeout(function() {
@@ -93,15 +104,6 @@ function initialize() {
 			setTimeout(addLoadedClassFn, index * 65);
 		};
 	}, 480);
-
-	daVinci = new DaVinci();
-	daVinci.init();
-
-	sectionMethod = document.querySelector('.js--methodtitle');
-	// methodOne = document.querySelector('.method__title');
-	// methodTwo = document.querySelector('.js--file');
-	// methodThree = document.querySelector('.js--horse');
-	// methodFour = document.querySelector('.js--building');
 }
 
 function attachScrollTos() {
@@ -133,10 +135,6 @@ function onScroll(callback) {
 	window.requestAnimationFrame(() => {
 		let scrollTop = window.waypoints.getScrollTop();
 
-		// 2350 sm
-		// 2510 md
-		// 2200
-
 		if (scrollTop > 2200 && scrollTop < 3200) {
 			if (window.waypoints.isVisible(sectionMethod)) {
 				animateBoxes();
@@ -149,32 +147,6 @@ function onScroll(callback) {
 		} else {
 			destroyAnimBoxes();
 		}
-
-		// if (scrollTop > 3000 && window.waypoints.isVisible(methodOne) && !window.pinLoaded) {
-			// Animate.drawPin();
-			// setTimeout(Animate.animateIn(document.querySelector('.js--method1')), 120);
-		// }
-
-		// if (scrollTop > 3250 && window.waypoints.isVisible(methodTwo) && !window.fileLoaded) {
-		// 	Animate.drawFile();
-		// 	setTimeout(Animate.animateIn(document.querySelector('.js--method2')), 120);
-		// }
-
-		// if (scrollTop > 4000 && window.waypoints.isVisible(methodThree) && !window.horseLoaded) {
-		// 	Animate.drawHorse();
-		// 	setTimeout(Animate.animateIn(document.querySelector('.js--method3')), 120);
-		// }
-
-		// if (scrollTop > 4600 && window.waypoints.isVisible(methodFour) && !window.buildingLoaded) {
-		// 	Animate.drawBuilding();
-		// 	setTimeout(Animate.animateIn(document.querySelector('.js--method4')), 120);
-		// }
-
-		// if (scrollTop > 400 && scrollTop < 1780) {
-		// 	const about = document.querySelector('#about');
-		// 	let logo = document.querySelector('#about-logo');
-		// 	moveImage(logo, about, scrollTop);
-		// }
 
 		scrollListener.watchMenu();
 	});

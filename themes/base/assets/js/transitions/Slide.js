@@ -25,13 +25,15 @@ var Slide = Barba.BaseTransition.extend({
 		 */
 		// removeClass(this.oldContainer, 'slide__rightin');
 		// return addClass(this.oldContainer, 'slide__outleft');
-		return anime({
-			targets: [this.oldContainer],
-			opacity: 0,
-			// scale: 0.3,
-			duration: 220,
-			easing: [0.120, 0.825, 0.230, 1.000]
-		}).finished;
+		window.requestAnimationFrame(() => {
+			return anime({
+				targets: [this.oldContainer],
+				opacity: 0,
+				// scale: 0.3,
+				duration: 220,
+				easing: [0.120, 0.825, 0.230, 1.000]
+			}).finished;
+		});
 	},
 
 	slideRightIn: function() {
@@ -45,16 +47,18 @@ var Slide = Barba.BaseTransition.extend({
 		$el.style.visibility = 'visible';
 		document.body.scrollTop = 0;
 
-		// animate
-		anime({
-			targets: [$el],
-			opacity: 1,
-			duration: 220,
-			// translateX: ['100%', 0],
-			easing: [0.120, 0.825, 0.230, 1.000],
-			complete: () => {
-				this.done();
-			}
+		window.requestAnimationFrame(() => {
+			// animate
+			anime({
+				targets: [$el],
+				opacity: 1,
+				duration: 220,
+				// translateX: ['100%', 0],
+				easing: [0.120, 0.825, 0.230, 1.000],
+				complete: () => {
+					this.done();
+				}
+			});
 		});
 	}
 });

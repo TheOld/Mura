@@ -8,13 +8,13 @@
 		<div class="header__wrapper grid--10">
 			<a href="/" class="logo">
 				{% if this.page.id == 'atuacao'%}
-					<img src="{{ 'assets/img/logo-occ.svg'|theme }}" alt="">
+					<img src="{{ 'assets/img/logo-occ.svg'|theme }}" alt="Advocacia Empresarial em Santa Catarina">
 				{% else %}
-					<img src="{{ 'assets/img/logo-mb.svg'|theme }}" alt="">
+					<img src="{{ 'assets/img/logo-mb.svg'|theme }}" alt="Advocacia Empresarial em Florianópolis">
 				{% endif %}
 			</a>
-			<a href="call:4833078753" class="link">48.33077853</a>
-			<a href="mailto:contato@muraempresarial.com.br" class="link link--email">contato@muraempresarial.com.br</a>
+			<a href="call:+554833078753" class="link">+55 48 33077853</a>
+			<a href="mailto:contato@muraempresarial.com" class="link link--email">contato@muraempresarial.com</a>
 		</div>
 		<span class="bigmac bigmac--fixedmenu grid--2">
 			<div id="subnav__nav-icon" class="nav__icon {% if this.page.id == 'atuacao'%} nav__icon--alt {% endif %}">
@@ -27,19 +27,19 @@
 </nav>
 <div class="grid__container relative">
 	<div class="menu__aux menu__aux--dt">
-		<ul class="subnav subnav__aux subnav--alt animated slide__down">
+		<ul class="subnav subnav__aux subnav--alt {% if this.page.id == 'atuacao' %} subnav--occ {% endif %} animated slide__down">
 			<li class="subnav__item">
-				<a href="faq">
+				<a href="/faq">
 					FAQ
 				</a>
 			</li>
 			<li class="subnav__item">
-				<a href="blog">
+				<a href="//blog.muraempresarial.com" target="_blank">
 					blog
 				</a>
 			</li>
 			<li class="subnav__item">
-				<a href="news">
+				<a href="/noticias.php">
 					notícias
 				</a>
 			</li>
@@ -64,17 +64,17 @@
 		<div class="menu__aux menu__aux--mb push--2 grid__xs--7">
 			<ul class="subnav subnav__aux subnav--alt animated slide__down">
 				<li class="subnav__item">
-					<a href="faq">
+					<a href="/faq">
 						FAQ
 					</a>
 				</li>
 				<li class="subnav__item">
-					<a href="blog">
+					<a href="//blog.muraempresarial.com">
 						blog
 					</a>
 				</li>
 				<li class="subnav__item">
-					<a href="news">
+					<a href="/noticias.php">
 						notícias
 					</a>
 				</li>

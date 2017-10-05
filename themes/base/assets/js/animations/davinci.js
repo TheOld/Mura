@@ -7,6 +7,7 @@ let	$body = $('body');
 let	wrappers = [];
 let	currentWrapper = null;
 // let	scrollTimeoutID = 0;
+let selectedKeyframes = [];
 let	scrollIntervalID = 0;
 let	bodyHeight = 0;
 let	windowHeight = 0;
@@ -15,10 +16,12 @@ let	prevKeyframesDurations = 0;
 let	scrollTop = 0;
 let	relativeScrollTop = 0;
 let	currentKeyframe = 0;
-let	keyframesDt = [
+
+let	keyframesLg = [
 	{
 		'wrapper': '.title__wrapper',
 		'duration': '50%',
+		'isLoaded': false,
 		'animations': [
 			{
 				'selector': '.js--introtitle_',
@@ -34,6 +37,7 @@ let	keyframesDt = [
 	{
 		'wrapper': '#about',
 		'duration': '10%',
+		'isLoaded': false,
 		'animations': [
 			{
 				'selector': '.who__title',
@@ -45,6 +49,7 @@ let	keyframesDt = [
 	{
 		'wrapper': '.js--aboutlogowrapper',
 		'duration': '45%',
+		'isLoaded': false,
 		'animations': [
 			{
 				'selector': '#about-logo',
@@ -55,6 +60,7 @@ let	keyframesDt = [
 	{
 		'wrapper': '#team',
 		'duration': '65%',
+		'isLoaded': false,
 		'animations': [
 			{
 				'selector': '#slider',
@@ -63,13 +69,25 @@ let	keyframesDt = [
 		]
 	},
 	{
-		'duration': '130%',
+		'wrapper': '#team',
+		'duration': '15%',
+		'isLoaded': false,
+		'animations': [
+			{
+				'selector': '.team__sidelogo',
+				'translateY': [300, 0]
+			}
+		]
+	},
+	{
+		'duration': '80%',
 		'animations': []
 	},
 		// Method 1
 	{
 		'wrapper': '#method1',
-		'duration': '25%',
+		'duration': '20%',
+		'isLoaded': false,
 		'animations': [
 			{
 				'selector': '#number1',
@@ -86,6 +104,7 @@ let	keyframesDt = [
 	{
 		'wrapper': '.js--method1-content',
 		'duration': '5%',
+		'isLoaded': false,
 		'animations': [
 			{
 				'selector': '.js--method1__title',
@@ -102,6 +121,7 @@ let	keyframesDt = [
 	{
 		'wrapper': '.js--method1-lead',
 		'duration': '25%',
+		'isLoaded': false,
 		'animations': [
 			{
 				'selector': '.js--method1-lead',
@@ -113,7 +133,8 @@ let	keyframesDt = [
 		// Method 2
 	{
 		'wrapper': '#method2',
-		'duration': '25%',
+		'duration': '20%',
+		'isLoaded': false,
 		'animations': [
 			{
 				'selector': '#number2',
@@ -130,6 +151,7 @@ let	keyframesDt = [
 	{
 		'wrapper': '.js--method2-content',
 		'duration': '5%',
+		'isLoaded': false,
 		'animations': [
 			{
 				'selector': '.js--method2__title',
@@ -146,6 +168,7 @@ let	keyframesDt = [
 	{
 		'wrapper': '.js--method2-lead',
 		'duration': '25%',
+		'isLoaded': false,
 		'animations': [
 			{
 				'selector': '.js--method2-lead',
@@ -157,7 +180,8 @@ let	keyframesDt = [
 			// Method 3
 	{
 		'wrapper': '#method3',
-		'duration': '25%',
+		'duration': '20%',
+		'isLoaded': false,
 		'animations': [
 			{
 				'selector': '#number3',
@@ -174,6 +198,7 @@ let	keyframesDt = [
 	{
 		'wrapper': '.js--method3-content',
 		'duration': '5%',
+		'isLoaded': false,
 		'animations': [
 			{
 				'selector': '.js--method3__title',
@@ -190,6 +215,7 @@ let	keyframesDt = [
 	{
 		'wrapper': '.js--method3-lead',
 		'duration': '25%',
+		'isLoaded': false,
 		'animations': [
 			{
 				'selector': '.js--method3-lead',
@@ -201,7 +227,8 @@ let	keyframesDt = [
 				// Method 4
 	{
 		'wrapper': '#method4',
-		'duration': '25%',
+		'duration': '20%',
+		'isLoaded': false,
 		'animations': [
 			{
 				'selector': '#number4',
@@ -218,6 +245,7 @@ let	keyframesDt = [
 	{
 		'wrapper': '.js--method4-content',
 		'duration': '5%',
+		'isLoaded': false,
 		'animations': [
 			{
 				'selector': '.js--method4__title',
@@ -234,6 +262,7 @@ let	keyframesDt = [
 	{
 		'wrapper': '.js--method4-lead',
 		'duration': '25%',
+		'isLoaded': false,
 		'animations': [
 			{
 				'selector': '.js--method4-lead',
@@ -244,14 +273,16 @@ let	keyframesDt = [
 	},
 	{
 		'duration': '100%',
+		'isLoaded': false,
 		'animations': []
 	}
 ];
 
-let	keyframesMb = [
+let	keyframesDt = [
 	{
 		'wrapper': '.title__wrapper',
 		'duration': '50%',
+		'isLoaded': false,
 		'animations': [
 			{
 				'selector': '.js--introtitle_',
@@ -267,6 +298,7 @@ let	keyframesMb = [
 	{
 		'wrapper': '#about',
 		'duration': '10%',
+		'isLoaded': false,
 		'animations': [
 			{
 				'selector': '.who__title',
@@ -277,7 +309,259 @@ let	keyframesMb = [
 	},
 	{
 		'wrapper': '.js--aboutlogowrapper',
+		'duration': '45%',
+		'isLoaded': false,
+		'animations': [
+			{
+				'selector': '#about-logo',
+				'translateY': [250, 0]
+			}
+		]
+	},
+	{
+		'wrapper': '#team',
+		'duration': '65%',
+		'isLoaded': false,
+		'animations': [
+			{
+				'selector': '#slider',
+				'translateY': [300, 0]
+			}
+		]
+	},
+	{
+		'duration': '200%',
+		'isLoaded': false,
+		'animations': []
+	},
+		// Method 1
+	{
+		'wrapper': '#method1',
+		'duration': '25%',
+		'isLoaded': false,
+		'animations': [
+			{
+				'selector': '#number1',
+				'translateX': [-50, 0],
+				'opacity': [0, 1]
+			},
+			{
+				'selector': '.js--header1',
+				'translateY': [50, 0],
+				'opacity': [0, 1]
+			}
+		]
+	},
+	{
+		'wrapper': '.js--method1-content',
+		'duration': '5%',
+		'isLoaded': false,
+		'animations': [
+			{
+				'selector': '.js--method1__title',
+				'translateY': [22, 0],
+				'opacity': [0, 1]
+			},
+			{
+				'selector': '.method__copy--1',
+				'translateY': [22, 0],
+				'opacity': [0, 1]
+			}
+		]
+	},
+	{
+		'wrapper': '.js--method1-lead',
+		'duration': '25%',
+		'isLoaded': false,
+		'animations': [
+			{
+				'selector': '.js--method1-lead',
+				'translateY': [-50, 0],
+				'opacity': [0, 1]
+			}
+		]
+	},
+		// Method 2
+	{
+		'wrapper': '#method2',
+		'duration': '25%',
+		'isLoaded': false,
+		'animations': [
+			{
+				'selector': '#number2',
+				'translateX': [-50, 0],
+				'opacity': [0, 1]
+			},
+			{
+				'selector': '.js--header2',
+				'translateY': [50, 0],
+				'opacity': [0, 1]
+			}
+		]
+	},
+	{
+		'wrapper': '.js--method2-content',
+		'duration': '5%',
+		'isLoaded': false,
+		'animations': [
+			{
+				'selector': '.js--method2__title',
+				'translateY': [22, 0],
+				'opacity': [0, 1]
+			},
+			{
+				'selector': '.method__copy--2',
+				'translateY': [22, 0],
+				'opacity': [0, 1]
+			}
+		]
+	},
+	{
+		'wrapper': '.js--method2-lead',
+		'duration': '25%',
+		'isLoaded': false,
+		'animations': [
+			{
+				'selector': '.js--method2-lead',
+				'translateY': [-50, 0],
+				'opacity': [0, 1]
+			}
+		]
+	},
+			// Method 3
+	{
+		'wrapper': '#method3',
+		'duration': '25%',
+		'isLoaded': false,
+		'animations': [
+			{
+				'selector': '#number3',
+				'translateX': [-50, 0],
+				'opacity': [0, 1]
+			},
+			{
+				'selector': '.js--header3',
+				'translateY': [50, 0],
+				'opacity': [0, 1]
+			}
+		]
+	},
+	{
+		'wrapper': '.js--method3-content',
+		'duration': '5%',
+		'isLoaded': false,
+		'animations': [
+			{
+				'selector': '.js--method3__title',
+				'translateY': [22, 0],
+				'opacity': [0, 1]
+			},
+			{
+				'selector': '.method__copy--3',
+				'translateY': [22, 0],
+				'opacity': [0, 1]
+			}
+		]
+	},
+	{
+		'wrapper': '.js--method3-lead',
+		'duration': '25%',
+		'isLoaded': false,
+		'animations': [
+			{
+				'selector': '.js--method3-lead',
+				'translateY': [-50, 0],
+				'opacity': [0, 1]
+			}
+		]
+	},
+				// Method 4
+	{
+		'wrapper': '#method4',
+		'duration': '20%',
+		'isLoaded': false,
+		'animations': [
+			{
+				'selector': '#number4',
+				'translateX': [-50, 0],
+				'opacity': [0, 1]
+			},
+			{
+				'selector': '.js--header4',
+				'translateY': [50, 0],
+				'opacity': [0, 1]
+			}
+		]
+	},
+	{
+		'wrapper': '.js--method4-content',
+		'duration': '5%',
+		'isLoaded': false,
+		'animations': [
+			{
+				'selector': '.js--method4__title',
+				'translateY': [22, 0],
+				'opacity': [0, 1]
+			},
+			{
+				'selector': '.method__copy--last',
+				'translateY': [22, 0],
+				'opacity': [0, 1]
+			}
+		]
+	},
+	{
+		'wrapper': '.js--method4-lead',
+		'duration': '25%',
+		'isLoaded': false,
+		'animations': [
+			{
+				'selector': '.js--method4-lead',
+				'translateY': [-50, 0],
+				'opacity': [0, 1]
+			}
+		]
+	},
+	{
 		'duration': '100%',
+		'isLoaded': false,
+		'animations': []
+	}
+];
+
+let	keyframesMb = [
+	{
+		'wrapper': '.title__wrapper',
+		'duration': '50%',
+		'isLoaded': false,
+		'animations': [
+			{
+				'selector': '.js--introtitle_',
+				'translateY': -140,
+				'opacity': 0
+			}, {
+				'selector': '.js--introleadin_',
+				'translateY': -110,
+				'opacity': 0
+			}
+		]
+	},
+	{
+		'wrapper': '#about',
+		'duration': '10%',
+		'isLoaded': false,
+		'animations': [
+			{
+				'selector': '.who__title',
+				'translateY': [50, 0],
+				'opacity': [0, 1]
+			}
+		]
+	},
+	{
+		'wrapper': '.js--aboutlogowrapper',
+		'duration': '75%',
+		'isLoaded': false,
 		'animations': [
 			{
 				'selector': '#about-logo',
@@ -288,6 +572,7 @@ let	keyframesMb = [
 	{
 		'wrapper': '#team',
 		'duration': '100%',
+		'isLoaded': false,
 		'animations': [
 			{
 				'selector': '#slider',
@@ -296,13 +581,14 @@ let	keyframesMb = [
 		]
 	},
 	{
-		'duration': '230%',
+		'duration': '180%',
 		'animations': []
 	},
 		// Method 1
 	{
 		'wrapper': '#method1',
 		'duration': '35%',
+		'isLoaded': false,
 		'animations': [
 			{
 				'selector': '#number1',
@@ -319,6 +605,7 @@ let	keyframesMb = [
 	{
 		'wrapper': '.js--method1-content',
 		'duration': '15%',
+		'isLoaded': false,
 		'animations': [
 			{
 				'selector': '.js--method1__title',
@@ -335,6 +622,7 @@ let	keyframesMb = [
 	{
 		'wrapper': '.js--method1-lead',
 		'duration': '35%',
+		'isLoaded': false,
 		'animations': [
 			{
 				'selector': '.js--method1-lead',
@@ -347,6 +635,7 @@ let	keyframesMb = [
 	{
 		'wrapper': '#method2',
 		'duration': '30%',
+		'isLoaded': false,
 		'animations': [
 			{
 				'selector': '#number2',
@@ -362,7 +651,8 @@ let	keyframesMb = [
 	},
 	{
 		'wrapper': '.js--method2-content',
-		'duration': '30%',
+		'duration': '20%',
+		'isLoaded': false,
 		'animations': [
 			{
 				'selector': '.js--method2__title',
@@ -378,7 +668,8 @@ let	keyframesMb = [
 	},
 	{
 		'wrapper': '.js--method2-lead',
-		'duration': '30%',
+		'duration': '20%',
+		'isLoaded': false,
 		'animations': [
 			{
 				'selector': '.js--method2-lead',
@@ -391,6 +682,7 @@ let	keyframesMb = [
 	{
 		'wrapper': '#method3',
 		'duration': '30%',
+		'isLoaded': false,
 		'animations': [
 			{
 				'selector': '#number3',
@@ -407,6 +699,7 @@ let	keyframesMb = [
 	{
 		'wrapper': '.js--method3-content',
 		'duration': '30%',
+		'isLoaded': false,
 		'animations': [
 			{
 				'selector': '.js--method3__title',
@@ -422,7 +715,8 @@ let	keyframesMb = [
 	},
 	{
 		'wrapper': '.js--method3-lead',
-		'duration': '45%',
+		'duration': '15%',
+		'isLoaded': false,
 		'animations': [
 			{
 				'selector': '.js--method3-lead',
@@ -435,6 +729,7 @@ let	keyframesMb = [
 	{
 		'wrapper': '#method4',
 		'duration': '25%',
+		'isLoaded': false,
 		'animations': [
 			{
 				'selector': '#number4',
@@ -451,6 +746,7 @@ let	keyframesMb = [
 	{
 		'wrapper': '.js--method4-content',
 		'duration': '5%',
+		'isLoaded': false,
 		'animations': [
 			{
 				'selector': '.js--method4__title',
@@ -467,6 +763,7 @@ let	keyframesMb = [
 	{
 		'wrapper': '.js--method4-lead',
 		'duration': '25%',
+		'isLoaded': false,
 		'animations': [
 			{
 				'selector': '.js--method4-lead',
@@ -477,12 +774,14 @@ let	keyframesMb = [
 	},
 	{
 		'duration': '100%',
+		'isLoaded': false,
 		'animations': []
 	}
 ];
 
 class DaVinci {
 	init() {
+		this.getKeyframes();
 		this.startInterval();
 		this.setupValues();
 	}
@@ -493,7 +792,7 @@ class DaVinci {
 			if (main.classList.contains('scrolling')) {
 				this.updatePage();
 			}
-		}, 10);
+		}, 1);
 	}
 
 	stopIntreval() {
@@ -509,35 +808,37 @@ class DaVinci {
 	}
 
 	buildPage() {
-		var i, j;
-		let keyframes = this.getKeyframes();
-		for (i = 0; i < keyframes.length; i++) { // loop keyframes
-			bodyHeight += keyframes[i].duration;
+		window.requestAnimationFrame(() => {
+			var i, j;
+			let keyframes = selectedKeyframes;
+			for (i = 0; i < keyframes.length; i++) { // loop keyframes
+				bodyHeight += keyframes[i].duration;
 
-			if ($.inArray(keyframes[i].wrapper, wrappers) === -1) {
-				wrappers.push(keyframes[i].wrapper);
+				if ($.inArray(keyframes[i].wrapper, wrappers) === -1) {
+					wrappers.push(keyframes[i].wrapper);
+				}
+				for (j = 0; j < keyframes[i].animations.length; j++) { // loop animations
+					Object.keys(keyframes[i].animations[j]).forEach((key) => { // loop properties
+						let value = keyframes[i].animations[j][key];
+						if (key !== 'selector' && value instanceof Array === false) {
+							var valueSet = [];
+							valueSet.push(this.getDefaultPropertyValue(key), value);
+							value = valueSet;
+						}
+						keyframes[i].animations[j][key] = value;
+					});
+				}
 			}
-			for (j = 0; j < keyframes[i].animations.length; j++) { // loop animations
-				Object.keys(keyframes[i].animations[j]).forEach((key) => { // loop properties
-					let value = keyframes[i].animations[j][key];
-					if (key !== 'selector' && value instanceof Array === false) {
-						var valueSet = [];
-						valueSet.push(this.getDefaultPropertyValue(key), value);
-						value = valueSet;
-					}
-					keyframes[i].animations[j][key] = value;
-				});
-			}
-		}
-		$body.height(bodyHeight);
-		$window.scroll(0);
-		currentWrapper = wrappers[0];
-		$(currentWrapper).show();
+			$body.height(bodyHeight);
+			$window.scroll(0);
+			currentWrapper = wrappers[0];
+			$(currentWrapper).show();
+		});
 	}
 
 	convertAllPropsToPx() {
 		var i, j, k;
-		let keyframes = this.getKeyframes();
+		let keyframes = selectedKeyframes;
 		for (i = 0; i < keyframes.length; i++) { // loop keyframes
 			keyframes[i].duration = this.convertPercentToPx(keyframes[i].duration, 'y');
 			for (j = 0; j < keyframes[i].animations.length; j++) { // loop animations
@@ -604,23 +905,23 @@ class DaVinci {
 
 	animateElements() {
 		var animation, translateY, translateX, opacity;
-		let keyframes = this.getKeyframes();
+		let keyframes = selectedKeyframes;
 		for (var i = 0; i < keyframes[currentKeyframe].animations.length; i++) {
 			animation = keyframes[currentKeyframe].animations[i];
 			translateY = this.calcPropValue(animation, 'translateY');
 			translateX = this.calcPropValue(animation, 'translateX');
-			// scale = this.calcPropValue(animation, 'scale');
-			// rotate = this.calcPropValue(animation, 'rotate');
 			opacity = this.calcPropValue(animation, 'opacity');
-			$(animation.selector).css({
-				'transform': 'translate3d(' + translateX + 'px, ' + translateY + 'px, 0)',
-				'opacity': opacity
-			});
+
+			let el = document.querySelector(animation.selector);
+			if (el) {
+				el.style.transform = 'translate3d(' + translateX + 'px, ' + translateY + 'px, 0)';
+				el.style.opacity = opacity;
+			}
 		}
 	};
 
 	calcPropValue(animation, property) {
-		let keyframes = this.getKeyframes();
+		let keyframes = selectedKeyframes;
 		var value = animation[property];
 		if (value) {
 			value = this.easeInOutQuad(relativeScrollTop, value[0], (value[1] - value[0]), keyframes[currentKeyframe].duration);
@@ -639,7 +940,7 @@ class DaVinci {
 	};
 
 	setKeyframe() {
-		let keyframes = this.getKeyframes();
+		let keyframes = selectedKeyframes;
 		if (scrollTop > (keyframes[currentKeyframe].duration + prevKeyframesDurations)) {
 			prevKeyframesDurations += keyframes[currentKeyframe].duration;
 			currentKeyframe++;
@@ -653,7 +954,7 @@ class DaVinci {
 
 	showCurrentWrappers() {
 		// var i;
-		let keyframes = this.getKeyframes();
+		let keyframes = selectedKeyframes;
 		if (keyframes[currentKeyframe].wrapper !== currentWrapper) {
 			// $(currentWrapper).fadeOut();
 			$(keyframes[currentKeyframe].wrapper).show();
@@ -667,35 +968,35 @@ class DaVinci {
 		if (currentWrapper === '#method1' && !window.pinLoaded) {
 			setTimeout(() => {
 				Animate.drawPin();
-			}, 800);
+			}, 400);
 		}
 		if (currentWrapper === '#method2' && !window.fileLoaded) {
 			setTimeout(() => {
 				Animate.drawFile();
-			}, 800);
+			}, 400);
 		}
 		if (currentWrapper === '#method3' && !window.horseLoaded) {
 			setTimeout(() => {
 				Animate.drawHorse();
-			}, 800);
+			}, 400);
 		}
 		if (currentWrapper === '#method4' && !window.buildingLoaded) {
 			setTimeout(() => {
 				Animate.drawBuilding();
-			}, 800);
+			}, 400);
 		}
 	};
 
 	getKeyframes() {
-		if (window.matchMedia('(max-width:568px)').matches) {
-			return keyframesMb;
+		if (window.matchMedia('(max-width:568px)').matches && window.matchMedia('(max-width:767px').matches) {
+			selectedKeyframes = keyframesMb;
 		}
-		if (window.matchMedia('(min-width:768px)').matches) {
-			return keyframesDt;
+		if (window.matchMedia('(min-width:768px)').matches && window.matchMedia('(max-width:1440px').matches) {
+			selectedKeyframes = keyframesDt;
 		}
-		// if (window.matchMedia('min-width:769px')) {
-		// 	return keyframesDt;
-		// }
+		if (window.matchMedia('(min-width:1444px').matches) {
+			selectedKeyframes = keyframesLg;
+		}
 	};
 
 /*  Helpers

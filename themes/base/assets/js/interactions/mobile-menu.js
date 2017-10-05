@@ -20,7 +20,9 @@ function toggleMenu() {
 	} else {
 		if (!window.isNavbarOpen) {
 			let fixedMenu = document.querySelector('.fixedmenu');
-			addClass(fixedMenu, 'fixedmenu--open');
+			window.requestAnimationFrame(() => {
+				addClass(fixedMenu, 'fixedmenu--open');
+			});
 		}
 		showMenu();
 	}
@@ -29,14 +31,15 @@ function toggleMenu() {
 export function setActiveMenuItem(target) {
 	let item = document.querySelector('[data-target="' + target + '"]');
 	const menuItems = document.querySelectorAll('.js-nav');
+	window.requestAnimationFrame(() => {
+		for (var index = 0; index < menuItems.length; index++) {
+			var menuItem = menuItems[index];
+			removeClass(menuItem, 'menu__item--active');
+		}
 
-	for (var index = 0; index < menuItems.length; index++) {
-		var menuItem = menuItems[index];
-		removeClass(menuItem, 'menu__item--active');
-	}
-
-	addClass(item, 'menu__item--active');
-	hideMenu();
+		addClass(item, 'menu__item--active');
+		hideMenu();
+	});
 }
 
 function addItemClass(i, list) {
@@ -60,10 +63,12 @@ function showMenu() {
 	let menuItems = document.querySelectorAll('.menu__item');
 	let menuAux = document.querySelector('.menu__aux--dt');
 
-	addClass(menu, 'menu--mobile--open');
-	addClass(menuAux, 'menu__aux--dt--active');
-	addClass(subnavIcon, 'nav__icon--open');
-	addClass(menuIcon, 'nav__icon--hidden');
+	window.requestAnimationFrame(() => {
+		addClass(menu, 'menu--mobile--open');
+		addClass(menuAux, 'menu__aux--dt--active');
+		addClass(subnavIcon, 'nav__icon--open');
+		addClass(menuIcon, 'nav__icon--hidden');
+	});
 
 	for (let i = 0; i < menuItems.length; i++) {
 		let toggleItemMove = addItemClass(i, menuItems);
@@ -85,10 +90,13 @@ function hideMenu() {
 		let toggleItemMove = removeItemClass(i, menuItems);
 		setTimeout(toggleItemMove, (i * 60) + 180);
 	};
-	removeClass(menuIcon, 'nav__icon--hidden');
-	removeClass(subnavIcon, 'nav__icon--open');
-	removeClass(menu, 'menu--mobile--open');
-	removeClass(menuAux, 'menu__aux--dt--active');
+
+	window.requestAnimationFrame(() => {
+		removeClass(menuIcon, 'nav__icon--hidden');
+		removeClass(subnavIcon, 'nav__icon--open');
+		removeClass(menu, 'menu--mobile--open');
+		removeClass(menuAux, 'menu__aux--dt--active');
+	});
 
 	let main = document.querySelector('main');
 	let page = main.dataset.page || main.getAttribute('[data-page]');

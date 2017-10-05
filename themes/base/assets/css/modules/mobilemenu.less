@@ -102,47 +102,21 @@
 		@media @lg {
 			margin-top: 0.8rem;
 		}
-		.nav__icon{
+
+		& > .nav__icon {
 			height: 16px;
 
 			span {
 				background-color: @regent-gray;
 			}
 
-
-			// &--open {
-			// 	span {
-			// 		&:nth-child(1) {
-			// 			transform: rotate(45deg);
-			// 			top: 0;
-			// 			left: 8px;
-			// 			background: #44D5C3;
-			// 		}
-
-			// 		&:nth-child(2) {
-			// 			width: 0%;
-			// 			opacity: 0;
-			// 			background: #44D5C3;
-			// 		}
-
-			// 		&:nth-child(3) {
-			// 			transform: rotate(-45deg);
-			// 			top: 18px;
-			// 			left: 8px;
-			// 			background: #44D5C3;
-
-			// 			@media @md {
-			// 				top: 21px;
-			// 			}
-			// 		}
-			// 	}
-			// }
-
 			&--alt {
-				span {
-					background-color: #44D5C3;
+				& > span {
+					background: #44D5C3 !important;
 				}
 			}
 		}
+
+
 	}
 }

@@ -159,6 +159,8 @@
 
 	&.section--about {
 		display: block;
+
+
 	}
 
 	&.section--team {
@@ -192,6 +194,19 @@
 		.container {
 			position: relative;
 		}
+	}
+
+	.team__sidelogo {
+		position: absolute;
+		bottom: 0;
+		left: 88px;
+		background-image: url('../../img/logo-2.png');
+		background-repeat: no-repeat;
+		background-size: contain;
+		width: 124px;
+		height: 165px;
+		transform: translate3d(0, 300px, 0);
+
 	}
 
 	.team__bg {
@@ -242,6 +257,7 @@
 			}
 		}
 
+
 		.title {
 			clear: both;
 			margin-top: 24px;
@@ -255,8 +271,8 @@
 			}
 
 			@media @lg {
-				font-size: 60px;
-				line-height: 65px;
+				font-size: 50px;
+				line-height: 56px;
 			}
 		}
 
@@ -271,16 +287,69 @@
 			}
 
 			@media @lg {
-				font-size: 25px;
-				line-height: 32px;
+
+				font-size: 18px;
+				line-height: 28px;
 			}
 
 		}
 	}
 
+
 	&--occupation {
+		@media @lg {
+			margin-top: 39rem;
+		}
+		&:before {
+			position: absolute;
+			left: -130px;
+			bottom: 22px;
+			content: '';
+			display: block;
+			width: 0;
+			height: 0;
+			border: 0 solid transparent;
+			border-bottom-width: 0px;
+			border-top-width: 480px;
+			border-left: 280px solid #44D5C3;
 
+			@media @md {
+				left: 0;
+				bottom: 80px;
+			}
+		}
+	}
 
+	&--services {
+		background-image: url('../../img/occupation-bg-md-alt.jpg');
+
+		@media @lg {
+			background-image: url('../../img/occupation-bg.jpg');
+		}
+		.services__bg {
+			position: absolute;
+			top: 0;
+
+			background-repeat: no-repeat;
+			margin-top: -7rem;
+			width: 100%;
+			height: 16rem;
+			z-index: 3;
+			display: none;
+
+			@media @md {
+				height: 26rem;
+				background-image: url('../../img/services-bg-md.png');
+				background-size: cover;
+				display: block;
+			}
+
+			@media @lg {
+				background-image: url('../../img/services-bg.png');
+				height: 31rem;
+				display: block;
+			}
+		}
 	}
 
 	&--contact {
@@ -295,6 +364,24 @@
 			color: @laser;
 			font-weight: 800;
 
+		}
+	}
+
+	&--news {
+		background-image: url('../../img/faq-bg.png');
+		background-repeat: no-repeat;
+		background-size: cover;
+		min-height: 51.6rem;
+		position: relative;
+		margin-top: -135px;
+		padding-top: 310px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@media @lg {
+			margin-top: -135px;
+			padding-top: 310px;
 		}
 	}
 }

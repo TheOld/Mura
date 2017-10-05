@@ -5,126 +5,78 @@ is_hidden = 0
 robot_index = "index"
 robot_follow = "follow"
 ==
-<section class="section section--occupation">
-	<section class="occ">
-		<div class="occ__container">
-			<aside class="occ__column occ__column--0">
-				<article class="occ__details grid__container">
-					<div class="occ__bg" style="background-image: url({{'assets/img/occ-bg-alt.svg'|theme}})"></div>
-					<div class="occ__detailswrapper">
-						<div class="column grid--12 grid__md--2 occ__menucontainer">
-							<ul class="occ__icons">
-								<li class="occ__icon js-iconfamily occ__icon--active">
+<section class="section section--services">
+	<div class="services__bg"></div>
+	<section class="services">
+		<div class="services__container">
+			<aside class="services__column services__column--0">
+				<article class="services__details grid__container">
+					<div class="services__detailswrapper">
+						<div class="column grid--12 grid__md--2 services__menucontainer">
+							<ul class="services__icons">
+								<li class="services__icon js-iconfamily">
 									<img src="{{'assets/img/family-icon-alt.svg'|theme}}" alt="Empresas familiares">
 								</li>
-								<li class="occ__icon js-iconenterprise">
+								<li class="services__icon js-iconenterprise">
 									<img src="{{'assets/img/building-icon-alt.svg'|theme}}" alt="Empresas">
 								</li>
-								<li class="occ__icon js-iconperson">
+								<li class="services__icon js-iconperson">
 									<img src="{{'assets/img/user-icon-alt.svg'|theme}}" alt="Pessoas físicas">
 								</li>
 							</ul>
-							<nav class="occ__menu">
-								<a href="" class="occ__menuitem occ__menuitem--family">Empresas familiares</a>
-								<a href="" class="occ__menuitem occ__menuitem--enterprise">Empresas</a>
-								<a href="" class="occ__menuitem occ__menuitem--person">Pessoas físicas</a>
-								<a href="#" class="occ__back" alt="Voltar"></a>
+							<nav class="services__menu">
+								<a href="#" class="services__menuitem services__menuitem--family">Empresas familiares</a>
+								<a href="#" class="services__menuitem services__menuitem--enterprise">Empresas</a>
+								<a href="#" class="services__menuitem services__menuitem--person">Pessoas físicas</a>
 							</nav>
-
 						</div>
-						<section class="occ__wrapper grid__lg--9 js-family" data-content="family">
+						<section class="services__wrapper grid--12 grid__md--10 grid--nogutters js-family" data-content="family">
 							{% include 'content/occfamily' %}
 						</section>
-						<section class="occ__wrapper  grid__lg--9 js-enterprise" data-content="enterprise">
+						<section class="services__wrapper  grid--12 grid__md--10 grid--nogutters js-enterprise" data-content="enterprise">
 							{% include 'content/occenterprise' %}
 						</section>
-						<section class="occ__wrapper grid__lg--9 js-person" data-content="person">
+						<section class="services__wrapper grid--12 grid__md--10 grid--nogutters js-person" data-content="person">
 							{% include 'content/occperson' %}
 						</section>
 					</div>
-					<footer class="occ__footer">
-						<section class="occ__footerleadin">
-							<p>Gostaria de saber mais sobre esse assunto?</p>
-							<div>
-								<img src="{{ 'assets/img/arrow-occ.svg'|theme }}" alt="">
-							</div>
-						</section>
-						<section class="occ__footeritems">
-							<div class="occ__footeritem">
-								<img class="occ__footericon" src="{{ 'assets/img/pen-icon.svg'|theme }}" alt="">
-								<span>BLOG</span>
-							</div>
-							<hr>
-							<div class="occ__footeritem">
-								<a href="/faq" style="text-align: center;">
-									<span class="occ__footerlabel occ__footericon">F.A.Q</span>
-									<strong>
-										PERGUNTAS FREQUENTES
-									</strong>
-								</a>
-							</div>
-							<hr>
-							<div class="occ__footeritem">
-								<img class="occ__footericon" src="{{ 'assets/img/mail-icon.svg'|theme }}" alt="">
-								<span>
-									CONTATO
-								</span>
-							</div>
-						</section>
+					<footer class="services__footer">
+						<div class="services__footerwrapper">
+							<section class="services__footerleadin">
+								<p>Gostaria de saber mais sobre esse assunto?</p>
+								<div>
+									<img src="{{ 'assets/img/arrow-occ.svg'|theme }}" alt="">
+								</div>
+							</section>
+							<section class="services__footeritems">
+								<div class="services__footeritem">
+									<a class="type--center" href="http://blog.muraempresarial.com" target="_blank" title="Blog | Murakami & Cantú">
+										<img class="services__footericon" src="{{ 'assets/img/pen-icon.svg'|theme }}" alt="">
+										<span>BLOG</span>
+									</a>
+								</div>
+								<hr>
+								<div class="services__footeritem">
+									<a href="/faq" style="text-align: center;">
+										<span class="services__footerlabel services__footericon">F.A.Q</span>
+										<strong>
+											PERGUNTAS FREQUENTES
+										</strong>
+									</a>
+								</div>
+								<hr>
+								<div class="services__footeritem">
+									<a href="/#contato" class="type--center">
+										<img class="services__footericon" src="{{ 'assets/img/mail-icon.svg'|theme }}" alt="">
+										<span>
+											CONTATO
+										</span>
+									</a>
+								</div>
+							</section>
+						</div>
 					</footer>
 				</article>
-			</aside>
-			<aside class="occ__column occ__column--1">
-
-				<div class="grid__container relative">
-					<div class="occ__bg occ__bg--header"></div>
-					<div class="grid--12 grid__lg--10 push__lg--2">
-						<header class="occ__header push__md--1">
-							<div class="occ__sup">
-								<span class="type--sup">
-									o que fazemos
-								</span>
-								<p class="grid--12 grid__md--9 grid__lg--7 animated slide__down">
-									Somos um escritório de advocacia e consultoria empresarial, transparente e comunicativo.
-								</p>
-							</div>
-							<h2 class="occ__title animated fade__in">
-								Nosso foco é procurar por soluções que se adaptem à necessidade de cada cliente.
-							</h2>
-						</header>
-						<article class="occ__items">
-							<figure class="occ__item animated slide__upin" data-target="family">
-								<img class="item__icon" src="{{ 'assets/img/family-icon.svg'|theme }}" alt="">
-								<figcaption class="item__content">
-									<h4 class="item__title">
-										Empresas Familiares
-									</h4>
-									<p class="item__leadin">Sua empresa em harmonia com sua família. </p>
-									<p class="item__copy">Foco em estruturação e gestão de empresas familiares.</p>
-									<a href="" class="item__link">Leia mais</a>
-								</figcaption>
-							</figure>
-							<figure class="occ__item animated slide__upin" data-target="enterprise">
-								<img class="item__icon" src="{{ 'assets/img/building-icon.svg'|theme }}" alt="">
-								<figcaption class="item__content">
-									<h4 class="item__title">Empresas</h4>
-									<p class="item__leadin">Sua empresa protegina juridicamente.</p>
-									<p class="item__copy">Conte com nossa expertise.</p>
-									<a href="" class="item__link">Leia mais</a>
-								</figcaption>
-							</figure>
-							<figure class="occ__item animated slide__upin" data-target="person">
-								<img class="item__icon item__icon--last" src="{{ 'assets/img/user-icon.svg'|theme }}" alt="">
-								<figcaption class="item__content">
-									<h4 class="item__title">Pessoas físicas</h4>
-									<p class="item__leadin">Soluções para executivos, empresários em investidores.</p>
-									<p class="item__copy">Nossa metodologia única aplicada a pessoas físicas</p>
-									<a href="" class="item__link">Leia mais</a>
-								</figcaption>
-							</figure>
-						</article>
-					</div>
-				</div>
 			</aside>
 		</div>
 	</section>

@@ -1,0 +1,145 @@
+.news__title {
+	text-align: center;
+
+	.font-size(20, 24);
+	color: @laser;
+	text-transform: uppercase;
+	position: relative;
+	margin-top: 0;
+
+	@media @md {
+		font-size: 4rem;
+		line-height: 5rem;
+		color: #CCA969;
+		letter-spacing: 1.9px;
+		margin: -65px 0 0;
+	}
+
+	@media @lg {
+		font-size: 5rem;
+		line-height: 5rem;
+	}
+}
+
+.news {
+	padding-top: 70px;
+
+	a {
+		&:hover {
+			color: darken(@laser, 10%);
+		}
+	}
+
+	//News wrapper
+	& > div {
+		width: 95rem;
+
+		padding: 3.5rem 2rem;
+		background-color: #ffffff;
+		width: 30rem;
+		display: block;
+		margin: 0 auto;
+		position: relative;
+
+		@media @md {
+			padding: 12.4rem 8rem;
+		}
+
+		div {
+			&:last-child {
+				margin-top: 4.2rem;
+				@media @lg {
+					margin-top: 6.2rem;
+				}
+			}
+			// This should be the paragraph
+			&:nth-child(4){
+				font-family: @font-hind !important;
+				font-weight: 300 !important;
+				font-size: 16px !important;
+				line-height: 20px !important;
+				margin-top: 1.6rem !important;
+				border: none !important;
+
+
+				@media @lg {
+					font-size: 18px !important;
+					line-height: 28px !important;
+				}
+			}
+
+
+
+			& > div {
+				& > strong {
+					color: @laser;
+					text-transform: none;
+					font-weight: normal;
+					font-size: 16px !important;
+					line-height: 20px !important;
+					margin-bottom: 1.6rem !important;
+
+					@media @md {
+						font-size: 24px !important;
+						line-height: 28px !important;
+					}
+
+
+				}
+			}
+		}
+	}
+
+	strong {
+		font-weight: 500;
+		.font-size(16, 20);
+
+		@media @lg {
+			.font-size(18, 28);
+		}
+
+		a {
+			font-weight: @font-hind;
+			font-weight: 500;
+			color: @laser;
+			.font-size(16, 20);
+			font-size: 16px !important;
+			line-height: 20px !important;
+			text-transform: uppercase;
+
+			@media @lg {
+				font-size: 18px !important;
+				line-height: 28px !important;
+			}
+		}
+	}
+
+	p {
+		margin-top: 3.2rem !important;
+		margin-bottom: 3.2rem !important;
+
+		& > span {
+			font-weight: 500;
+			.font-size(16, 20);
+
+			@media @lg {
+				.font-size(18, 28);
+			}
+		}
+
+		& > a {
+			font-weight: 500;
+			color: #468EE5;
+			.font-size(16, 20);
+
+			@media @lg {
+				.font-size(18, 28);
+			}
+
+			&:hover {
+				color: lighten(#468EE5, 10%);
+			}
+
+		}
+	}
+}

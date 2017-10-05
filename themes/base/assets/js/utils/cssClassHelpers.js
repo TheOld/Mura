@@ -32,3 +32,8 @@ export function isHidden(element) {
 		return true;
 	}
 }
+
+export function findAncestor(el, cls) {
+	while ((el = el.parentElement) && !el.classList.contains(cls));
+	return el;
+}
