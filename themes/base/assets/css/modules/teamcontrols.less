@@ -13,11 +13,18 @@
 
 	@media @md {
 		top: 257px;
+		height: 50px;
+		width: 50px;
 	}
+
 
 	&--left {
 		transform: rotate(180deg);
-		left: 28px;
+		left: 0;
+
+		@media @xs {
+			left: 28px;
+		}
 
 		@media @sm {
 			left: 54px;
@@ -29,7 +36,11 @@
 	}
 
 	&--right {
-		right: 28px;
+		right: 0;
+
+		@media @xs {
+			right: 28px;
+		}
 
 		@media @sm {
 			right: 54px;

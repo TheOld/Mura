@@ -1,4 +1,6 @@
 import {setActiveMenuItem} from './mobile-menu.js';
+import ScrollController from '../animations/scrollmagic';
+
 export function delegateScrollTo(element, target) {
 	element.addEventListener('click', (e) => scrollTo(e, target), false);
 }
@@ -10,7 +12,10 @@ export function delegateOnFocus(element) {
 
 function scrollTo(e, target) {
 	e.preventDefault();
-	window.waypoints.scrollIntoView(target);
+
+	ScrollController.scrollTo(target);
+
+	// window.waypoints.scrollIntoView(target);
 	let newTarget = e.target;
 
 	if (!newTarget.dataset.target) {

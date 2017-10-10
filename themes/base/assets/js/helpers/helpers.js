@@ -1,15 +1,37 @@
 
 'use strict';
 
-/* global ss */
+/* global $ */
 
 export function isInView(element) {
 	let elemTop = element.getBoundingClientRect().top;
 	let elemBottom = element.getBoundingClientRect().bottom;
 	let innerHeight = window.innerHeight;
-	let isVisible = (elemTop >= 0) && ((elemBottom - (innerHeight / 4)) <= window.innerHeight);
+	console.log('=====================================');
+	console.log(element + ' top: ', elemTop);
+	console.log((elemBottom - (innerHeight / 2)));
+	console.log('Window height: ', window.innerHeight);
+	console.log((elemBottom - (innerHeight / 4)) <= window.innerHeight);
+	console.log('=====================================');
+	let isVisible = (elemTop >= 0) && ((elemBottom - (innerHeight / 2)) <= window.innerHeight);
 
 	return isVisible;
+}
+
+export function inViewport(element) {
+	const elementTop = $(element).offset().top;
+	const elementBottom = elementTop + $(element).outerHeight();
+	// const windowHeight = $(window).height();
+	const viewportTop = $(window).scrollTop();
+	const viewportBottom = viewportTop + $(window).height();
+
+	return elementBottom > viewportTop && elementTop < viewportBottom;
+}
+
+export function spamLetters(element) {
+	$(element).each(function() {
+		$(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+	});
 }
 
 export function isHidden(element) {
@@ -66,66 +88,11 @@ export function toCamelCase(str) {
 	});
 }
 
-export function getMonthNumber(name) {
-	switch (name) {
-		case 'January':
-			return 1;
-		case 'February':
-			return 2;
-		case 'March':
-			return 3;
-		case 'April':
-			return 4;
-		case 'May':
-			return 5;
-		case 'June':
-			return 6;
-		case 'July':
-			return 7;
-		case 'August':
-			return 8;
-		case 'September':
-			return 9;
-		case 'October':
-			return 10;
-		case 'November':
-			return 11;
-		case 'December':
-			return 12;
-		default:
-			return 'All';
-	}
-}
-
-export function getMonthName(pNumber) {
-	switch (pNumber) {
-		case 1:
-			return ss.i18n._t('Month.Jan');
-		case 2:
-			return ss.i18n._t('Month.Fev');
-		case 3:
-			return ss.i18n._t('Month.Mar');
-		case 4:
-			return ss.i18n._t('Month.Apr');
-		case 5:
-			return ss.i18n._t('Month.May');
-		case 6:
-			return ss.i18n._t('Month.Jun');
-		case 7:
-			return ss.i18n._t('Month.Jul');
-		case 8:
-			return ss.i18n._t('Month.Aug');
-		case 9:
-			return ss.i18n._t('Month.Sep');
-		case 10:
-			return ss.i18n._t('Month.Oct');
-		case 11:
-			return ss.i18n._t('Month.Nov');
-		case 12:
-			return ss.i18n._t('Month.Dec');
-		default:
-			return 'All';
-	}
+export function addClassFunc(index, items, _class) {
+	var item = items[index];
+	return function() {
+		addClass(item, _class);
+	};
 }
 
 export function isNumber(n) {

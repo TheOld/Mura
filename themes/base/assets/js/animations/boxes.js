@@ -31,5 +31,4 @@ export function animateBoxes() {
 
 export function destroyAnimBoxes() {
 	clearInterval(window.boxesCycle);
-	window.boxesCycle = null;
 }

@@ -2,7 +2,7 @@ import Barba from 'barba.js';
 import Slide from './transitions/Slide.js';
 // import initImagesLoaded from './imagesloaded-controller.js';
 export default function initTransitionController() {
-	// Barba.Prefetch.init();
+	Barba.Prefetch.init();
 	Barba.Pjax.start();
 	attachDoneListener();
 

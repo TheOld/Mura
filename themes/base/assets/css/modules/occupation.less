@@ -86,7 +86,6 @@
 		height: 29rem;
 		width: 100%;
 		background-repeat: no-repeat;
-		transition: transform 220ms @sharp-curve;
 
 		@media @md {
 
@@ -104,7 +103,7 @@
 
 		&:before {
 			@media @lg {
-				content: '';
+
 				position: absolute;
 				top: 0;
 				height: 100%;
@@ -177,7 +176,7 @@
 		align-items: center;
 		margin-bottom: 12rem;
 		position: relative;
-		z-index: 5;
+		z-index: 1;
 
 		@media @md {
 			margin-bottom: 17.3rem;
@@ -189,6 +188,7 @@
 			align-items: flex-start;
 			flex-direction: row;
 			margin-bottom: 19.2rem;
+			margin-top: 6rem;
 		}
 	}
 	@base-item-delay: 620ms;

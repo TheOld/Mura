@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import Animate from './animate.js';
+import {hasClass, addClass} from '../helpers/helpers';
 
 // let PROPERTIES = ['translateX', 'translateY', 'opacity', 'rotate', 'scale'];
 let	$window = $(window);
@@ -24,11 +25,7 @@ let	keyframesLg = [
 		'isLoaded': false,
 		'animations': [
 			{
-				'selector': '.js--introtitle_',
-				'translateY': -140,
-				'opacity': 0
-			}, {
-				'selector': '.js--introleadin_',
+				'selector': '.section__logo__bg',
 				'translateY': -110,
 				'opacity': 0
 			}
@@ -39,11 +36,11 @@ let	keyframesLg = [
 		'duration': '10%',
 		'isLoaded': false,
 		'animations': [
-			{
-				'selector': '.who__title',
-				'translateY': [50, 0],
-				'opacity': [0, 1]
-			}
+			// {
+			// 	'selector': '.who__title'
+			// 	// 'translateY': [50, 0],
+			// 	// 'opacity': [0, 1]
+			// }
 		]
 	},
 	{
@@ -70,17 +67,21 @@ let	keyframesLg = [
 	},
 	{
 		'wrapper': '#team',
-		'duration': '15%',
+		'duration': '100%',
 		'isLoaded': false,
 		'animations': [
 			{
 				'selector': '.team__sidelogo',
-				'translateY': [300, 0]
+				'translateY': [0, -450]
+			},
+			{
+				'selector': '.team__bg',
+				'translateY': [0, -220]
 			}
 		]
 	},
 	{
-		'duration': '80%',
+		'duration': '85%',
 		'animations': []
 	},
 		// Method 1
@@ -92,12 +93,12 @@ let	keyframesLg = [
 			{
 				'selector': '#number1',
 				'translateX': [-50, 0],
-				'opacity': [0, 1]
+				'opacity': [0, 1.25]
 			},
 			{
 				'selector': '.js--header1',
 				'translateY': [50, 0],
-				'opacity': [0, 1]
+				'opacity': [0, 1.25]
 			}
 		]
 	},
@@ -109,12 +110,12 @@ let	keyframesLg = [
 			{
 				'selector': '.js--method1__title',
 				'translateY': [22, 0],
-				'opacity': [0, 1]
+				'opacity': [0, 1.25]
 			},
 			{
 				'selector': '.method__copy--1',
 				'translateY': [22, 0],
-				'opacity': [0, 1]
+				'opacity': [0, 1.25]
 			}
 		]
 	},
@@ -126,7 +127,7 @@ let	keyframesLg = [
 			{
 				'selector': '.js--method1-lead',
 				'translateY': [-50, 0],
-				'opacity': [0, 1]
+				'opacity': [0, 1.25]
 			}
 		]
 	},
@@ -139,12 +140,12 @@ let	keyframesLg = [
 			{
 				'selector': '#number2',
 				'translateX': [-50, 0],
-				'opacity': [0, 1]
+				'opacity': [0, 1.25]
 			},
 			{
 				'selector': '.js--header2',
 				'translateY': [50, 0],
-				'opacity': [0, 1]
+				'opacity': [0, 1.25]
 			}
 		]
 	},
@@ -156,12 +157,12 @@ let	keyframesLg = [
 			{
 				'selector': '.js--method2__title',
 				'translateY': [22, 0],
-				'opacity': [0, 1]
+				'opacity': [0, 1.25]
 			},
 			{
 				'selector': '.method__copy--2',
 				'translateY': [22, 0],
-				'opacity': [0, 1]
+				'opacity': [0, 1.25]
 			}
 		]
 	},
@@ -173,7 +174,7 @@ let	keyframesLg = [
 			{
 				'selector': '.js--method2-lead',
 				'translateY': [-50, 0],
-				'opacity': [0, 1]
+				'opacity': [0, 1.25]
 			}
 		]
 	},
@@ -186,12 +187,12 @@ let	keyframesLg = [
 			{
 				'selector': '#number3',
 				'translateX': [-50, 0],
-				'opacity': [0, 1]
+				'opacity': [0, 1.25]
 			},
 			{
 				'selector': '.js--header3',
 				'translateY': [50, 0],
-				'opacity': [0, 1]
+				'opacity': [0, 1.25]
 			}
 		]
 	},
@@ -203,12 +204,12 @@ let	keyframesLg = [
 			{
 				'selector': '.js--method3__title',
 				'translateY': [22, 0],
-				'opacity': [0, 1]
+				'opacity': [0, 1.25]
 			},
 			{
 				'selector': '.method__copy--3',
 				'translateY': [22, 0],
-				'opacity': [0, 1]
+				'opacity': [0, 1.25]
 			}
 		]
 	},
@@ -220,7 +221,7 @@ let	keyframesLg = [
 			{
 				'selector': '.js--method3-lead',
 				'translateY': [-50, 0],
-				'opacity': [0, 1]
+				'opacity': [0, 1.25]
 			}
 		]
 	},
@@ -233,12 +234,12 @@ let	keyframesLg = [
 			{
 				'selector': '#number4',
 				'translateX': [-50, 0],
-				'opacity': [0, 1]
+				'opacity': [0, 1.25]
 			},
 			{
 				'selector': '.js--header4',
 				'translateY': [50, 0],
-				'opacity': [0, 1]
+				'opacity': [0, 1.25]
 			}
 		]
 	},
@@ -250,12 +251,12 @@ let	keyframesLg = [
 			{
 				'selector': '.js--method4__title',
 				'translateY': [22, 0],
-				'opacity': [0, 1]
+				'opacity': [0, 1.25]
 			},
 			{
 				'selector': '.method__copy--last',
 				'translateY': [22, 0],
-				'opacity': [0, 1]
+				'opacity': [0, 1.25]
 			}
 		]
 	},
@@ -300,11 +301,9 @@ let	keyframesDt = [
 		'duration': '10%',
 		'isLoaded': false,
 		'animations': [
-			{
-				'selector': '.who__title',
-				'translateY': [50, 0],
-				'opacity': [0, 1]
-			}
+			// {
+			// 	'selector': '.who__title'
+			// }
 		]
 	},
 	{
@@ -329,6 +328,22 @@ let	keyframesDt = [
 			}
 		]
 	},
+	{
+		'wrapper': '#team',
+		'duration': '100%',
+		'isLoaded': false,
+		'animations': [
+			{
+				'selector': '.team__sidelogo',
+				'translateY': [0, -450]
+			},
+			{
+				'selector': '.team__bg',
+				'translateY': [0, -220]
+			}
+		]
+	},
+
 	{
 		'duration': '200%',
 		'isLoaded': false,
@@ -551,16 +566,14 @@ let	keyframesMb = [
 		'duration': '10%',
 		'isLoaded': false,
 		'animations': [
-			{
-				'selector': '.who__title',
-				'translateY': [50, 0],
-				'opacity': [0, 1]
-			}
+			// {
+			// 	'selector': '.who__title'
+			// }
 		]
 	},
 	{
 		'wrapper': '.js--aboutlogowrapper',
-		'duration': '75%',
+		'duration': '45%',
 		'isLoaded': false,
 		'animations': [
 			{
@@ -571,7 +584,7 @@ let	keyframesMb = [
 	},
 	{
 		'wrapper': '#team',
-		'duration': '100%',
+		'duration': '65%',
 		'isLoaded': false,
 		'animations': [
 			{
@@ -581,7 +594,7 @@ let	keyframesMb = [
 		]
 	},
 	{
-		'duration': '180%',
+		'duration': '85%',
 		'animations': []
 	},
 		// Method 1
@@ -640,12 +653,12 @@ let	keyframesMb = [
 			{
 				'selector': '#number2',
 				'translateX': [-50, 0],
-				'opacity': [0, 1]
+				'opacity': [0, 1.25]
 			},
 			{
 				'selector': '.js--header2',
 				'translateY': [50, 0],
-				'opacity': [0, 1]
+				'opacity': [0, 1.25]
 			}
 		]
 	},
@@ -657,12 +670,12 @@ let	keyframesMb = [
 			{
 				'selector': '.js--method2__title',
 				'translateY': [22, 0],
-				'opacity': [0, 1]
+				'opacity': [0, 1.25]
 			},
 			{
 				'selector': '.method__copy--2',
 				'translateY': [22, 0],
-				'opacity': [0, 1]
+				'opacity': [0, 1.25]
 			}
 		]
 	},
@@ -674,7 +687,7 @@ let	keyframesMb = [
 			{
 				'selector': '.js--method2-lead',
 				'translateY': [-50, 0],
-				'opacity': [0, 1]
+				'opacity': [0, 1.25]
 			}
 		]
 	},
@@ -687,12 +700,12 @@ let	keyframesMb = [
 			{
 				'selector': '#number3',
 				'translateX': [-50, 0],
-				'opacity': [0, 1]
+				'opacity': [0, 1.25]
 			},
 			{
 				'selector': '.js--header3',
 				'translateY': [50, 0],
-				'opacity': [0, 1]
+				'opacity': [0, 1.25]
 			}
 		]
 	},
@@ -704,12 +717,12 @@ let	keyframesMb = [
 			{
 				'selector': '.js--method3__title',
 				'translateY': [22, 0],
-				'opacity': [0, 1]
+				'opacity': [0, 1.25]
 			},
 			{
 				'selector': '.method__copy--3',
 				'translateY': [22, 0],
-				'opacity': [0, 1]
+				'opacity': [0, 1.25]
 			}
 		]
 	},
@@ -721,7 +734,7 @@ let	keyframesMb = [
 			{
 				'selector': '.js--method3-lead',
 				'translateY': [-50, 0],
-				'opacity': [0, 1]
+				'opacity': [0, 1.25]
 			}
 		]
 	},
@@ -739,7 +752,7 @@ let	keyframesMb = [
 			{
 				'selector': '.js--header4',
 				'translateY': [50, 0],
-				'opacity': [0, 1]
+				'opacity': [0, 1.25]
 			}
 		]
 	},
@@ -751,12 +764,12 @@ let	keyframesMb = [
 			{
 				'selector': '.js--method4__title',
 				'translateY': [22, 0],
-				'opacity': [0, 1]
+				'opacity': [0, 1.25]
 			},
 			{
 				'selector': '.method__copy--last',
 				'translateY': [22, 0],
-				'opacity': [0, 1]
+				'opacity': [0, 1.25]
 			}
 		]
 	},
@@ -768,7 +781,7 @@ let	keyframesMb = [
 			{
 				'selector': '.js--method4-lead',
 				'translateY': [-50, 0],
-				'opacity': [0, 1]
+				'opacity': [0, 1.25]
 			}
 		]
 	},
@@ -788,10 +801,10 @@ class DaVinci {
 
 	startInterval() {
 		scrollIntervalID = setInterval(() => {
-			let main = document.querySelector('main');
-			if (main.classList.contains('scrolling')) {
-				this.updatePage();
-			}
+			// let main = document.querySelector('main');
+			// if (main.classList.contains('scrolling')) {
+			this.updatePage();
+			// }
 		}, 1);
 	}
 
@@ -800,7 +813,7 @@ class DaVinci {
 	}
 
 	setupValues() {
-		scrollTop = window.waypoints.getScrollTop();
+		scrollTop = window.scrollY; // window.waypoints.getScrollTop();
 		windowHeight = $window.height();
 		windowWidth = $window.width();
 		this.convertAllPropsToPx();
@@ -829,6 +842,7 @@ class DaVinci {
 					});
 				}
 			}
+
 			$body.height(bodyHeight);
 			$window.scroll(0);
 			currentWrapper = wrappers[0];
@@ -899,7 +913,7 @@ class DaVinci {
 	}
 
 	setScrollTops() {
-		scrollTop = window.waypoints.getScrollTop();
+		scrollTop = window.scrollY || window.pageYOffset;
 		relativeScrollTop = scrollTop - prevKeyframesDurations;
 	}
 
@@ -913,6 +927,7 @@ class DaVinci {
 			opacity = this.calcPropValue(animation, 'opacity');
 
 			let el = document.querySelector(animation.selector);
+
 			if (el) {
 				el.style.transform = 'translate3d(' + translateX + 'px, ' + translateY + 'px, 0)';
 				el.style.opacity = opacity;
@@ -988,13 +1003,13 @@ class DaVinci {
 	};
 
 	getKeyframes() {
-		if (window.matchMedia('(max-width:568px)').matches && window.matchMedia('(max-width:767px').matches) {
+		if (window.matchMedia('(max-width:568px)').matches && window.matchMedia('(max-width:767px)').matches) {
 			selectedKeyframes = keyframesMb;
 		}
-		if (window.matchMedia('(min-width:768px)').matches && window.matchMedia('(max-width:1440px').matches) {
+		if (window.matchMedia('(min-width:768px)').matches && window.matchMedia('(max-width:1399px)').matches) {
 			selectedKeyframes = keyframesDt;
 		}
-		if (window.matchMedia('(min-width:1444px').matches) {
+		if (window.matchMedia('(min-width:1400px)').matches) {
 			selectedKeyframes = keyframesLg;
 		}
 	};

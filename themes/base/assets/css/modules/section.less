@@ -34,6 +34,7 @@
 			top: 120px;
 			z-index: 0;
 
+
 			@media @md {
 				background-size: contain;
 				left: 57%;
@@ -51,14 +52,12 @@
 		}
 
 		.title {
-			color: #44d5c3;
-			font-family: @font-playfair;
-			font-style: italic;
 			position: relative;
 			z-index: 2;
 			display: block;
 			margin-right: 44px;
 			width: 65%;
+			color: transparent;
 
 			@media @md {
 				width: 55%;
@@ -66,6 +65,14 @@
 
 			@media @lg {
 				width: 35%;
+			}
+
+			span{
+				color: #44d5c3;
+				font-family: @font-playfair;
+				font-style: italic;
+				font-size: inherit;
+				display: inline;
 			}
 		}
 
@@ -274,6 +281,13 @@
 				font-size: 50px;
 				line-height: 56px;
 			}
+
+			span {
+				display: inline;
+				font-size: inherit;
+				line-height: inherit;
+				color: @blue-dianne;
+			}
 		}
 
 		.copy {
@@ -298,7 +312,7 @@
 
 	&--occupation {
 		@media @lg {
-			margin-top: 39rem;
+			margin-top: 19rem;
 		}
 		&:before {
 			position: absolute;

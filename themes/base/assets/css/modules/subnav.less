@@ -139,7 +139,6 @@
 	&--alt {
 		background-color: transparent;
 		width: auto;
-		margin-top: 12px;
 
 		&:before {
 			display: none;
@@ -152,10 +151,20 @@
 		.subnav__item {
 			margin-left: 0;
 			float: left;
+			margin: 0 5px;
+
+			@media @md {
+				margin: 0 10px;
+			}
+
+			&:first-child {
+				margin-left: 0;
+			}
 
 			a {
 				color: @font-color-mobile-menu;
 				font-size: 18px;
+				text-transform: uppercase;
 
 				&:hover {
 					color: @laser;

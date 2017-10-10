@@ -19,15 +19,15 @@ description = "Default layout"
     </head>
     <body class="page__container js-body">
 		<div id="barba-wrapper">
-			<div class="barba-container animated">
+			<div class="barba-container">
 				{% partial 'site/subnav' %}
-				<main id="main-scrollbar" scrollbar="" data-page="{{this.page.id}}">
-
+				<main data-page="{{this.page.id}}">
 					{% partial 'site/header' %}
 					<!-- Content -->
-					<section id="layout-content" class="layout__content">
+					<section id="full-page" class="layout__content">
 						{% page %}
 					</section>
+					<!-- Content -->
 					{% partial 'site/footer' %}
 				</main>
 			</div>

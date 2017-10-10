@@ -1,3 +1,4 @@
+@import '../variables.less';
 .about {
 	// background-image: linear-gradient(-160deg, #315D79 7%, #233F51 90%);
 	background-color: #315D79;
@@ -19,6 +20,14 @@
 		font-family: @font-hind;
 		margin-bottom: 0;
 
+		opacity: 0;
+		transform: translate3d(0, 25%, 0);
+		transition: transform 300ms @deceleration-curve, opacity 280ms @deceleration-curve;
+
+		&--active {
+			opacity: 1;
+			transform: translate3d(0, 0, 0);
+		}
 
 		@media @sm {
 			color: @font-dark;
@@ -39,10 +48,10 @@
 		background-size: contain;
 		position: absolute;
 		top: 95px;
-		z-index: -1;
+		z-index: -2;
 		height: 299px;
 		width: 216px;
-		transform: translate3d(0, 250px, 0);
+		// transform: translate3d(0, 650px, 0);
 
 		@media @md {
 			background-image: url('../../img/who-logo-dt.png');
@@ -160,6 +169,7 @@
 		z-index: 3;
 		opacity: 0;
 		transform: translate3d(0, 50px, 0);
+		transition: transform 320ms @deceleration-curve, opacity 300ms @deceleration-curve;
 
 		@media @sm {
 			margin-top: 0;
@@ -177,6 +187,11 @@
 			.font-size(55, 60);
 			margin-right: 1.8rem;
 		}
+
+		&--active {
+			opacity: 1;
+			transform: translate3d(0, 0, 0);
+		}
 	}
 
 	.who__subtitle {
@@ -192,9 +207,16 @@
 	.who__leadin {
 		color: #F1F1F1;
 		font-family: @font-hind;
-
 		margin-top: 75px;
 		font-weight: bold;
+		opacity: 0;
+		transform: translate3d(0, 25%, 0);
+		transition: transform 320ms @deceleration-curve, opacity 300ms @deceleration-curve;
+
+		&--active {
+			opacity: 1;
+			transform: translate3d(0, 0, 0);
+		}
 
 		@media @md {
 			color: @font-dark;
@@ -226,6 +248,7 @@
 			margin-bottom: 1.6rem;
 		}
 	}
+
 
 	.about__wrapper {
 		position: relative;
@@ -293,12 +316,23 @@
 			text-transform: uppercase;
 			line-height: 13px;
 
+			// opacity: 0;
+			// transform: translate3d(-25%, 0, 0);
+			// transition: transform 320ms @deceleration-curve, opacity 300ms @deceleration-curve;
+
 			@media @sm {
 				.font-size(15, 20);
 			}
 
 			&:first-child {
-				margin-top: .8rem;
+				margin-top: 0.8rem;
+			}
+		}
+
+		&--active {
+			span {
+				opacity: 0;
+				transform: translate3d(0, 0, 0);
 			}
 		}
 	}

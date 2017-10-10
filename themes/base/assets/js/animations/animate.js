@@ -14,54 +14,75 @@ class Animate {
 
 	static drawPin() {
 		window.pinLoaded = true;
-		window.requestAnimationFrame(() => {
-			anime({
-				targets: '.js-pinbg',
-				opacity: 1,
-				easing: 'easeInOutSine',
-				duration: 300,
-				complete: this.drawIconContent('.symbol--pin .pin__lines path', 300, 280)
-			});
+
+		anime({
+			targets: '.js-pinbg',
+			opacity: 1,
+			easing: 'easeInOutSine',
+			duration: 300,
+			complete: this.drawIconContent('.symbol--pin .pin__lines path', 300, 280)
 		});
 	}
 
 	static drawFile() {
 		window.fileLoaded = true;
-		window.requestAnimationFrame(() => {
-			anime({
-				targets: '.symbol--file',
-				opacity: 1,
-				easing: 'easeInOutSine',
-				duration: 220,
-				complete: this.drawIconContent('.symbol--file .file__lines path', 220, 120)
-			});
+
+		anime({
+			targets: '.symbol--file',
+			opacity: 1,
+			easing: 'easeInOutSine',
+			duration: 220,
+			complete: this.drawIconContent('.symbol--file .file__lines path', 220, 120)
 		});
 	}
 
 	static drawHorse() {
 		window.horseLoaded = true;
-		window.requestAnimationFrame(() => {
-			anime({
-				targets: '.symbol--horse',
-				opacity: 1,
-				easing: 'easeInOutSine',
-				duration: 200,
-				complete: this.drawIconContent('.symbol--horse path', 180, 180)
-			});
+
+		anime({
+			targets: '.symbol--horse',
+			opacity: 1,
+			easing: 'easeInOutSine',
+			duration: 200,
+			complete: this.drawIconContent('.symbol--horse path', 180, 180)
 		});
 	}
 
 	static drawBuilding() {
 		window.buildingLoaded = true;
-		window.requestAnimationFrame(() => {
-			anime({
-				targets: '.symbol--building',
-				opacity: 1,
-				easing: 'easeInOutSine',
-				duration: 200,
-				complete: this.drawIconContent('.symbol--building .building__lines path', 220, 220)
-			});
+
+		anime({
+			targets: '.symbol--building',
+			opacity: 1,
+			easing: 'easeInOutSine',
+			duration: 200,
+			complete: this.drawIconContent('.symbol--building .building__lines path', 220, 220)
 		});
+	}
+
+	static animateLetters(target, duration) {
+		console.log(target + '.letter');
+		anime.timeline({loop: false})
+		.add({
+			targets: target + ' .letter',
+			translateX: [40, 0],
+			translateZ: 0,
+			opacity: [0, 1],
+			easing: 'easeInOutSine',
+			duration: duration,
+			delay: function(el, i) {
+				return 500 + 30 * i;
+			}
+		});
+
+		switch (target) {
+			case '.js--introtitle':
+				window.introTitle = true;
+				break;
+			case '.js--methodtitle':
+				window.methodTitle = true;
+				break;
+		}
 	}
 
 	// Content

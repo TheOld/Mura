@@ -5,26 +5,24 @@ import {delegateOnFocus, delegateScrollTo} from './interactions/events.js';
 
 // import Animate from './animations/animate.js';
 import Barba from 'barba.js';
-import DaVinci from './animations/davinci';
+import Picasso from './animations/Picasso';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import ScrollController from './animations/scrollmagic';
 import ScrollListener from './interactions/ScrollListener.js';
 import Slider from './components/Slider/Slider.js';
 import SlidingContent from './interactions/SlidingContent';
-import Waypoints from './animations/waypoints.js';
-import {addClass} from './utils/cssClassHelpers.js';
+import Waypoints from './animations/waypoints';
 import debounce from './utils/debouncer.js';
 import imagesLoaded from 'imagesloaded';
 import initMobileMenu from './interactions/mobile-menu';
 import initTransitionController from './transition';
-
-window.jQuery = require('jquery');
-window.waypoints = new Waypoints(document.querySelector('#main-scrollbar'));
+import {addClassFunc, addClass, inViewport, spamLetters} from '../js/helpers/helpers';
+import Rellax from 'rellax';
 
 // let _animate;
 // let lastScrollTop = 0;
 let scrollListener;
-let daVinci;
 let sectionMethod;
 // let methodOne;
 // let methodTwo;
@@ -46,6 +44,10 @@ function initialize() {
 	window.pinLoaded = false;
 	window.buildingLoaded = false;
 	window.fileLoaded = false;
+	window.methodTitle = false;
+	window.introTitle = false;
+
+	spamLetters('.js--introtitle');
 
 	let cardEl = document.querySelector('.js-slider');
 	if (cardEl) {
@@ -55,8 +57,8 @@ function initialize() {
 		);
 	}
 
-	window.waypoints = new Waypoints(document.querySelector('#main-scrollbar'));
-
+	let scrollController = new ScrollController();
+	scrollController.init();
 	attachScrollTos();
 	scrollListener = new ScrollListener();
 
@@ -75,35 +77,49 @@ function initialize() {
 
 	if (page !== 'atuacao') {
 		let debouncedScroll = debounce(onScroll, 120);
-		window.waypoints.addListener(debouncedScroll);
+		window.addEventListener('scroll', debouncedScroll);
 		window.isNavbarOpen = false;
 
-		daVinci = new DaVinci();
-		daVinci.init();
+		let picasso = new Picasso();
+		picasso.init();
 	}
 
 	const hash = window.location.hash;
 
 	if (hash) {
-		const section = document.querySelector(hash);
-		window.waypoints.scrollIntoView(section);
+		// const section = document.querySelector(hash);
+		// window.waypoints.scrollIntoView(section);
 	}
 
-	sectionMethod = document.querySelector('.js--methodtitle');
 	SlidingContent.attachListeners();
 
 	if (page === 'atuacao') {
 		SlidingContent.setInitialContent();
 	}
 
+	const sections = document.querySelectorAll('.section');
+	for (var i = 0; i < sections.length; i++) {
+		const section = sections[i];
+
+		if (inViewport(section)) {
+			Waypoints.showContent(section);
+			break;
+		}
+	}
+
 	setTimeout(function() {
 		let navItems = document.querySelectorAll('.nav__item');
 
 		for (let index = 0; index < navItems.length; index++) {
-			let addLoadedClassFn = addLoadedClass(index, navItems);
+			let addLoadedClassFn = addClassFunc(index, navItems, 'nav__item--loaded');
 			setTimeout(addLoadedClassFn, index * 65);
 		};
 	}, 480);
+
+	sectionMethod = document.querySelector('.js--methodtitle');
+
+	var rellax = new Rellax('.rellax');
+	console.log(rellax);
 }
 
 function attachScrollTos() {
@@ -113,6 +129,7 @@ function attachScrollTos() {
 	if (arrow) {
 		delegateScrollTo(arrow, sectionOne);
 	}
+
 	let menuItems = document.querySelectorAll('.js-nav');
 
 	for (var index = 0; index < menuItems.length; index++) {
@@ -133,10 +150,9 @@ function triggerImgsLoaded() {
 
 function onScroll(callback) {
 	window.requestAnimationFrame(() => {
-		let scrollTop = window.waypoints.getScrollTop();
-
+		let scrollTop = window.scrollY || window.pageYOffset;
 		if (scrollTop > 2200 && scrollTop < 3200) {
-			if (window.waypoints.isVisible(sectionMethod)) {
+			if (inViewport(sectionMethod)) {
 				animateBoxes();
 				setTimeout(function() {
 					destroyAnimBoxes();
@@ -149,12 +165,6 @@ function onScroll(callback) {
 		}
 
 		scrollListener.watchMenu();
+		scrollListener.watchSections();
 	});
-}
-
-function addLoadedClass(index, items) {
-	var item = items[index];
-	return function() {
-		addClass(item, 'nav__item--loaded');
-	};
 }

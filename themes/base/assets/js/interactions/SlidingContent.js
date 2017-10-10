@@ -71,6 +71,11 @@ class SlidingContent {
 					height = content.clientHeight;
 					detailsWrapper.style.height = (height + wrapperBottom) + 'px';
 					element = document.querySelector('.services__menuitem--person');
+
+					if (window.matchMedia('(max-width: 321px)').matches) {
+						detailsWrapper.style.height = (height + wrapperBottom + 120) + 'px';
+					}
+
 					window.requestAnimationFrame(() => {
 						addClass(content, 'services__wrapper--active');
 						addClass(element, 'services__menuitem--active');
@@ -217,6 +222,14 @@ class SlidingContent {
 			icon = document.querySelector('.js-iconfamily');
 			let height = content.clientHeight;
 			detailsWrapper.style.height = (height + wrapperBottom) + 'px';
+			if (window.matchMedia('(max-width: 321px)').matches) {
+				detailsWrapper.style.height = (height + wrapperBottom + 80) + 'px';
+			}
+			// else if (window.matchMedia('(max-width: 769px)').matches) {
+			// 	detailsWrapper.style.height = (height + wrapperBottom + 140) + 'px';
+			// } else {
+			// 	detailsWrapper.style.height = (height + wrapperBottom) + 'px';
+			// }
 		} else if (hasClass(element, 'services__menuitem--enterprise')) {
 			content = document.querySelector('.js-enterprise');
 			icon = document.querySelector('.js-iconenterprise');

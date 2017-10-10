@@ -74,6 +74,8 @@ function showMenu() {
 		let toggleItemMove = addItemClass(i, menuItems);
 		setTimeout(toggleItemMove, (i * 60) + 180);
 	};
+	let body = document.body;
+	body.style.overflow = 'hidden';
 
 	window.isNavbarOpen = true;
 	window.isMenuOpen = true;
@@ -104,6 +106,9 @@ function hideMenu() {
 		removeClass(fixedMenu, 'fixedmenu--open');
 		window.isNavbarOpen = false;
 	}
+
+	let body = document.body;
+	body.removeAttribute('style');
 
 	window.isMenuOpen = false;
 }

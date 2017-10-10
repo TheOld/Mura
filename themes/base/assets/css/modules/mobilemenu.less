@@ -26,6 +26,7 @@
 
 		@media @lg {
 			margin-left: 5.8rem;
+			margin-top: 0.5rem;
 		}
 
 		span {
@@ -58,6 +59,11 @@
 		}
 
 		&--open {
+
+			@media @lg {
+				margin-top: 0;
+			}
+
 			span {
 				&:nth-child(1) {
 					transform: rotate(45deg);
@@ -100,7 +106,7 @@
 		display: block;
 
 		@media @lg {
-			margin-top: 0.8rem;
+			// margin-top: 0.8rem;
 		}
 
 		& > .nav__icon {
