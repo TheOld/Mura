@@ -1,7 +1,7 @@
 /*
  * Extends the fancy tabs layout with expand controls in the tab 
  * form sections. See main Builder page for example. 
- * TODO: A similar layout is used in the CMS, Pages and Builder areas,
+ * TODO: A similar layout is used in the CMS, Pages and Builder areas, id:5 gh:6
  * but only Builder uses this class.
  */
 +function ($) { "use strict";

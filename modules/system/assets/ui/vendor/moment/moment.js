@@ -391,7 +391,7 @@
 
     function loadLocale(name) {
         var oldLocale = null;
-        // TODO: Find a better way to register and load all the locales in Node
+        // TODO: Find a better way to register and load all the locales in Node id:168 gh:169
         if (!locales[name] && (typeof module !== 'undefined') &&
                 module && module.exports) {
             try {
@@ -902,7 +902,7 @@
             this._shortMonthsParse = [];
         }
 
-        // TODO: add sorting
+        // TODO: add sorting id:112 gh:113
         // Sorting makes sure if one month (or abbr) is a prefix of another
         // see sorting in computeMonthsParse
         for (i = 0; i < 12; i++) {
@@ -942,7 +942,7 @@
                 value = toInt(value);
             } else {
                 value = mom.localeData().monthsParse(value);
-                // TODO: Another silent failure?
+                // TODO: Another silent failure? id:53 gh:54
                 if (typeof value !== 'number') {
                     return mom;
                 }
@@ -1420,7 +1420,7 @@
             dow = 1;
             doy = 4;
 
-            // TODO: We need to take the current isoWeekYear, but that depends on
+            // TODO: We need to take the current isoWeekYear, but that depends on id:19 gh:20
             // how we interpret now (local, utc, fixed offset). So create
             // a now version of current config (take local/utc/offset flags, and
             // create now).
@@ -1470,7 +1470,7 @@
 
     // date from string and format string
     function configFromStringAndFormat(config) {
-        // TODO: Move this to another part of the creation flow to prevent circular deps
+        // TODO: Move this to another part of the creation flow to prevent circular deps id:67 gh:69
         if (config._f === utils_hooks__hooks.ISO_8601) {
             configFromISO(config);
             return;
@@ -1757,7 +1757,7 @@
         return res;
     }
 
-    // TODO: Use [].sort instead?
+    // TODO: Use [].sort instead? id:169 gh:170
     function min () {
         var args = [].slice.call(arguments, 0);
 
@@ -2137,7 +2137,7 @@
         }
     }
 
-    // TODO: remove 'name' arg after deprecation is removed
+    // TODO: remove 'name' arg after deprecation is removed id:113 gh:114
     function createAdder(direction, name) {
         return function (val, period) {
             var dur, tmp;
@@ -3783,7 +3783,7 @@
         }
     }
 
-    // TODO: Use this.as('ms')?
+    // TODO: Use this.as('ms')? id:54 gh:55
     function duration_as__valueOf () {
         return (
             this._milliseconds +

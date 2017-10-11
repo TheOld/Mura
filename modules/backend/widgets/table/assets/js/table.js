@@ -945,7 +945,7 @@
     }
 
     Table.prototype.getEventTarget = function(ev, tag) {
-        // TODO: use the foundation library
+        // TODO: use the foundation library id:12 gh:14
 
         var target = ev.target ? ev.target : ev.srcElement
 
@@ -967,7 +967,7 @@
     }
 
     Table.prototype.stopEvent = function(ev) {
-        // TODO: use the foundation library
+        // TODO: use the foundation library id:40 gh:41
 
         if (ev.stopPropagation)
             ev.stopPropagation()
@@ -981,7 +981,7 @@
     }
 
     Table.prototype.elementHasClass = function(el, className) {
-        // TODO: use the foundation library
+        // TODO: use the foundation library id:28 gh:29
 
         if (el.classList)
             return el.classList.contains(className);
@@ -990,7 +990,7 @@
     }
 
     Table.prototype.elementAddClass = function(el, className) {
-        // TODO: use the foundation library
+        // TODO: use the foundation library id:63 gh:65
 
         if (this.elementHasClass(el, className))
             return
@@ -1002,7 +1002,7 @@
     }
 
     Table.prototype.elementRemoveClass = function(el, className) {
-        // TODO: use the foundation library
+        // TODO: use the foundation library id:47 gh:48
 
         if (el.classList)
             el.classList.remove(className);

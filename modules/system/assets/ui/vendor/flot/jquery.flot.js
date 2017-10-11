@@ -2380,7 +2380,7 @@ Licensed under the MIT license.
 
             var lw = series.lines.lineWidth,
                 sw = series.shadowSize;
-            // FIXME: consider another form of shadow when filling is turned on
+            // FIXME: consider another form of shadow when filling is turned on id:17 gh:19
             if (lw > 0 && sw > 0) {
                 // draw shadow as a thick and thin line with transparency
                 ctx.lineWidth = sw;
@@ -2556,7 +2556,7 @@ Licensed under the MIT license.
             if (lineWidth > 0 && (drawLeft || drawRight || drawTop || drawBottom)) {
                 c.beginPath();
 
-                // FIXME: inline moveTo is buggy with excanvas
+                // FIXME: inline moveTo is buggy with excanvas id:65 gh:67
                 c.moveTo(left, bottom + offset);
                 if (drawLeft)
                     c.lineTo(left, top + offset);
@@ -2592,7 +2592,7 @@ Licensed under the MIT license.
             ctx.save();
             ctx.translate(plotOffset.left, plotOffset.top);
 
-            // FIXME: figure out a way to add shadows (for instance along the right edge)
+            // FIXME: figure out a way to add shadows (for instance along the right edge) id:167 gh:168
             ctx.lineWidth = series.bars.lineWidth;
             ctx.strokeStyle = series.color;
 

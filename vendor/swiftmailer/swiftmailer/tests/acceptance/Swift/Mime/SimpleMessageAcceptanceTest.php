@@ -4,7 +4,7 @@ class Swift_Mime_SimpleMessageAcceptanceTest extends \PHPUnit_Framework_TestCase
 {
     protected function setUp()
     {
-        Swift_Preferences::getInstance()->setCharset(null); //TODO: Test with the charset defined
+        Swift_Preferences::getInstance()->setCharset(null); //TODO: Test with the charset defined id:165 gh:166
     }
 
     public function testBasicHeaders()

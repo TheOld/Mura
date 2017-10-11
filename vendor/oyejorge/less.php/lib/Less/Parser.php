@@ -205,7 +205,7 @@ class Less_Parser{
 			if( Less_Parser::$options['sourceMap'] ){
 				$generator = new Less_SourceMap_Generator($evaldRoot, Less_Parser::$contentsMap, Less_Parser::$options );
 				// will also save file
-				// FIXME: should happen somewhere else?
+				// FIXME: should happen somewhere else? id:192 gh:193
 				$css = $generator->generateCSS();
 			}else{
 				$css = $evaldRoot->toCSS();

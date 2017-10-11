@@ -29,7 +29,7 @@
   })
 
 
-  // NOTE: POPOVER EXTENDS tooltip.js
+  // NOTE: POPOVER EXTENDS tooltip.js id:155 gh:156
   // ================================
 
   Popover.prototype = $.extend({}, $.fn.tooltip.Constructor.prototype)

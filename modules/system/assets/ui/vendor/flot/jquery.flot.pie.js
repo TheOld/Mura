@@ -554,7 +554,7 @@ More detail and specific examples can be found in the included HTML file.
 				layer.closePath();
 				layer.restore();
 
-				// TODO: add extra shadow inside hole (with a mask) if the pie is tilted.
+				// TODO: add extra shadow inside hole (with a mask) if the pie is tilted. id:111 gh:112
 			}
 		}
 
@@ -618,7 +618,7 @@ More detail and specific examples can be found in the included HTML file.
 							arrPoly = [[0, 0], [p1X, p1Y], [p2X, p2Y], [p3X, p3Y], [p4X, p4Y], [p5X, p5Y]],
 							arrPoint = [x, y];
 
-						// TODO: perhaps do some mathmatical trickery here with the Y-coordinate to compensate for pie tilt?
+						// TODO: perhaps do some mathmatical trickery here with the Y-coordinate to compensate for pie tilt? id:52 gh:53
 
 						if (isPointInPoly(arrPoly, arrPoint)) {
 							ctx.restore();

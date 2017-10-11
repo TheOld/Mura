@@ -420,7 +420,7 @@
     },
     scroll: function  (e) {
       this.clearDimensions()
-      this.clearOffsetParent() // TODO is this needed?
+      this.clearOffsetParent() // TODO is this needed? id:20 gh:21
     },
     toggleListeners: function (method) {
       var that = this,

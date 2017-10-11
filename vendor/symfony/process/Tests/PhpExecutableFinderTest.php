@@ -91,7 +91,7 @@ class PhpExecutableFinderTest extends TestCase
 
         $current = $f->find();
 
-        //TODO maybe php executable is custom or even Windows
+        //TODO maybe php executable is custom or even Windows id:237 gh:238
         if ('\\' === DIRECTORY_SEPARATOR) {
             $this->assertTrue(is_executable($current));
             $this->assertTrue((bool) preg_match('/'.addslashes(DIRECTORY_SEPARATOR).'php\.(exe|bat|cmd|com)$/i', $current), '::find() returns the executable PHP with suffixes');

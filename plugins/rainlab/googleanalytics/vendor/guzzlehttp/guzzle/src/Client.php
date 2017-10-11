@@ -367,7 +367,7 @@ class Client implements ClientInterface
 
         // Ensure that sink is not an invalid value.
         if (isset($options['sink'])) {
-            // TODO: Add more sink validation?
+            // TODO: Add more sink validation? id:69 gh:70
             if (is_bool($options['sink'])) {
                 throw new \InvalidArgumentException('sink must not be a boolean');
             }

@@ -116,7 +116,7 @@ class Google_Service_Resource
       unset($parameters['postBody']);
     }
 
-    // TODO: optParams here probably should have been
+    // TODO: optParams here probably should have been id:170 gh:171
     // handled already - this may well be redundant code.
     if (isset($parameters['optParams'])) {
       $optParams = $parameters['optParams'];
@@ -191,7 +191,7 @@ class Google_Service_Resource
         $parameters
     );
 
-    // NOTE: because we're creating the request by hand,
+    // NOTE: because we're creating the request by hand, id:114 gh:115
     // and because the service has a rootUrl property
     // the "base_uri" of the Http Client is not accounted for
     $request = new Request(

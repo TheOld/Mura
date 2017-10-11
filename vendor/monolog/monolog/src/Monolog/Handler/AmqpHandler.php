@@ -115,7 +115,7 @@ class AmqpHandler extends AbstractProcessingHandler
     {
         $routingKey = sprintf(
             '%s.%s',
-            // TODO 2.0 remove substr call
+            // TODO 2.0 remove substr call id:208 gh:210
             substr($record['level_name'], 0, 4),
             $record['channel']
         );

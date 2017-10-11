@@ -203,7 +203,7 @@ class SnippetManager
             }
 
             foreach ($snippets as $componentClass => $componentCode) {
-                // TODO: register snippet components later, during 
+                // TODO: register snippet components later, during  id:83 gh:84
                 // the page life cycle.
                 $snippet = new Snippet;
                 $snippet->initFromComponentInfo($componentClass, $componentCode);

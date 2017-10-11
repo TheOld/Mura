@@ -230,7 +230,7 @@ class Swift_Signers_DKIMSigner implements Swift_Signers_HeaderSigner
      *
      * @return int
      */
-    // TODO fix return
+    // TODO fix return id:236 gh:237
     public function write($bytes)
     {
         $this->_canonicalizeBody($bytes);

@@ -139,7 +139,7 @@ class ArrayStatement implements \IteratorAggregate, ResultStatement
     {
         $row = $this->fetch(PDO::FETCH_NUM);
         if (!isset($row[$columnIndex])) {
-            // TODO: verify this is correct behavior
+            // TODO: verify this is correct behavior id:206 gh:208
             return false;
         }
 

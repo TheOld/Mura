@@ -127,7 +127,7 @@ class LineFormatter extends NormalizerFormatter
 
     protected function normalizeException($e)
     {
-        // TODO 2.0 only check for Throwable
+        // TODO 2.0 only check for Throwable id:229 gh:230
         if (!$e instanceof \Exception && !$e instanceof \Throwable) {
             throw new \InvalidArgumentException('Exception/Throwable expected, got '.gettype($e).' / '.get_class($e));
         }

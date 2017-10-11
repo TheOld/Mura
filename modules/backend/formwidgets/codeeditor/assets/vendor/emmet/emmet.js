@@ -2087,7 +2087,7 @@ emmet.define('abbreviationParser', function(require, _) {
             || specialChars.indexOf(ch) != -1;    // special character
     }
 
-    // XXX add counter replacer function as output processor
+    // XXX add counter replacer function as output processor id:4 gh:5
     outputProcessors.push(function(text, node) {
         return require('utils').replaceCounter(text, node.counter, node.maxCount);
     });
@@ -2288,7 +2288,7 @@ emmet.exec(function(require, _) {
         });
     }
 
-    // XXX register abbreviation filter that creates references to resources
+    // XXX register abbreviation filter that creates references to resources id:9 gh:10
     // on abbreviation nodes
     /**
      * @param {AbbreviationNode} tree
@@ -6190,7 +6190,7 @@ emmet.define('tabStops', function(require, _) {
         }
     };
 
-    // XXX register output processor that will upgrade tabstops of parsed node
+    // XXX register output processor that will upgrade tabstops of parsed node id:37 gh:38
     // in order to prevent tabstop index conflicts
     require('abbreviationParser').addOutputProcessor(function(text, node, type) {
         var maxNum = 0;
@@ -8184,7 +8184,7 @@ emmet.define('expandAbbreviation', function(require, _) {
         return true;
     }, {hidden: true});
 
-    // XXX setup default handler
+    // XXX setup default handler id:25 gh:26
     /**
      * Extracts abbreviation from current caret
      * position and replaces it with formatted output
@@ -8720,7 +8720,7 @@ emmet.exec(function(require, _) {
         return false;
     }
 
-    // XXX HTML section
+    // XXX HTML section id:60 gh:61
 
     /**
      * Find next HTML item
@@ -9113,7 +9113,7 @@ emmet.exec(function(require, _) {
         return curRange;
     }
 
-    // XXX register actions
+    // XXX register actions id:44 gh:45
     var actions = require('actions');
     actions.add('select_next_item', function(editor){
         if (editor.getSyntax() == 'css')
@@ -9460,7 +9460,7 @@ emmet.define('reflectCSSValue', function(require, _) {
         return curValue;
     }
 
-    // XXX add default handler
+    // XXX add default handler id:10 gh:11
     handlers.add(function(property) {
         var reName = getReflectedCSSName(property.name());
         _.each(property.parent.list(), function(p) {
@@ -10109,7 +10109,7 @@ emmet.define('cssResolver', function(require, _) {
 
     var defaultValue = '${1};';
 
-    // XXX module preferences
+    // XXX module preferences id:38 gh:39
     var prefs = require('preferences');
     prefs.define('css.valueSeparator', ': ',
         'Defines a symbol that should be placed between CSS property and '
@@ -10448,7 +10448,7 @@ emmet.define('cssResolver', function(require, _) {
     }
 
 
-    // TODO refactor, this looks awkward now
+    // TODO refactor, this looks awkward now id:26 gh:27
     addPrefix('w', {
         prefix: 'webkit'
     });
@@ -10471,7 +10471,7 @@ emmet.define('cssResolver', function(require, _) {
     var cssSyntaxes = ['css', 'less', 'sass', 'scss', 'stylus'];
 
     /**
-     * XXX register resolver
+     * XXX register resolver id:61 gh:63
      * @param {TreeNode} node
      * @param {String} syntax
      */
@@ -10893,7 +10893,7 @@ emmet.define('cssGradient', function(require, _) {
     var reDeg = /\d+deg/i;
     var reKeyword = /top|bottom|left|right/i;
 
-    // XXX define preferences
+    // XXX define preferences id:45 gh:46
     /** @type preferences */
     var prefs = require('preferences');
     prefs.define('css.gradient.prefixes', 'webkit, moz, o',
@@ -11342,7 +11342,7 @@ emmet.define('cssGradient', function(require, _) {
         };
     }
 
-    // XXX register expand abbreviation handler
+    // XXX register expand abbreviation handler id:11 gh:13
     /**
      * @param {IEmmetEditor} editor
      * @param {String} syntax
@@ -11400,7 +11400,7 @@ emmet.define('cssGradient', function(require, _) {
         return expandGradientOutsideValue(editor, syntax);
     });
 
-    // XXX register "Reflect CSS Value" action delegate
+    // XXX register "Reflect CSS Value" action delegate id:39 gh:40
     /**
      * @param {EditElement} property
      */
