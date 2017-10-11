@@ -145,7 +145,7 @@ class DefaultFileLocator implements FileLocator
                         continue;
                     }
 
-                    // NOTE: All files found here means classes are not transient!
+                    // NOTE: All files found here means classes are not transient! id:102 gh:103
                     $classes[] = str_replace('.', '\\', $fileName);
                 }
             }

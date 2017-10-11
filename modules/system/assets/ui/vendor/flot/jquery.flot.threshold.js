@@ -109,7 +109,7 @@ You may need to check for this in hover events.
                 plot.getData().splice(origIndex + 1, 0, thresholded);
             }
                 
-            // FIXME: there are probably some edge cases left in bars
+            // FIXME: there are probably some edge cases left in bars id:66 gh:68
         }
         
         function processThresholds(plot, s, datapoints) {

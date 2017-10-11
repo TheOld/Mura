@@ -159,7 +159,7 @@
     }
 
     StringProcessor.prototype.getCaretPosition = function(input) {
-        // TODO: use the foundation library
+        // TODO: use the foundation library id:48 gh:49
 
         if (document.selection) { 
            var selection = document.selection.createRange()
@@ -175,7 +175,7 @@
     }
 
     StringProcessor.prototype.setCaretPosition = function(input, position) {
-        // TODO: use the foundation library
+        // TODO: use the foundation library id:14 gh:16
 
         if (document.selection) { 
             var range = input.createTextRange()

@@ -186,7 +186,7 @@ class SymfonyFileLocator implements FileLocator
                         continue;
                     }
 
-                    // NOTE: All files found here means classes are not transient!
+                    // NOTE: All files found here means classes are not transient! id:189 gh:190
                     if (isset($this->prefixes[$path])) {
 
                         // Calculate namespace suffix for given prefix as a relative path from basepath to file path

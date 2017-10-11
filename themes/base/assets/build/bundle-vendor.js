@@ -1047,7 +1047,7 @@ var ReactComponentTreeHook = {
       !nextChild.isMounted ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Expected onMountComponent() to fire for the child before its parent includes it in onSetChildren().') : _prodInvariant('71') : void 0;
       if (nextChild.parentID == null) {
         nextChild.parentID = id;
-        // TODO: This shouldn't be necessary but mounting a new root during in
+        // TODO: This shouldn't be necessary but mounting a new root during in id:73 gh:74
         // componentWillMount currently causes not-yet-mounted components to
         // be purged from our tree data so their parent id is missing.
       }
@@ -2432,7 +2432,7 @@ ReactElement.createFactory = function (type) {
   // easily accessed on elements. E.g. `<Foo />.type === Foo`.
   // This should not be named `constructor` since this may not be the function
   // that created the element, and it may not even be a constructor.
-  // Legacy hook TODO: Warn if this is accessed
+  // Legacy hook TODO: Warn if this is accessed id:175 gh:172
   factory.type = type;
   return factory;
 };
@@ -2802,8 +2802,8 @@ var ReactReconciler = {
       // it's possible for an element created outside a composite to be
       // deeply mutated and reused.
 
-      // TODO: Bailing out early is just a perf optimization right?
-      // TODO: Removing the return statement should affect correctness?
+      // TODO: Bailing out early is just a perf optimization right? id:119 gh:120
+      // TODO: Removing the return statement should affect correctness? id:140 gh:141
       return;
     }
 
@@ -2958,7 +2958,7 @@ var React = {
   __spread: __spread
 };
 
-// TODO: Fix tests so that this deprecation warning doesn't cause failures.
+// TODO: Fix tests so that this deprecation warning doesn't cause failures. id:86 gh:87
 if (process.env.NODE_ENV !== 'production') {
   if (canDefineProperty) {
     Object.defineProperty(React, 'PropTypes', {
@@ -3157,7 +3157,7 @@ var EventPluginHub = {
    * @return {?function} The stored callback.
    */
   getListener: function (inst, registrationName) {
-    // TODO: shouldPreventMouseEvent is DOM-specific and definitely should not
+    // TODO: shouldPreventMouseEvent is DOM-specific and definitely should not id:74 gh:75
     // live here; needs to be moved to a better place soon
     var bankForRegistrationName = listenerBank[registrationName];
     if (shouldPreventMouseEvent(registrationName, inst._currentElement.type, inst._currentElement.props)) {
@@ -3180,7 +3180,7 @@ var EventPluginHub = {
     }
 
     var bankForRegistrationName = listenerBank[registrationName];
-    // TODO: This should never be null -- when is it?
+    // TODO: This should never be null -- when is it? id:176 gh:177
     if (bankForRegistrationName) {
       var key = getDictionaryKey(inst);
       delete bankForRegistrationName[key];
@@ -3448,7 +3448,7 @@ module.exports = EventPropagators;
  * to internal methods.
  */
 
-// TODO: Replace this with ES6: var ReactInstanceMap = new Map();
+// TODO: Replace this with ES6: var ReactInstanceMap = new Map(); id:120 gh:121
 
 var ReactInstanceMap = {
 
@@ -3515,7 +3515,7 @@ var UIEventInterface = {
     }
 
     var doc = target.ownerDocument;
-    // TODO: Figure out why `ownerDocument` is sometimes undefined in IE8.
+    // TODO: Figure out why `ownerDocument` is sometimes undefined in IE8. id:141 gh:142
     if (doc) {
       return doc.defaultView || doc.parentWindow;
     } else {
@@ -4116,7 +4116,7 @@ var ReactBrowserEventEmitter = _assign({}, ReactEventEmitterMixin, {
    * ViewportMetrics is only used by SyntheticMouse/TouchEvent and only when
    * pageX/pageY isn't supported (legacy browsers).
    *
-   * NOTE: Scroll events do not bubble.
+   * NOTE: Scroll events do not bubble. id:87 gh:88
    *
    * @see http://www.quirksmode.org/dom/events/scroll.html
    */
@@ -4638,7 +4638,7 @@ if (ExecutionEnvironment.canUseDOM) {
       // nodes when processing innerHTML, innerHTML on updated nodes suffers
       // from worse whitespace behavior. Re-adding a node like this triggers
       // the initial and more favorable whitespace behavior.
-      // TODO: What to do on a detached node?
+      // TODO: What to do on a detached node? id:75 gh:76
       if (node.parentNode) {
         node.parentNode.replaceChild(node, node);
       }
@@ -5732,7 +5732,7 @@ var ReactUpdateQueue = {
     } else {
       internalInstance._pendingCallbacks = [callback];
     }
-    // TODO: The callback here is ignored when setState is called from
+    // TODO: The callback here is ignored when setState is called from id:177 gh:178
     // componentWillMount. Either fix it or disallow doing so completely in
     // favor of getInitialState. Alternatively, we can disallow
     // componentWillMount during server-side rendering.
@@ -5810,7 +5810,7 @@ var ReactUpdateQueue = {
   /**
    * Sets a subset of the state. This only exists because _pendingState is
    * internal. This provides a merging strategy that is not available to deep
-   * properties which is confusing. TODO: Expose pendingState or don't use it
+   * properties which is confusing. TODO: Expose pendingState or don't use it id:121 gh:122
    * during the merge.
    *
    * @param {ReactClass} publicInstance The instance that should rerender.
@@ -5837,7 +5837,7 @@ var ReactUpdateQueue = {
 
   enqueueElementInternal: function (internalInstance, nextElement, nextContext) {
     internalInstance._pendingElement = nextElement;
-    // TODO: introduce _pendingContext instead of setting it directly.
+    // TODO: introduce _pendingContext instead of setting it directly. id:142 gh:143
     internalInstance._context = nextContext;
     enqueueUpdate(internalInstance);
   },
@@ -6061,7 +6061,7 @@ if (ExecutionEnvironment.canUseDOM) {
 /**
  * Checks if an event is supported in the current execution environment.
  *
- * NOTE: This will not work correctly for non-generic events such as `change`,
+ * NOTE: This will not work correctly for non-generic events such as `change`, id:88 gh:89
  * `reset`, `load`, `error`, and `select`.
  *
  * Borrows from Modernizr.
@@ -6186,7 +6186,7 @@ if (process.env.NODE_ENV !== 'production') {
   var inScopeTags = ['applet', 'caption', 'html', 'table', 'td', 'th', 'marquee', 'object', 'template',
 
   // https://html.spec.whatwg.org/multipage/syntax.html#html-integration-point
-  // TODO: Distinguish by namespace here -- for <title>, including it here
+  // TODO: Distinguish by namespace here -- for <title>, including it here id:76 gh:77
   // errs on the side of fewer warnings
   'foreignObject', 'desc', 'title'];
 
@@ -6737,7 +6737,7 @@ var ReactNoopUpdateQueue = {
   /**
    * Sets a subset of the state. This only exists because _pendingState is
    * internal. This provides a merging strategy that is not available to deep
-   * properties which is confusing. TODO: Expose pendingState or don't use it
+   * properties which is confusing. TODO: Expose pendingState or don't use it id:178 gh:179
    * during the merge.
    *
    * @param {ReactClass} publicInstance The instance that should rerender.
@@ -9085,7 +9085,7 @@ var SUBSEPARATOR = ':';
  */
 
 /**
- * TODO: Test that a single child and an array with one item have the same key
+ * TODO: Test that a single child and an array with one item have the same key id:122 gh:123
  * pattern.
  */
 
@@ -9456,7 +9456,7 @@ var ReactElementValidator = {
     var element = ReactElement.createElement.apply(this, arguments);
 
     // The result can be nullish if a mock or a custom function is used.
-    // TODO: Drop this when these are no longer allowed as the type argument.
+    // TODO: Drop this when these are no longer allowed as the type argument. id:143 gh:144
     if (element == null) {
       return element;
     }
@@ -9479,7 +9479,7 @@ var ReactElementValidator = {
 
   createFactory: function (type) {
     var validatedFactory = ReactElementValidator.createElement.bind(null, type);
-    // Legacy hook TODO: Warn if this is accessed
+    // Legacy hook TODO: Warn if this is accessed id:89 gh:90
     validatedFactory.type = type;
 
     if (process.env.NODE_ENV !== 'production') {
@@ -10040,7 +10040,7 @@ svgElements.forEach(function (nodeName) {
 /**
  * Gets the markup wrap configuration for the supplied `nodeName`.
  *
- * NOTE: This lazily detects which wraps are necessary for the current browser.
+ * NOTE: This lazily detects which wraps are necessary for the current browser. id:77 gh:78
  *
  * @param {string} nodeName Lowercase `nodeName`.
  * @return {?array} Markup wrap configuration, if applicable.
@@ -11927,7 +11927,7 @@ function getTargetInstForClickEvent(topLevelType, targetInst) {
 }
 
 function handleControlledInputBlur(inst, node) {
-  // TODO: In IE, inst is occasionally null. Why?
+  // TODO: In IE, inst is occasionally null. Why? id:179 gh:180
   if (inst == null) {
     return;
   }
@@ -12147,7 +12147,7 @@ var EnterLeaveEventPlugin = {
       // `nativeEventTarget` is probably a window object.
       win = nativeEventTarget;
     } else {
-      // TODO: Figure out why `ownerDocument` is sometimes undefined in IE8.
+      // TODO: Figure out why `ownerDocument` is sometimes undefined in IE8. id:123 gh:124
       var doc = nativeEventTarget.ownerDocument;
       if (doc) {
         win = doc.defaultView || doc.parentWindow;
@@ -12634,7 +12634,7 @@ var ReactChildReconciler = {
     // We currently don't have a way to track moves here but if we use iterators
     // instead of for..in we can zip the iterators and check if an item has
     // moved.
-    // TODO: If nothing has changed, return the prevChildren object so that we
+    // TODO: If nothing has changed, return the prevChildren object so that we id:144 gh:145
     // can quickly bailout if nothing has changed.
     if (!nextChildren && !prevChildren) {
       return;
@@ -12718,7 +12718,7 @@ var ReactDOMIDOperations = __webpack_require__(119);
 
 /**
  * Abstracts away all functionality of the reconciler that requires knowledge of
- * the browser context. TODO: These callers should be refactored to avoid the
+ * the browser context. TODO: These callers should be refactored to avoid the id:90 gh:91
  * need for this injection.
  */
 var ReactComponentBrowserEnvironment = {
@@ -13181,9 +13181,9 @@ var ReactCompositeComponent = {
 
     // Some existing components rely on inst.props even after they've been
     // destroyed (in event handlers).
-    // TODO: inst.props = null;
-    // TODO: inst.state = null;
-    // TODO: inst.context = null;
+    // TODO: inst.props = null; id:78 gh:79
+    // TODO: inst.state = null; id:194 gh:195
+    // TODO: inst.context = null; id:124 gh:125
   },
 
   /**
@@ -13565,7 +13565,7 @@ var ReactCompositeComponent = {
       renderedElement = this._renderValidatedComponentWithoutOwnerOrContext();
     }
     !(
-    // TODO: An `isValidNode` function would probably be more appropriate
+    // TODO: An `isValidNode` function would probably be more appropriate id:145 gh:146
     renderedElement === null || renderedElement === false || React.isValidElement(renderedElement)) ? process.env.NODE_ENV !== 'production' ? invariant(false, '%s.render(): A valid React element (or null) must be returned. You may have returned undefined, an array or some other invalid object.', this.getName() || 'ReactCompositeComponent') : _prodInvariant('109', this.getName() || 'ReactCompositeComponent') : void 0;
 
     return renderedElement;
@@ -14407,7 +14407,7 @@ ReactDOMComponent.Mixin = {
       var contentToUse = CONTENT_TYPES[typeof props.children] ? props.children : null;
       var childrenToUse = contentToUse != null ? null : props.children;
       if (contentToUse != null) {
-        // TODO: Validate that text is allowed as a child of this node
+        // TODO: Validate that text is allowed as a child of this node id:91 gh:92
         ret = escapeTextContentForBrowser(contentToUse);
         if (process.env.NODE_ENV !== 'production') {
           setAndValidateContentChildDev.call(this, contentToUse);
@@ -14444,7 +14444,7 @@ ReactDOMComponent.Mixin = {
     } else {
       var contentToUse = CONTENT_TYPES[typeof props.children] ? props.children : null;
       var childrenToUse = contentToUse != null ? null : props.children;
-      // TODO: Validate that text is allowed as a child of this node
+      // TODO: Validate that text is allowed as a child of this node id:79 gh:80
       if (contentToUse != null) {
         // Avoid setting textContent when the text is empty. In IE11 setting
         // textContent on a text area will cause the placeholder to not
@@ -15071,7 +15071,7 @@ var ReactDOMInput = {
       }
     }
 
-    // TODO: Shouldn't this be getChecked(props)?
+    // TODO: Shouldn't this be getChecked(props)? id:195 gh:196
     var checked = props.checked;
     if (checked != null) {
       DOMPropertyOperations.setValueForProperty(ReactDOMComponentTree.getNodeFromInstance(inst), 'checked', checked || false);
@@ -15420,7 +15420,7 @@ function flattenChildren(children) {
  */
 var ReactDOMOption = {
   mountWrapper: function (inst, props, hostParent) {
-    // TODO (yungsters): Remove support for `selected` in <option>.
+    // TODO (yungsters): Remove support for `selected` in <option>. id:125 gh:126
     if (process.env.NODE_ENV !== 'production') {
       process.env.NODE_ENV !== 'production' ? warning(props.selected == null, 'Use the `defaultValue` or `value` props on <select> instead of ' + 'setting `selected` on <option>.') : void 0;
     }
@@ -15759,7 +15759,7 @@ var validateDOMNesting = __webpack_require__(47);
  * @internal
  */
 var ReactDOMTextComponent = function (text) {
-  // TODO: This is really a ReactText (ReactNode), not a ReactElement
+  // TODO: This is really a ReactText (ReactNode), not a ReactElement id:146 gh:147
   this._currentElement = text;
   this._stringText = '' + text;
   // ReactDOMComponentTree uses these:
@@ -15842,7 +15842,7 @@ _assign(ReactDOMTextComponent.prototype, {
       this._currentElement = nextText;
       var nextStringText = '' + nextText;
       if (nextStringText !== this._stringText) {
-        // TODO: Save this as pending props and use performUpdateIfNecessary
+        // TODO: Save this as pending props and use performUpdateIfNecessary id:92 gh:93
         // and/or updateComponent to do the actual update for consistency with
         // other component types?
         this._stringText = nextStringText;
@@ -15975,7 +15975,7 @@ var ReactDOMTextarea = {
     // Only bother fetching default value if we're going to use it
     if (value == null) {
       var defaultValue = props.defaultValue;
-      // TODO (yungsters): Remove support for children content in <textarea>.
+      // TODO (yungsters): Remove support for children content in <textarea>. id:80 gh:81
       var children = props.children;
       if (children != null) {
         if (process.env.NODE_ENV !== 'production') {
@@ -16662,7 +16662,7 @@ var ReactDebugTool = {
   }
 };
 
-// TODO remove these when RN/www gets updated
+// TODO remove these when RN/www gets updated id:196 gh:197
 ReactDebugTool.addDevtool = ReactDebugTool.addHook;
 ReactDebugTool.removeDevtool = ReactDebugTool.removeHook;
 
@@ -16790,7 +16790,7 @@ var alreadyInjected = false;
 
 function inject() {
   if (alreadyInjected) {
-    // TODO: This is currently true because these injections are shared between
+    // TODO: This is currently true because these injections are shared between id:126 gh:127
     // the client and the server package. They should be built independently
     // and not share any injection state. Then this problem will be solved.
     return;
@@ -16937,7 +16937,7 @@ var getUnboundedScrollPosition = __webpack_require__(91);
  * other). If React trees are not nested, returns null.
  */
 function findParent(inst) {
-  // TODO: It may be a good idea to cache this to prevent unnecessary DOM
+  // TODO: It may be a good idea to cache this to prevent unnecessary DOM id:147 gh:148
   // traversal, but caching is difficult to do correctly without using a
   // mutation observer to listen for all DOM changes.
   while (inst._hostParent) {
@@ -17278,7 +17278,7 @@ var invariant = __webpack_require__(1);
  * @private
  */
 function makeInsertMarkup(markup, afterNode, toIndex) {
-  // NOTE: Null values reduce hidden classes.
+  // NOTE: Null values reduce hidden classes. id:93 gh:94
   return {
     type: 'INSERT_MARKUP',
     content: markup,
@@ -17297,7 +17297,7 @@ function makeInsertMarkup(markup, afterNode, toIndex) {
  * @private
  */
 function makeMove(child, afterNode, toIndex) {
-  // NOTE: Null values reduce hidden classes.
+  // NOTE: Null values reduce hidden classes. id:180 gh:181
   return {
     type: 'MOVE_EXISTING',
     content: null,
@@ -17315,7 +17315,7 @@ function makeMove(child, afterNode, toIndex) {
  * @private
  */
 function makeRemove(child, node) {
-  // NOTE: Null values reduce hidden classes.
+  // NOTE: Null values reduce hidden classes. id:197 gh:198
   return {
     type: 'REMOVE_NODE',
     content: null,
@@ -17333,7 +17333,7 @@ function makeRemove(child, node) {
  * @private
  */
 function makeSetMarkup(markup) {
-  // NOTE: Null values reduce hidden classes.
+  // NOTE: Null values reduce hidden classes. id:127 gh:128
   return {
     type: 'SET_MARKUP',
     content: markup,
@@ -17351,7 +17351,7 @@ function makeSetMarkup(markup) {
  * @private
  */
 function makeTextContent(textContent) {
-  // NOTE: Null values reduce hidden classes.
+  // NOTE: Null values reduce hidden classes. id:148 gh:149
   return {
     type: 'TEXT_CONTENT',
     content: textContent,
@@ -17397,7 +17397,7 @@ if (process.env.NODE_ENV !== 'production') {
   };
   setChildrenForInstrumentation = function (children) {
     var debugID = getDebugID(this);
-    // TODO: React Native empty components are also multichild.
+    // TODO: React Native empty components are also multichild. id:94 gh:95
     // This means they still get into this method but don't have _debugID.
     if (debugID !== 0) {
       ReactInstrumentation.debugTool.onSetChildren(debugID, children ? Object.keys(children).map(function (key) {
@@ -17661,7 +17661,7 @@ var ReactMultiChild = {
     /**
      * Mounts a child with the supplied name.
      *
-     * NOTE: This is part of `updateChildren` and is here for readability.
+     * NOTE: This is part of `updateChildren` and is here for readability. id:181 gh:182
      *
      * @param {ReactComponent} child Component to mount.
      * @param {string} name Name of the child.
@@ -17677,7 +17677,7 @@ var ReactMultiChild = {
     /**
      * Unmounts a rendered child.
      *
-     * NOTE: This is part of `updateChildren` and is here for readability.
+     * NOTE: This is part of `updateChildren` and is here for readability. id:198 gh:199
      *
      * @param {ReactComponent} child Component to unmount.
      * @private
@@ -17960,7 +17960,7 @@ var Mixin = {
    * @abstract
    * @final
    * @return {array<object>} List of operation wrap procedures.
-   *   TODO: convert to array<TransactionWrapper>
+   *   TODO: convert to array<TransactionWrapper> id:128 gh:129
    */
   getTransactionWrappers: function () {
     return TRANSACTION_WRAPPERS;
@@ -18067,7 +18067,7 @@ ReactRef.shouldUpdateRefs = function (prevElement, nextElement) {
   // of the public this.props because the post processing cannot determine
   // a ref. The ref conceptually lives on the element.
 
-  // TODO: Should this even be possible? The owner cannot change because
+  // TODO: Should this even be possible? The owner cannot change because id:149 gh:150
   // it's forbidden by shouldUpdateReactComponent. The ref can change
   // if you swap the keys of but not the refs. Reconsider where this check
   // is made. It probably belongs where the key checking and
@@ -18322,7 +18322,7 @@ var ReactServerUpdateQueue = function () {
   /**
    * Sets a subset of the state. This only exists because _pendingState is
    * internal. This provides a merging strategy that is not available to deep
-   * properties which is confusing. TODO: Expose pendingState or don't use it
+   * properties which is confusing. TODO: Expose pendingState or don't use it id:95 gh:96
    * during the merge.
    *
    * @param {ReactClass} publicInstance The instance that should rerender.
@@ -19024,7 +19024,7 @@ var SimpleEventPlugin = {
       case 'topMouseDown':
       case 'topMouseMove':
       case 'topMouseUp':
-      // TODO: Disabled elements should not respond to mouse events
+      // TODO: Disabled elements should not respond to mouse events id:182 gh:183
       /* falls through */
       case 'topMouseOut':
       case 'topMouseOver':
@@ -20935,7 +20935,7 @@ var ReactClassInterface = {
    *     });
    *   }
    *
-   * NOTE: There is no equivalent `componentWillReceiveState`. An incoming prop
+   * NOTE: There is no equivalent `componentWillReceiveState`. An incoming prop id:199 gh:200
    * transition may cause a state change, but the opposite is not true. If you
    * need it, you are probably looking for `componentWillUpdate`.
    *
@@ -20973,7 +20973,7 @@ var ReactClassInterface = {
    *
    * Use this as an opportunity to perform preparation before an update occurs.
    *
-   * NOTE: You **cannot** use `this.setState()` in this method.
+   * NOTE: You **cannot** use `this.setState()` in this method. id:129 gh:130
    *
    * @param {object} nextProps
    * @param {?object} nextState
@@ -21327,7 +21327,7 @@ function bindAutoBindMethods(component) {
 var ReactClassMixin = {
 
   /**
-   * TODO: This will be deprecated because state should always keep a consistent
+   * TODO: This will be deprecated because state should always keep a consistent id:150 gh:151
    * type signature and the only use case for this, is to avoid that.
    */
   replaceState: function (newState, callback) {
@@ -21955,7 +21955,7 @@ var SUBSEPARATOR = ':';
  */
 
 /**
- * TODO: Test that a single child and an array with one item have the same key
+ * TODO: Test that a single child and an array with one item have the same key id:96 gh:97
  * pattern.
  */
 

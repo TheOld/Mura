@@ -39,7 +39,7 @@ class LogglyFormatter extends JsonFormatter
     {
         if (isset($record["datetime"]) && ($record["datetime"] instanceof \DateTime)) {
             $record["timestamp"] = $record["datetime"]->format("Y-m-d\TH:i:s.uO");
-            // TODO 2.0 unset the 'datetime' parameter, retained for BC
+            // TODO 2.0 unset the 'datetime' parameter, retained for BC id:158 gh:159
         }
 
         return parent::format($record);

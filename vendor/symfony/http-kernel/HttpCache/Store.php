@@ -164,7 +164,7 @@ class Store implements StoreInterface
             return $this->restoreResponse($headers, $body);
         }
 
-        // TODO the metaStore referenced an entity that doesn't exist in
+        // TODO the metaStore referenced an entity that doesn't exist in id:215 gh:216
         // the entityStore. We definitely want to return nil but we should
         // also purge the entry from the meta-store when this is detected.
     }

@@ -25,7 +25,7 @@ class ConstantEnumerator extends Enumerator
     {
         // only list constants when no Reflector is present.
         //
-        // TODO: make a NamespaceReflector and pass that in for commands like:
+        // TODO: make a NamespaceReflector and pass that in for commands like: id:222 gh:223
         //
         //     ls --constants Foo
         //

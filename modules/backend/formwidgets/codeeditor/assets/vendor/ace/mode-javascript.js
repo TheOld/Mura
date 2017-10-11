@@ -8,7 +8,7 @@ var DocCommentHighlightRules = function() {
     this.$rules = {
         "start" : [ {
             token : "comment.doc.tag",
-            regex : "@[\\w\\d_]+" // TODO: fix email addresses
+            regex : "@[\\w\\d_]+" // TODO: fix email addresses id:34 gh:35
         }, 
         DocCommentHighlightRules.getTagRule(),
         {

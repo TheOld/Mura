@@ -144,7 +144,7 @@
         }
         
         var optionsEvent = $.Event('autocompleteitems.oc.table'),
-            values = {} // TODO - implement loading values from the current row.
+            values = {} // TODO - implement loading values from the current row. id:13 gh:15
 
         $(tableElement).trigger(optionsEvent, [{
             values: values, 

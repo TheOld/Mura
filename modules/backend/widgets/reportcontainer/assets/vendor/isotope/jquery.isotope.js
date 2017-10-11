@@ -691,7 +691,7 @@
           // get first non-empty jQ object
           while ( !testElem || !testElem.length ) {
             styleObj = this.styleQueue[ i++ ];
-            // HACK: sometimes styleQueue[i] is undefined
+            // HACK: sometimes styleQueue[i] is undefined id:27 gh:28
             if ( !styleObj ) {
               return;
             }
@@ -922,7 +922,7 @@
     _masonryReset : function() {
       // layout-specific props
       this.masonry = {};
-      // FIXME shouldn't have to call this again
+      // FIXME shouldn't have to call this again id:62 gh:64
       this._getSegments();
       var i = this.masonry.cols;
       this.masonry.colYs = [];
@@ -1112,7 +1112,7 @@
     _masonryHorizontalReset : function() {
       // layout-specific props
       this.masonryHorizontal = {};
-      // FIXME shouldn't have to call this again
+      // FIXME shouldn't have to call this again id:46 gh:47
       this._getSegments( true );
       var i = this.masonryHorizontal.rows;
       this.masonryHorizontal.rowXs = [];

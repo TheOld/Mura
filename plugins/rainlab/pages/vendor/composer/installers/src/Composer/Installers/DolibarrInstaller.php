@@ -9,7 +9,7 @@ namespace Composer\Installers;
  */
 class DolibarrInstaller extends BaseInstaller
 {
-    //TODO: Add support for scripts and themes
+    //TODO: Add support for scripts and themes id:71 gh:72
     protected $locations = array(
         'module' => 'htdocs/custom/{$name}/',
     );

@@ -25,7 +25,7 @@ class ClassEnumerator extends Enumerator
     {
         // only list classes when no Reflector is present.
         //
-        // TODO: make a NamespaceReflector and pass that in for commands like:
+        // TODO: make a NamespaceReflector and pass that in for commands like: id:216 gh:217
         //
         //     ls --classes Foo
         //

@@ -3,7 +3,7 @@
  */
 
 /*
- * TODO: implement the search
+ * TODO: implement the search id:41 gh:42
  */
 
 +function ($) { "use strict";
@@ -245,7 +245,7 @@
     }
 
     DropdownProcessor.prototype.getAbsolutePosition = function(element) {
-        // TODO: use the foundation library
+        // TODO: use the foundation library id:29 gh:30
 
         var top = document.body.scrollTop,
             left = 0
@@ -349,7 +349,7 @@
         // Determine if this drop-down depends on the changed column
         // and update the option list if necessary
 
-        // TODO: setting drop-down values with table.setRowValues() is not implemented currently
+        // TODO: setting drop-down values with table.setRowValues() is not implemented currently id:107 gh:108
 
         if (!this.columnConfiguration.dependsOn)
             return

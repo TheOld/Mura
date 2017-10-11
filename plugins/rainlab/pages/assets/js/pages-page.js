@@ -164,7 +164,7 @@
             $('[data-control=filelist]', this.$sidePanel).fileList('markActive', dataId)
             $(window).trigger('resize')
         } else if ($tabControl.hasClass('secondary')) {
-            // TODO: Focus the code or rich editor here
+            // TODO: Focus the code or rich editor here id:137 gh:138
         }
     }
 

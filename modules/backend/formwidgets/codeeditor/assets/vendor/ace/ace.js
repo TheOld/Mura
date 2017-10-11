@@ -407,7 +407,7 @@ if (!Array.prototype.forEach) {
             i = -1,
             length = self.length >>> 0;
         if (_toString(fun) != "[object Function]") {
-            throw new TypeError(); // TODO message
+            throw new TypeError(); // TODO message id:56 gh:57
         }
 
         while (++i < length) {
@@ -818,7 +818,7 @@ if (!Object.isFrozen) {
 if (!Object.isExtensible) {
     Object.isExtensible = function isExtensible(object) {
         if (Object(object) === object) {
-            throw new TypeError(); // TODO message
+            throw new TypeError(); // TODO message id:1 gh:2
         }
         var name = '';
         while (owns(object, name)) {

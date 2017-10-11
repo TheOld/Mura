@@ -11,5 +11,5 @@ class JoomlaInstaller extends BaseInstaller
         'library'      => 'libraries/{$name}/',
     );
 
-    // TODO: Add inflector for mod_ and com_ names
+    // TODO: Add inflector for mod_ and com_ names id:156 gh:157
 }

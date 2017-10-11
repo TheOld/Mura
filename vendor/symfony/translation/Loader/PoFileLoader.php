@@ -124,7 +124,7 @@ class PoFileLoader extends ArrayLoader
                 $flags = array_map('trim', explode(',', substr($line, 2)));
             } elseif (substr($line, 0, 7) === 'msgid "') {
                 // We start a new msg so save previous
-                // TODO: this fails when comments or contexts are added
+                // TODO: this fails when comments or contexts are added id:166 gh:167
                 $this->addMessage($messages, $item);
                 $item = $defaults;
                 $item['ids']['singular'] = substr($line, 7, -1);

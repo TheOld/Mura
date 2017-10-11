@@ -280,7 +280,7 @@ class Swift_Mime_SimpleMimeEntity implements Swift_Mime_MimeEntity
      */
     public function setChildren(array $children, $compoundLevel = null)
     {
-        // TODO: Try to refactor this logic
+        // TODO: Try to refactor this logic id:225 gh:226
 
         $compoundLevel = isset($compoundLevel) ? $compoundLevel : $this->_getCompoundLevel($children);
         $immediateChildren = array();
@@ -777,7 +777,7 @@ class Swift_Mime_SimpleMimeEntity implements Swift_Mime_MimeEntity
     {
         $shouldSort = false;
         foreach ($this->_immediateChildren as $child) {
-            // NOTE: This include alternative parts moved into a related part
+            // NOTE: This include alternative parts moved into a related part id:214 gh:215
             if ($child->getNestingLevel() == self::LEVEL_ALTERNATIVE) {
                 $shouldSort = true;
                 break;

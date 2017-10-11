@@ -127,7 +127,7 @@ class Swift_Mime_Headers_ParameterizedHeader extends Swift_Mime_Headers_Unstruct
      *
      * @return string
      */
-    public function getFieldBody() //TODO: Check caching here
+    public function getFieldBody() //TODO: Check caching here id:164 gh:165
     {
         $body = parent::getFieldBody();
         foreach ($this->_params as $name => $value) {
@@ -187,7 +187,7 @@ class Swift_Mime_Headers_ParameterizedHeader extends Swift_Mime_Headers_Unstruct
 
         // If it's not already a valid parameter value...
         if (!preg_match('/^'.self::TOKEN_REGEX.'$/D', $value)) {
-            // TODO: text, or something else??
+            // TODO: text, or something else?? id:219 gh:220
             // ... and it's not ascii
             if (!preg_match('/^'.$this->getGrammar()->getDefinition('text').'*$/D', $value)) {
                 $encoded = true;

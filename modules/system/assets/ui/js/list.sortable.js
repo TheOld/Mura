@@ -152,7 +152,7 @@
     }
 
     ListSortable.prototype.isDragStartAllowed = function(element) {
-        // TODO: if handle selector is specified - test if 
+        // TODO: if handle selector is specified - test if  id:30 gh:31
         // the element is a handle.
 
         return true

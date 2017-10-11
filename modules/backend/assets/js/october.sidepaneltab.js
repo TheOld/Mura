@@ -53,7 +53,7 @@
         if (!Modernizr.touch) {
             // The side panel now opens only when a menu item is hovered and
             // when the item doesn't have the "data-no-side-panel" attribute.
-            // TODO: remove the comment and the code below if no issues noticed.
+            // TODO: remove the comment and the code below if no issues noticed. id:0 gh:1
             // self.$sideNav.mouseenter(function() {
             //     if ($(window).width() < self.options.breakpoint || !self.panelFixed()) {
             //         self.panelOpenTimeout = setTimeout(function() {

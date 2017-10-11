@@ -1,7 +1,7 @@
 /*
  * Inspector string list with autocompletion editor class.
  *
- * TODO: validation is not implemented in this editor. See the Dictionary editor for reference.
+ * TODO: validation is not implemented in this editor. See the Dictionary editor for reference. id:42 gh:43
  */
 +function ($) { "use strict";
 
